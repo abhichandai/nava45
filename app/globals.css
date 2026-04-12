@@ -1,29 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
+/* ─── DESIGN SYSTEM ───────────────────────────────────────────────────────── */
+/* Refactoring UI: define shades up front, tint greys with brand color        */
+
 :root {
-  --gold: #B8962E;
-  --gold-light: #C9A84C;
-  --gold-muted: rgba(184,150,46,0.15);
-  --navy: #0e3d6c;
-  --navy-muted: rgba(14,61,108,0.08);
-  --bg: #FFFFFF;
-  --bg-2: #F5F5F5;
-  --bg-3: #EBEBEB;
-  --muted: #666666;
-  --text: #0D0D0D;
-  --border: rgba(0,0,0,0.1);
+  /* Gold — personality, brand, decorative */
+  --gold-50:  #FBF7EE;
+  --gold-100: #F3E8C8;
+  --gold-200: #E8D090;
+  --gold-400: #C9A84C;
+  --gold-600: #B8962E;
+  --gold-800: #7A6018;
+
+  /* Navy — action, trust, CTAs only */
+  --navy-50:  #EDF2F8;
+  --navy-100: #C8D9EC;
+  --navy-400: #4A7DB5;
+  --navy-600: #0e3d6c;
+  --navy-800: #092848;
+
+  /* Greys — tinted warm so they cohese with gold */
+  --grey-50:  #FAFAF8;
+  --grey-100: #F4F3F0;
+  --grey-200: #E8E6E1;
+  --grey-300: #D4D1CB;
+  --grey-500: #8A8780;
+  --grey-700: #4A4844;
+  --grey-900: #111110;
+
+  /* Semantic aliases */
+  --bg:       var(--grey-50);
+  --bg-alt:   var(--grey-100);
+  --text:     var(--grey-900);
+  --muted:    var(--grey-500);
+  --border:   var(--grey-200);
+  --gold:     var(--gold-600);
+  --navy:     var(--navy-600);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--bg);
@@ -34,129 +51,106 @@ body {
   overflow-x: hidden;
 }
 
-.font-display {
-  font-family: 'Cormorant Garamond', serif;
+/* ─── ANIMATIONS ──────────────────────────────────────────────────────────── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Grain overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1000;
-  opacity: 0.4;
-}
+.animate-fade-up { animation: fadeUp 0.8s ease forwards; }
+.delay-1 { animation-delay: 0.12s; opacity: 0; }
+.delay-2 { animation-delay: 0.24s; opacity: 0; }
+.delay-3 { animation-delay: 0.36s; opacity: 0; }
 
-.gold { color: var(--gold); }
+/* ─── SHARED ──────────────────────────────────────────────────────────────── */
+
 .gold-line {
-  width: 40px;
+  width: 36px;
   height: 1px;
   background: var(--gold);
   display: inline-block;
+  flex-shrink: 0;
 }
 
-/* Fade in animations */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+/* ─── NAV ─────────────────────────────────────────────────────────────────── */
 
-.animate-fade-up {
-  animation: fadeUp 0.9s ease forwards;
-}
-.animate-fade-in {
-  animation: fadeIn 1.2s ease forwards;
-}
-.delay-1 { animation-delay: 0.15s; opacity: 0; }
-.delay-2 { animation-delay: 0.3s; opacity: 0; }
-.delay-3 { animation-delay: 0.45s; opacity: 0; }
-.delay-4 { animation-delay: 0.6s; opacity: 0; }
-
-/* Nav */
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 28px 48px;
+  padding: 28px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.97), rgba(255,255,255,0.0));
+  background: linear-gradient(to bottom, rgba(250,250,248,0.96) 60%, transparent);
 }
 
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--text);
   text-decoration: none;
-  text-transform: uppercase;
 }
 
+/* Navy does one job: the single primary CTA */
 .nav-cta {
-  font-size: 0.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--navy);
+  font-weight: 500;
+  color: #fff;
+  background: var(--navy);
   text-decoration: none;
-  border: 1px solid rgba(14,61,108,0.3);
   padding: 10px 24px;
-  transition: all 0.3s ease;
+  transition: background 0.25s ease;
 }
-.nav-cta:hover {
-  background: var(--navy-muted);
-  border-color: var(--navy);
-}
+.nav-cta:hover { background: var(--navy-800); }
 
-/* Hero */
+/* ─── HERO ────────────────────────────────────────────────────────────────── */
+
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 48px;
+  padding: 0 60px;
   position: relative;
   overflow: hidden;
 }
 
+/* Refactoring UI: decorate backgrounds — subtle, purposeful */
 .hero-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 0% 0%, rgba(184,150,46,0.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 100% 100%, rgba(14,61,108,0.06) 0%, transparent 50%),
-    linear-gradient(135deg, rgba(184,150,46,0.07) 0%, rgba(255,255,255,0) 60%);
+    radial-gradient(ellipse at 2% 0%, var(--gold-100) 0%, transparent 45%),
+    radial-gradient(ellipse at 98% 100%, var(--navy-50) 0%, transparent 45%);
+  opacity: 0.5;
 }
 
 .hero-line {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: 60px; top: 0; bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(184,150,46,0.2), transparent);
+  background: linear-gradient(to bottom, transparent, var(--gold-200), transparent);
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 680px;
   position: relative;
   z-index: 2;
 }
 
 .eyebrow {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -168,7 +162,7 @@ nav {
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.01em;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   color: var(--text);
 }
 
@@ -180,133 +174,124 @@ nav {
 .hero-sub {
   font-size: 1rem;
   color: var(--muted);
-  max-width: 460px;
-  line-height: 1.8;
-  margin-bottom: 48px;
+  max-width: 440px;
+  line-height: 1.85;
+  margin-bottom: 44px;
   font-weight: 300;
 }
 
+/* Navy CTA button — one job, done confidently */
 .btn-primary {
   display: inline-block;
-  background: var(--text);
-  color: var(--bg);
-  font-size: 0.72rem;
-  letter-spacing: 0.25em;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 500;
-  padding: 16px 40px;
+  padding: 15px 38px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background 0.25s ease;
 }
-.btn-primary:hover {
-  background: var(--gold);
-  color: #fff;
-}
+.btn-primary:hover { background: var(--navy-800); }
 
 .btn-ghost {
   display: inline-block;
-  color: var(--text);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  color: var(--grey-700);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 16px 32px;
+  padding: 15px 28px;
   text-decoration: none;
-  border: 1px solid rgba(0,0,0,0.15);
-  margin-left: 16px;
-  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--grey-300);
+  margin-left: 20px;
+  transition: border-color 0.25s ease, color 0.25s ease;
 }
-.btn-ghost:hover {
-  border-color: rgba(0,0,0,0.4);
-}
+.btn-ghost:hover { color: var(--text); border-color: var(--grey-700); }
 
-/* Section spacing */
-section {
-  padding: 120px 48px;
-}
+/* ─── SECTIONS ────────────────────────────────────────────────────────────── */
+
+section { padding: 112px 60px; }
 
 .section-label {
   font-size: 0.65rem;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 64px;
+  margin-bottom: 56px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
-.section-label::after {
+
+/* Refactoring UI: accent borders add color without clutter */
+.section-label::before {
   content: '';
   display: block;
-  width: 60px;
+  width: 28px;
   height: 1px;
-  background: rgba(184,150,46,0.4);
+  background: var(--gold-400);
+  flex-shrink: 0;
 }
 
-/* Work section */
+/* ─── SERVICES ────────────────────────────────────────────────────────────── */
+/* Refactoring UI: use background color differences instead of borders        */
+
 .work-section {
-  background: var(--bg-2);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
 }
 
+/* No more grid gap lines — just side-by-side cards with spacing */
 .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1px;
-  background: var(--border);
+  gap: 32px;
 }
 
 .work-card {
-  background: var(--bg-2);
-  padding: 56px 40px;
+  background: var(--bg);
+  padding: 48px 36px;
   position: relative;
-  overflow: hidden;
-  transition: background 0.3s ease;
-}
-.work-card:hover {
-  background: var(--bg-3);
+  transition: box-shadow 0.3s ease;
 }
 
+/* Refactoring UI: accent borders — one gold line at top of card */
 .work-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 2px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
+  background: var(--gold-200);
+  transition: background 0.3s ease;
 }
-.work-card:hover::before {
-  transform: scaleX(1);
-}
+.work-card:hover::before { background: var(--gold); }
+.work-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
 
 .work-number {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.85rem;
   color: var(--gold);
   letter-spacing: 0.1em;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .work-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 400;
   color: var(--text);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   line-height: 1.2;
 }
 
 .work-desc {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--muted);
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
-/* About */
+/* ─── ABOUT ───────────────────────────────────────────────────────────────── */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -321,108 +306,110 @@ section {
   font-weight: 300;
   line-height: 1.15;
   color: var(--text);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .about-body {
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.9;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .client-type {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  margin-bottom: 28px;
-  padding-bottom: 28px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
 }
-.client-type:last-child {
-  border-bottom: none;
-}
+.client-type:last-child { border-bottom: none; }
 
+/* Refactoring UI: hierarchy through de-emphasis — navy dot is the accent */
 .client-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--navy);
-  margin-top: 8px;
+  margin-top: 9px;
   flex-shrink: 0;
 }
 
 .client-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--grey-700);
   margin-bottom: 6px;
+  font-weight: 500;
 }
 
 .client-desc {
-  font-size: 0.88rem;
-  color: #888;
-  line-height: 1.7;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.75;
 }
 
-/* Testimonials */
-.testimonials-section {
-  background: var(--bg-2);
-}
+/* ─── TESTIMONIALS ────────────────────────────────────────────────────────── */
+/* Refactoring UI: use bg difference + shadow, not borders                    */
+
+.testimonials-section { background: var(--bg-alt); }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 32px;
+  gap: 28px;
 }
 
 .testimonial-card {
-  padding: 40px;
-  border: 1px solid var(--border);
   background: var(--bg);
+  padding: 40px 36px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
   position: relative;
 }
 
 .quote-mark {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 5rem;
+  font-size: 4.5rem;
   line-height: 1;
-  color: rgba(184,150,46,0.15);
+  color: var(--gold-100);
   position: absolute;
-  top: 20px;
-  left: 32px;
+  top: 16px;
+  left: 28px;
 }
 
 .testimonial-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   font-style: italic;
-  color: var(--text);
-  line-height: 1.7;
+  color: var(--grey-700);
+  line-height: 1.75;
   margin-bottom: 28px;
-  margin-top: 24px;
+  margin-top: 20px;
   position: relative;
   z-index: 1;
 }
 
 .testimonial-author {
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--navy);
+  font-weight: 500;
 }
 
 .testimonial-role {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--muted);
   margin-top: 4px;
 }
 
-/* Contact */
+/* ─── CONTACT ─────────────────────────────────────────────────────────────── */
+
 .contact-section {
   text-align: center;
-  padding: 160px 48px;
+  padding: 140px 60px;
 }
 
 .contact-title {
@@ -430,41 +417,43 @@ section {
   font-size: clamp(2.8rem, 5vw, 4.5rem);
   font-weight: 300;
   color: var(--text);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   line-height: 1.1;
 }
 
 .contact-sub {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--muted);
-  max-width: 420px;
-  margin: 0 auto 48px;
-  line-height: 1.8;
+  max-width: 400px;
+  margin: 0 auto 44px;
+  line-height: 1.85;
 }
 
-/* Footer */
+/* ─── FOOTER ──────────────────────────────────────────────────────────────── */
+
 footer {
-  padding: 32px 48px;
+  padding: 28px 60px;
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: var(--bg);
 }
 
 .footer-text {
   font-size: 0.72rem;
   color: var(--muted);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
-/* Responsive */
+/* ─── RESPONSIVE ──────────────────────────────────────────────────────────── */
+
 @media (max-width: 900px) {
-  nav { padding: 24px; }
-  section { padding: 80px 24px; }
+  nav, footer { padding: 22px 24px; }
+  section, .contact-section { padding: 72px 24px; }
   .hero { padding: 0 24px; }
-  .work-grid { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-line { display: none; }
+  .work-grid { grid-template-columns: 1fr; gap: 20px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .testimonials-grid { grid-template-columns: 1fr; }
-  footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
-  .contact-section { padding: 100px 24px; }
 }
