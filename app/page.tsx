@@ -4,7 +4,6 @@ export default function Home() {
       {/* Nav */}
       <nav>
         <a href="/" className="nav-logo">Nava<span style={{color:'var(--gold)'}}>45</span></a>
-        <a href="#contact" className="nav-cta">Work Together</a>
       </nav>
 
       {/* Hero */}
@@ -17,9 +16,8 @@ export default function Home() {
             <em>discerning</em><br />
             brands & leaders.
           </h1>
-          <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
+          <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <a href="#contact" className="btn-primary">Start a Conversation</a>
-            <a href="#work" className="btn-ghost">What I Do</a>
           </div>
         </div>
       </section>

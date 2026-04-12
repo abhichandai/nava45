@@ -116,6 +116,14 @@ nav {
 }
 
 /* Clean hero — centered, headline only */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 2% 0%, var(--gold-100) 0%, transparent 45%),
+    radial-gradient(ellipse at 98% 100%, var(--gold-50) 0%, transparent 45%);
+  opacity: 0.5;
+}
 .hero {
   min-height: 100vh;
   display: flex;
