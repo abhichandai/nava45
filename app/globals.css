@@ -115,30 +115,21 @@ nav {
   overflow: hidden;
 }
 
-/* Refactoring UI: decorate backgrounds — subtle, purposeful */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 2% 0%, var(--gold-100) 0%, transparent 45%),
-    radial-gradient(ellipse at 98% 100%, var(--gold-50) 0%, transparent 45%);
-  opacity: 0.5;
-}
-
+/* Clean hero — let whitespace do the work */
+.hero-bg { display: none; }
 .hero-line { display: none; }
 
 .hero-content {
   max-width: 680px;
   position: relative;
-  z-index: 2;
 }
 
 .eyebrow {
-  font-size: 0.68rem;
-  letter-spacing: 0.35em;
+  font-size: 0.65rem;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 28px;
+  color: var(--muted);
+  margin-bottom: 32px;
   display: flex;
   align-items: center;
   gap: 16px;

@@ -13,7 +13,6 @@ export default function Home() {
         <div className="hero-line" />
         <div className="hero-content">
           <p className="eyebrow animate-fade-up">
-            <span className="gold-line" />
             Digital Marketing
           </p>
           <h1 className="hero-title animate-fade-up delay-1">
