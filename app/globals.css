@@ -29,7 +29,7 @@
   --muted:    var(--grey-500);
   --border:   var(--grey-200);
   --gold:     var(--gold-600);
-  --cta:      var(--grey-900);
+  --cta:      var(--gold-600);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -97,12 +97,12 @@ nav {
   text-transform: uppercase;
   font-weight: 500;
   color: #fff;
-  background: var(--cta);
+  background: var(--gold);
   text-decoration: none;
   padding: 10px 24px;
   transition: background 0.25s ease;
 }
-.nav-cta:hover { background: var(--grey-700); }
+.nav-cta:hover { background: var(--gold-800); }
 
 /* ─── HERO ────────────────────────────────────────────────────────────────── */
 
@@ -162,7 +162,7 @@ nav {
 /* Navy CTA button — one job, done confidently */
 .btn-primary {
   display: inline-block;
-  background: var(--cta);
+  background: var(--gold);
   color: #fff;
   font-size: 0.7rem;
   letter-spacing: 0.22em;
@@ -172,7 +172,7 @@ nav {
   text-decoration: none;
   transition: background 0.25s ease;
 }
-.btn-primary:hover { background: var(--grey-700); }
+.btn-primary:hover { background: var(--gold-800); }
 
 .btn-ghost {
   display: inline-block;
