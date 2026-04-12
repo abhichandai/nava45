@@ -13,13 +13,6 @@
   --gold-600: #B8962E;
   --gold-800: #7A6018;
 
-  /* Navy — action, trust, CTAs only */
-  --navy-50:  #EDF2F8;
-  --navy-100: #C8D9EC;
-  --navy-400: #4A7DB5;
-  --navy-600: #0e3d6c;
-  --navy-800: #092848;
-
   /* Greys — tinted warm so they cohese with gold */
   --grey-50:  #FAFAF8;
   --grey-100: #F4F3F0;
@@ -36,7 +29,7 @@
   --muted:    var(--grey-500);
   --border:   var(--grey-200);
   --gold:     var(--gold-600);
-  --navy:     var(--navy-600);
+  --cta:      var(--grey-900);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -104,12 +97,12 @@ nav {
   text-transform: uppercase;
   font-weight: 500;
   color: #fff;
-  background: var(--navy);
+  background: var(--cta);
   text-decoration: none;
   padding: 10px 24px;
   transition: background 0.25s ease;
 }
-.nav-cta:hover { background: var(--navy-800); }
+.nav-cta:hover { background: var(--grey-700); }
 
 /* ─── HERO ────────────────────────────────────────────────────────────────── */
 
@@ -128,16 +121,11 @@ nav {
   inset: 0;
   background:
     radial-gradient(ellipse at 2% 0%, var(--gold-100) 0%, transparent 45%),
-    radial-gradient(ellipse at 98% 100%, var(--navy-50) 0%, transparent 45%);
+    radial-gradient(ellipse at 98% 100%, var(--gold-50) 0%, transparent 45%);
   opacity: 0.5;
 }
 
-.hero-line {
-  position: absolute;
-  right: 60px; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--gold-200), transparent);
-}
+.hero-line { display: none; }
 
 .hero-content {
   max-width: 680px;
@@ -183,7 +171,7 @@ nav {
 /* Navy CTA button — one job, done confidently */
 .btn-primary {
   display: inline-block;
-  background: var(--navy);
+  background: var(--cta);
   color: #fff;
   font-size: 0.7rem;
   letter-spacing: 0.22em;
@@ -193,7 +181,7 @@ nav {
   text-decoration: none;
   transition: background 0.25s ease;
 }
-.btn-primary:hover { background: var(--navy-800); }
+.btn-primary:hover { background: var(--grey-700); }
 
 .btn-ghost {
   display: inline-block;
@@ -331,7 +319,7 @@ section { padding: 112px 60px; }
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--navy);
+  background: var(--gold);
   margin-top: 9px;
   flex-shrink: 0;
 }
@@ -395,7 +383,7 @@ section { padding: 112px 60px; }
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--grey-700);
   font-weight: 500;
 }
 
