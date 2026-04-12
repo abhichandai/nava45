@@ -2,13 +2,15 @@
 @import "tailwindcss";
 
 :root {
-  --gold: #C9A96E;
-  --gold-light: #E8D5B0;
-  --dark: #0A0A0A;
-  --dark-2: #111111;
-  --dark-3: #1A1A1A;
-  --muted: #666666;
-  --text: #E8E2D9;
+  --gold: #B8962E;
+  --gold-light: #C9A84C;
+  --gold-muted: rgba(184,150,46,0.25);
+  --bg: #FAFAF7;
+  --bg-2: #F3F0E8;
+  --bg-3: #EDE9DE;
+  --muted: #7A7A72;
+  --text: #1A1A18;
+  --border: rgba(0,0,0,0.08);
 }
 
 * {
@@ -22,7 +24,7 @@ html {
 }
 
 body {
-  background-color: var(--dark);
+  background-color: var(--bg);
   color: var(--text);
   font-family: 'Outfit', sans-serif;
   font-weight: 300;
@@ -85,16 +87,17 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+  background: linear-gradient(to bottom, rgba(250,250,247,0.97), rgba(250,250,247,0.0));
 }
 
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0.15em;
-  color: var(--gold-light);
+  color: var(--text);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .nav-cta {
@@ -103,12 +106,12 @@ nav {
   text-transform: uppercase;
   color: var(--gold);
   text-decoration: none;
-  border: 1px solid rgba(201,169,110,0.4);
+  border: 1px solid rgba(184,150,46,0.4);
   padding: 10px 24px;
   transition: all 0.3s ease;
 }
 .nav-cta:hover {
-  background: rgba(201,169,110,0.1);
+  background: rgba(184,150,46,0.08);
   border-color: var(--gold);
 }
 
@@ -125,8 +128,8 @@ nav {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.04) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(201,169,110,0.02) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 70% 50%, rgba(184,150,46,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(184,150,46,0.03) 0%, transparent 50%);
 }
 
 .hero-line {
@@ -135,7 +138,7 @@ nav {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(201,169,110,0.2), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(184,150,46,0.2), transparent);
 }
 
 .hero-content {
@@ -162,12 +165,12 @@ nav {
   line-height: 1.05;
   letter-spacing: -0.01em;
   margin-bottom: 32px;
-  color: #F0EAE0;
+  color: var(--text);
 }
 
 .hero-title em {
   font-style: italic;
-  color: var(--gold-light);
+  color: var(--gold);
 }
 
 .hero-sub {
@@ -181,8 +184,8 @@ nav {
 
 .btn-primary {
   display: inline-block;
-  background: var(--gold);
-  color: var(--dark);
+  background: var(--text);
+  color: var(--bg);
   font-size: 0.72rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -192,7 +195,8 @@ nav {
   transition: all 0.3s ease;
 }
 .btn-primary:hover {
-  background: var(--gold-light);
+  background: var(--gold);
+  color: #fff;
 }
 
 .btn-ghost {
@@ -203,12 +207,12 @@ nav {
   text-transform: uppercase;
   padding: 16px 32px;
   text-decoration: none;
-  border: 1px solid rgba(232,226,217,0.15);
+  border: 1px solid rgba(0,0,0,0.15);
   margin-left: 16px;
   transition: all 0.3s ease;
 }
 .btn-ghost:hover {
-  border-color: rgba(232,226,217,0.4);
+  border-color: rgba(0,0,0,0.4);
 }
 
 /* Section spacing */
@@ -231,32 +235,32 @@ section {
   display: block;
   width: 60px;
   height: 1px;
-  background: rgba(201,169,110,0.4);
+  background: rgba(184,150,46,0.4);
 }
 
 /* Work section */
 .work-section {
-  background: var(--dark-2);
-  border-top: 1px solid rgba(255,255,255,0.04);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1px;
-  background: rgba(255,255,255,0.05);
+  background: var(--border);
 }
 
 .work-card {
-  background: var(--dark-2);
+  background: var(--bg-2);
   padding: 56px 40px;
   position: relative;
   overflow: hidden;
   transition: background 0.3s ease;
 }
 .work-card:hover {
-  background: var(--dark-3);
+  background: var(--bg-3);
 }
 
 .work-card::before {
@@ -287,7 +291,7 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.6rem;
   font-weight: 400;
-  color: #F0EAE0;
+  color: var(--text);
   margin-bottom: 16px;
   line-height: 1.2;
 }
@@ -312,13 +316,13 @@ section {
   font-size: clamp(2.2rem, 3.5vw, 3.2rem);
   font-weight: 300;
   line-height: 1.15;
-  color: #F0EAE0;
+  color: var(--text);
   margin-bottom: 32px;
 }
 
 .about-body {
   font-size: 0.9rem;
-  color: #999;
+  color: var(--muted);
   line-height: 1.9;
   margin-bottom: 20px;
 }
@@ -329,7 +333,7 @@ section {
   gap: 20px;
   margin-bottom: 28px;
   padding-bottom: 28px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border);
 }
 .client-type:last-child {
   border-bottom: none;
@@ -360,7 +364,7 @@ section {
 
 /* Testimonials */
 .testimonials-section {
-  background: var(--dark-2);
+  background: var(--bg-2);
 }
 
 .testimonials-grid {
@@ -371,7 +375,8 @@ section {
 
 .testimonial-card {
   padding: 40px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  background: var(--bg);
   position: relative;
 }
 
@@ -379,7 +384,7 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-size: 5rem;
   line-height: 1;
-  color: rgba(201,169,110,0.15);
+  color: rgba(184,150,46,0.15);
   position: absolute;
   top: 20px;
   left: 32px;
@@ -389,7 +394,7 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   font-style: italic;
-  color: #CCC;
+  color: var(--text);
   line-height: 1.7;
   margin-bottom: 28px;
   margin-top: 24px;
@@ -420,7 +425,7 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.8rem, 5vw, 4.5rem);
   font-weight: 300;
-  color: #F0EAE0;
+  color: var(--text);
   margin-bottom: 24px;
   line-height: 1.1;
 }
@@ -436,7 +441,7 @@ section {
 /* Footer */
 footer {
   padding: 32px 48px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;

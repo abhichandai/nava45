@@ -3,7 +3,7 @@ export default function Home() {
     <>
       {/* Nav */}
       <nav>
-        <a href="/" className="nav-logo">Abhi Chand</a>
+        <a href="/" className="nav-logo">Nava<span style={{color:'var(--gold)'}}>45</span></a>
         <a href="#contact" className="nav-cta">Work Together</a>
       </nav>
 
@@ -164,7 +164,7 @@ export default function Home() {
         </p>
         <h2 className="contact-title">
           Let's talk about<br />
-          <em style={{ fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', color: 'var(--gold-light)' }}>
+          <em style={{ fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', color: 'var(--gold)' }}>
             what's possible.
           </em>
         </h2>
@@ -172,14 +172,14 @@ export default function Home() {
           If you're working on something that matters and need a marketer
           who will treat it that way, I'd like to hear from you.
         </p>
-        <a href="mailto:hello@abhichand.com" className="btn-primary">
-          hello@abhichand.com
+        <a href="mailto:hello@nava45.com" className="btn-primary">
+          hello@nava45.com
         </a>
       </section>
 
       {/* Footer */}
       <footer>
-        <p className="footer-text">© 2026 Abhi Chand</p>
+        <p className="footer-text">© 2026 Nava45</p>
         <p className="footer-text" style={{ letterSpacing: '0.05em' }}>
           Based in Canada · Working Globally
         </p>
