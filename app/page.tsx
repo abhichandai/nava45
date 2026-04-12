@@ -12,19 +12,12 @@ export default function Home() {
         <div className="hero-bg" />
         <div className="hero-line" />
         <div className="hero-content">
-          <p className="eyebrow animate-fade-up">
-            Digital Marketing
-          </p>
-          <h1 className="hero-title animate-fade-up delay-1">
+          <h1 className="hero-title animate-fade-up">
             Growth for<br />
             <em>discerning</em><br />
             brands & leaders.
           </h1>
-          <p className="hero-sub animate-fade-up delay-2">
-            Performance marketing and personal brand strategy for luxury products and
-            high-profile executives. I work with a small number of clients — and I work closely.
-          </p>
-          <div className="animate-fade-up delay-3">
+          <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
             <a href="#contact" className="btn-primary">Start a Conversation</a>
             <a href="#work" className="btn-ghost">What I Do</a>
           </div>

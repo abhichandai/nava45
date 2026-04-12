@@ -115,12 +115,19 @@ nav {
   overflow: hidden;
 }
 
-/* Clean hero — let whitespace do the work */
-.hero-bg { display: none; }
-.hero-line { display: none; }
+/* Clean hero — centered, headline only */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 60px;
+  position: relative;
+}
 
 .hero-content {
-  max-width: 680px;
+  max-width: 860px;
   position: relative;
 }
 
