@@ -1,9 +1,12 @@
+import ThemeToggle from './components/ThemeToggle'
+
 export default function Home() {
   return (
     <>
       {/* Nav */}
       <nav>
         <a href="/" className="nav-logo">Nava<span style={{color:'var(--gold)'}}>45</span></a>
+        <ThemeToggle />
       </nav>
 
       {/* Hero */}
@@ -17,7 +20,7 @@ export default function Home() {
             brands & leaders.
           </h1>
           <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <a href="#contact" className="btn-primary">Start a Conversation</a>
+            <a href="#contact" className="btn-primary">Apply to Work Together</a>
           </div>
         </div>
       </section>
