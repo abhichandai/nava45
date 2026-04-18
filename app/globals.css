@@ -293,11 +293,11 @@ section { padding: 112px 60px; }
 /* Refactoring UI: use background color differences instead of borders        */
 
 .work-section {
-  background: color-mix(in srgb, #B8962E 5%, #FAFAF8);
+  background: var(--bg-alt);
 }
 
 [data-theme="dark"] .work-section {
-  background: color-mix(in srgb, #B8962E 5%, #0E0D0C);
+  background: var(--bg-alt);
 }
 
 /* No more grid gap lines — just side-by-side cards with spacing */
@@ -555,9 +555,13 @@ section { padding: 112px 60px; }
 /* ─── LOGO TICKER ─────────────────────────────────────────────────────────── */
 
 .ticker-section {
-  background: var(--bg-alt);
+  background: color-mix(in srgb, #B8962E 5%, #FAFAF8);
   padding: 64px 0 72px;
   overflow: hidden;
+}
+
+[data-theme="dark"] .ticker-section {
+  background: color-mix(in srgb, #B8962E 5%, #0E0D0C);
 }
 
 .ticker-label {
