@@ -558,6 +558,7 @@ section { padding: 112px 60px; }
   background: color-mix(in srgb, #B8962E 5%, #FAFAF8);
   padding: 64px 0 72px;
   overflow: hidden;
+  width: 100%;
 }
 
 [data-theme="dark"] .ticker-section {
@@ -572,8 +573,13 @@ section { padding: 112px 60px; }
 .ticker-track-wrap {
   overflow: hidden;
   width: 100%;
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* Pause entire ticker on hover */
+.ticker-track-wrap:hover .ticker-track {
+  animation-play-state: paused;
 }
 
 @keyframes ticker-scroll {
@@ -584,9 +590,16 @@ section { padding: 112px 60px; }
 .ticker-track {
   display: flex;
   align-items: center;
-  gap: 80px;
   width: max-content;
-  animation: ticker-scroll 28s linear infinite;
+  animation: ticker-scroll 30s linear infinite;
+}
+
+/* Each set is its own flex row — -50% lands exactly at the set boundary */
+.ticker-set {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+  padding-right: 96px; /* trailing gap matches internal gap for perfect loop */
 }
 
 .ticker-item {
@@ -610,7 +623,7 @@ section { padding: 112px 60px; }
   mix-blend-mode: multiply;
 }
 
-.dark .ticker-logo-blend {
+[data-theme="dark"] .ticker-logo-blend {
   mix-blend-mode: screen;
   filter: grayscale(1) invert(1) opacity(0.55);
 }
@@ -621,6 +634,8 @@ section { padding: 112px 60px; }
 
 .ticker-item-text {
   height: 52px;
+  display: flex;
+  align-items: center;
 }
 
 .ticker-text-logo {
@@ -635,6 +650,7 @@ section { padding: 112px 60px; }
   display: block;
   transition: color 0.3s ease;
   opacity: 0.7;
+  white-space: nowrap;
 }
 
 .ticker-item:hover .ticker-text-logo {
@@ -695,5 +711,5 @@ footer {
   .testimonials-grid { grid-template-columns: 1fr; }
   .hero-quote-section { padding: 80px 28px 72px; }
   .hero-quote-mark { font-size: 6rem; }
-  .ticker-track { gap: 48px; }
+  .ticker-set { gap: 56px; padding-right: 56px; }
 }
