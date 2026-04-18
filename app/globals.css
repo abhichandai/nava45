@@ -533,12 +533,19 @@ section { padding: 112px 60px; }
   margin: 0 0 5px;
   line-height: 1.6;
   letter-spacing: 0.02em;
+}
+
+.hero-quote-credential {
   transition: color 0.3s ease;
   cursor: default;
 }
 
-.hero-quote-title:hover {
+.hero-quote-credential:hover {
   color: var(--gold);
+}
+
+.hero-quote-dot {
+  color: var(--muted);
 }
 
 /* ─── LOGO TICKER ─────────────────────────────────────────────────────────── */

@@ -36,7 +36,13 @@ export default function Home() {
             <span className="hero-quote-dash">—</span>
             <div>
               <p className="hero-quote-name">Adam Leipzig</p>
-              <p className="hero-quote-title">Hollywood Producer · Former President, National Geographic Films · Former Disney Executive</p>
+              <p className="hero-quote-title">
+                <span className="hero-quote-credential">Hollywood Producer</span>
+                <span className="hero-quote-dot"> · </span>
+                <span className="hero-quote-credential">Former President, National Geographic Films</span>
+                <span className="hero-quote-dot"> · </span>
+                <span className="hero-quote-credential">Former Disney Executive</span>
+              </p>
             </div>
           </div>
         </div>
