@@ -293,7 +293,7 @@ section { padding: 112px 60px; }
 /* Refactoring UI: use background color differences instead of borders        */
 
 .work-section {
-  background: var(--bg-alt);
+  background: #E8E4DC;
 }
 
 /* No more grid gap lines — just side-by-side cards with spacing */
