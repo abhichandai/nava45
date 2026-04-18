@@ -308,7 +308,7 @@ section { padding: 112px 60px; }
 }
 
 .work-card {
-  background: var(--bg);
+  background: var(--bg-alt);
   padding: 48px 36px;
   position: relative;
   transition: box-shadow 0.3s ease;
