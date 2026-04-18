@@ -53,42 +53,25 @@ export default function Home() {
         <p className="section-label ticker-label">Trusted By</p>
         <div className="ticker-track-wrap">
           <div className="ticker-track">
-            {/* Set 1 */}
-            <div className="ticker-set" aria-hidden="false">
-              <div className="ticker-item">
-                <img src="/logos/university-of-toronto.jpg" alt="University of Toronto" className="ticker-logo" />
+            {[0, 1, 2, 3].map((i) => (
+              <div className="ticker-set" key={i} aria-hidden={i > 0 ? 'true' : 'false'}>
+                <div className="ticker-item">
+                  <img src="/logos/university-of-toronto.jpg" alt={i === 0 ? "University of Toronto" : ""} className="ticker-logo" />
+                </div>
+                <div className="ticker-item">
+                  <img src="/logos/adam-leipzig.png" alt={i === 0 ? "Adam Leipzig Productions" : ""} className="ticker-logo ticker-logo-blend" />
+                </div>
+                <div className="ticker-item ticker-item-text">
+                  <span className="ticker-text-logo">Balance Catamarans</span>
+                </div>
+                <div className="ticker-item ticker-item-text">
+                  <span className="ticker-text-logo">Focus in Action</span>
+                </div>
+                <div className="ticker-item ticker-item-text">
+                  <span className="ticker-text-logo">Quit by Healing</span>
+                </div>
               </div>
-              <div className="ticker-item">
-                <img src="/logos/adam-leipzig.png" alt="Adam Leipzig Productions" className="ticker-logo ticker-logo-blend" />
-              </div>
-              <div className="ticker-item ticker-item-text">
-                <span className="ticker-text-logo">Balance Catamarans</span>
-              </div>
-              <div className="ticker-item ticker-item-text">
-                <span className="ticker-text-logo">Focus in Action</span>
-              </div>
-              <div className="ticker-item ticker-item-text">
-                <span className="ticker-text-logo">Quit by Healing</span>
-              </div>
-            </div>
-            {/* Set 2 — exact duplicate for seamless loop */}
-            <div className="ticker-set" aria-hidden="true">
-              <div className="ticker-item">
-                <img src="/logos/university-of-toronto.jpg" alt="" className="ticker-logo" />
-              </div>
-              <div className="ticker-item">
-                <img src="/logos/adam-leipzig.png" alt="" className="ticker-logo ticker-logo-blend" />
-              </div>
-              <div className="ticker-item ticker-item-text">
-                <span className="ticker-text-logo">Balance Catamarans</span>
-              </div>
-              <div className="ticker-item ticker-item-text">
-                <span className="ticker-text-logo">Focus in Action</span>
-              </div>
-              <div className="ticker-item ticker-item-text">
-                <span className="ticker-text-logo">Quit by Healing</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
