@@ -533,6 +533,12 @@ section { padding: 112px 60px; }
   margin: 0 0 5px;
   line-height: 1.6;
   letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.hero-quote-title:hover {
+  color: var(--gold);
 }
 
 /* ─── LOGO TICKER ─────────────────────────────────────────────────────────── */
