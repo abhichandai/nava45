@@ -464,7 +464,7 @@ section { padding: 112px 60px; }
 
 .hero-quote-section {
   background: var(--bg);
-  padding: 140px 60px 120px;
+  padding: 140px 60px 180px;
   display: flex;
   justify-content: center;
 }

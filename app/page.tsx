@@ -31,8 +31,8 @@ export default function Home() {
           <span className="hero-quote-mark">&ldquo;</span>
           <blockquote className="hero-quote-text">
             I&rsquo;ve worked with 10 other companies like yours.
-            You are the <em>best</em> I have ever seen.
-            Nobody even comes close.
+            You are <em>the best I have ever seen.
+            Nobody even comes close.</em>
           </blockquote>
           <div className="hero-quote-attribution">
             <span className="hero-quote-dash">—</span>
