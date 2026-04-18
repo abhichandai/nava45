@@ -296,6 +296,10 @@ section { padding: 112px 60px; }
   background: color-mix(in srgb, #B8962E 5%, #FAFAF8);
 }
 
+[data-theme="dark"] .work-section {
+  background: color-mix(in srgb, #B8962E 8%, #0E0D0C);
+}
+
 /* No more grid gap lines — just side-by-side cards with spacing */
 .work-grid {
   display: grid;
