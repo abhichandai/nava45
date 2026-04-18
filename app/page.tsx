@@ -25,6 +25,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Hero Quote — Adam Leipzig */}
+      <section className="hero-quote-section">
+        <div className="hero-quote-inner">
+          <span className="hero-quote-mark">&ldquo;</span>
+          <blockquote className="hero-quote-text">
+            I&rsquo;ve worked with 10 other companies like yours.
+            You are the <em>best</em> I have ever seen.
+            Nobody even comes close.
+          </blockquote>
+          <div className="hero-quote-attribution">
+            <span className="hero-quote-dash">—</span>
+            <div>
+              <p className="hero-quote-name">Adam Leipzig</p>
+              <p className="hero-quote-title">Hollywood Producer · Former President, National Geographic Films · Former Disney Executive</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Logo Ticker — Trusted By */}
+      <section className="ticker-section">
+        <p className="section-label ticker-label">Trusted By</p>
+        <div className="ticker-track-wrap">
+          <div className="ticker-track">
+            {/* Set 1 */}
+            <div className="ticker-item">
+              <img src="/logos/university-of-toronto.jpg" alt="University of Toronto" className="ticker-logo" />
+            </div>
+            <div className="ticker-item">
+              <img src="/logos/adam-leipzig.png" alt="Adam Leipzig Productions" className="ticker-logo ticker-logo-blend" />
+            </div>
+            <div className="ticker-item ticker-item-text">
+              <span className="ticker-text-logo">Balance<br />Catamarans</span>
+            </div>
+            <div className="ticker-item ticker-item-text">
+              <span className="ticker-text-logo">Focus in<br />Action</span>
+            </div>
+            <div className="ticker-item ticker-item-text">
+              <span className="ticker-text-logo">Quit by<br />Healing</span>
+            </div>
+            {/* Set 2 — duplicate for seamless loop */}
+            <div className="ticker-item">
+              <img src="/logos/university-of-toronto.jpg" alt="University of Toronto" className="ticker-logo" />
+            </div>
+            <div className="ticker-item">
+              <img src="/logos/adam-leipzig.png" alt="Adam Leipzig Productions" className="ticker-logo ticker-logo-blend" />
+            </div>
+            <div className="ticker-item ticker-item-text">
+              <span className="ticker-text-logo">Balance<br />Catamarans</span>
+            </div>
+            <div className="ticker-item ticker-item-text">
+              <span className="ticker-text-logo">Focus in<br />Action</span>
+            </div>
+            <div className="ticker-item ticker-item-text">
+              <span className="ticker-text-logo">Quit by<br />Healing</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section id="work" className="work-section">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
