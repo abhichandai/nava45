@@ -464,7 +464,7 @@ section { padding: 112px 60px; }
 
 .hero-quote-section {
   background: var(--bg);
-  padding: 140px 60px 180px;
+  padding: 160px 60px 220px;
   display: flex;
   justify-content: center;
 }
@@ -490,46 +490,47 @@ section { padding: 112px 60px; }
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 3.8vw, 3rem);
   font-weight: 300;
+  font-style: italic;
   color: var(--text);
   line-height: 1.25;
-  margin: 0 0 44px;
+  margin: 0 0 56px;
   letter-spacing: -0.01em;
 }
 
-.hero-quote-text em {
-  font-style: italic;
+.hero-quote-gold {
   color: var(--gold);
 }
 
 .hero-quote-attribution {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 20px;
 }
 
 .hero-quote-dash {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem;
   color: var(--gold);
-  line-height: 1.4;
+  line-height: 1.6;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .hero-quote-name {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 500;
   color: var(--text);
-  margin: 0 0 4px;
+  margin: 0 0 10px;
   letter-spacing: 0.01em;
 }
 
 .hero-quote-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 400;
   color: var(--muted);
-  margin: 0;
+  margin: 0 0 5px;
   line-height: 1.6;
   letter-spacing: 0.02em;
 }

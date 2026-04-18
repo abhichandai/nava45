@@ -30,15 +30,15 @@ export default function Home() {
         <div className="hero-quote-inner">
           <span className="hero-quote-mark">&ldquo;</span>
           <blockquote className="hero-quote-text">
-            I&rsquo;ve worked with 10 other companies like yours.
-            You are <em>the best I have ever seen.
-            Nobody even comes close.</em>
+            <em>I&rsquo;ve worked with 10 other companies like yours. You are <span className="hero-quote-gold">the best I have ever seen.</span> Nobody even comes close.</em>
           </blockquote>
           <div className="hero-quote-attribution">
             <span className="hero-quote-dash">—</span>
             <div>
               <p className="hero-quote-name">Adam Leipzig</p>
-              <p className="hero-quote-title">Hollywood Producer · Former President, National Geographic Films · Former Disney Executive</p>
+              <p className="hero-quote-title">Hollywood Producer</p>
+              <p className="hero-quote-title">Former President, National Geographic Films</p>
+              <p className="hero-quote-title">Former Disney Executive</p>
             </div>
           </div>
         </div>
