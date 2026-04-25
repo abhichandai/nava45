@@ -56,7 +56,7 @@ export default function Home() {
             {[0, 1, 2, 3].map((i) => (
               <div className="ticker-set" key={i} aria-hidden={i > 0 ? 'true' : 'false'}>
                 <div className="ticker-item">
-                  <img src="/logos/university-of-toronto.jpg" alt={i === 0 ? "University of Toronto" : ""} className="ticker-logo" />
+                  <img src="/logos/university-of-toronto.png" alt={i === 0 ? "University of Toronto" : ""} className="ticker-logo ticker-logo-blend" />
                 </div>
                 <div className="ticker-item">
                   <img src="/logos/adam-leipzig.png" alt={i === 0 ? "Adam Leipzig Productions" : ""} className="ticker-logo ticker-logo-blend" />
