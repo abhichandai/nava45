@@ -577,10 +577,7 @@ section { padding: 112px 60px; }
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
-/* Pause entire ticker on hover */
-.ticker-track-wrap:hover .ticker-track {
-  animation-play-state: paused;
-}
+/* Pause handled by JS — no CSS hover pause needed */
 
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
@@ -599,7 +596,7 @@ section { padding: 112px 60px; }
   display: flex;
   align-items: center;
   gap: 96px;
-  padding-right: 96px; /* trailing gap matches internal gap for perfect loop */
+  padding-right: 96px;
 }
 
 .ticker-item {
@@ -615,24 +612,20 @@ section { padding: 112px 60px; }
   width: auto;
   max-width: 220px;
   object-fit: contain;
-  filter: brightness(0) opacity(0.5);
+  filter: grayscale(1) opacity(0.45);
   transition: filter 0.3s ease;
 }
 
-.ticker-logo-blend {
-  /* no blend mode needed — brightness(0) forces pure black on any bg */
-}
-
 [data-theme="dark"] .ticker-logo {
-  filter: brightness(0) invert(1) opacity(0.55);
+  filter: grayscale(1) invert(1) opacity(0.45);
 }
 
 .ticker-item:hover .ticker-logo {
-  filter: brightness(0) opacity(0.85) sepia(1) saturate(3) hue-rotate(5deg);
+  filter: sepia(1) saturate(6) hue-rotate(5deg) brightness(0.85) opacity(1);
 }
 
 [data-theme="dark"] .ticker-item:hover .ticker-logo {
-  filter: brightness(0) invert(1) opacity(0.85) sepia(1) saturate(3) hue-rotate(5deg);
+  filter: invert(1) sepia(1) saturate(6) hue-rotate(5deg) brightness(0.85) opacity(1);
 }
 
 .ticker-item-text {
