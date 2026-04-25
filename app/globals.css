@@ -611,25 +611,28 @@ section { padding: 112px 60px; }
 }
 
 .ticker-logo {
-  height: 40px;
+  height: 36px;
   width: auto;
-  max-width: 180px;
+  max-width: 160px;
   object-fit: contain;
-  filter: grayscale(1) opacity(0.55);
+  filter: brightness(0) opacity(0.5);
   transition: filter 0.3s ease;
 }
 
 .ticker-logo-blend {
-  mix-blend-mode: multiply;
+  /* no blend mode needed — brightness(0) forces pure black on any bg */
 }
 
-[data-theme="dark"] .ticker-logo-blend {
-  mix-blend-mode: screen;
-  filter: grayscale(1) invert(1) opacity(0.55);
+[data-theme="dark"] .ticker-logo {
+  filter: brightness(0) invert(1) opacity(0.55);
 }
 
 .ticker-item:hover .ticker-logo {
-  filter: grayscale(0) opacity(0.9);
+  filter: brightness(0) opacity(0.85) sepia(1) saturate(3) hue-rotate(5deg);
+}
+
+[data-theme="dark"] .ticker-item:hover .ticker-logo {
+  filter: brightness(0) invert(1) opacity(0.85) sepia(1) saturate(3) hue-rotate(5deg);
 }
 
 .ticker-item-text {
