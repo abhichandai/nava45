@@ -1,5 +1,4 @@
 import ThemeToggle from './components/ThemeToggle'
-import TickerSection from './components/TickerSection'
 
 export default function Home() {
   return (
@@ -49,7 +48,33 @@ export default function Home() {
         </div>
       </section>
 
-      <TickerSection />
+      {/* Logo Ticker — Trusted By */}
+      <section className="ticker-section">
+        <p className="section-label ticker-label">Trusted By</p>
+        <div className="ticker-track-wrap">
+          <div className="ticker-track">
+            {[0, 1, 2, 3].map((i) => (
+              <div className="ticker-set" key={i} aria-hidden={i > 0 ? 'true' : 'false'}>
+                <div className="ticker-item">
+                  <img src="/logos/university-of-toronto.png" alt={i === 0 ? "University of Toronto" : ""} className="ticker-logo ticker-logo-blend" />
+                </div>
+                <div className="ticker-item">
+                  <img src="/logos/adam-leipzig.png" alt={i === 0 ? "Adam Leipzig Productions" : ""} className="ticker-logo ticker-logo-blend" />
+                </div>
+                <div className="ticker-item ticker-item-text">
+                  <span className="ticker-text-logo">Balance Catamarans</span>
+                </div>
+                <div className="ticker-item ticker-item-text">
+                  <span className="ticker-text-logo">Focus in Action</span>
+                </div>
+                <div className="ticker-item ticker-item-text">
+                  <span className="ticker-text-logo">Quit by Healing</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Services */}
       <section id="work" className="work-section">
