@@ -341,7 +341,7 @@ section { padding: 112px 60px; }
 }
 
 [data-theme="dark"] .results-section {
-  background: color-mix(in srgb, #B8962E 10%, #0E0D0C);
+  background: #1A1714;
 }
 
 .results-inner { max-width: 1000px; width: 100%; }
@@ -362,14 +362,14 @@ section { padding: 112px 60px; }
 
 .results-number {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-size: clamp(4rem, 8vw, 8rem);
   font-weight: 300;
   color: var(--gold-800);
   line-height: 1;
 }
 
 .results-label {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--gold-800);
   font-style: italic;
   letter-spacing: 0.04em;
@@ -383,6 +383,22 @@ section { padding: 112px 60px; }
 
 .results-section .section-label::before {
   background: var(--gold-800);
+}
+
+[data-theme="dark"] .results-number {
+  color: var(--gold-400);
+}
+
+[data-theme="dark"] .results-label {
+  color: var(--gold-400);
+}
+
+[data-theme="dark"] .results-section .section-label {
+  color: var(--gold-400);
+}
+
+[data-theme="dark"] .results-section .section-label::before {
+  background: var(--gold-400);
 }
 
 /* ─── THE WORK ────────────────────────────────────────────────────────────── */
