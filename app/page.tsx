@@ -76,93 +76,119 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Who We Work With */}
+      <section className="who-section">
+        <div className="who-inner">
+          <p className="section-label">Who We Work With</p>
+          <h2 className="who-headline">
+            You&rsquo;re already the best at what you do.
+          </h2>
+          <p className="who-sub">The market just doesn&rsquo;t know it yet.</p>
+          <p className="who-body">
+            You&rsquo;ve learned the hard way that &ldquo;build it and they will come&rdquo; is a myth.
+            Excellence is the entry fee, not the growth engine. The businesses that lead their
+            industries aren&rsquo;t always the most talented. They&rsquo;re the ones the market knows <strong>best.</strong>
+          </p>
+          <p className="who-emphasis">Their visibility is their authority.</p>
+          <p className="who-body">
+            The most respected names in any industry got there on more than skill. They built
+            the brand, the authority, and the growth engine that made their reputation impossible to ignore.
+          </p>
+          <p className="who-cta">
+            We work with esteemed founders and category leaders who are ready to build theirs.
+          </p>
+        </div>
+      </section>
+
+      {/* What We Do */}
       <section id="work" className="work-section">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <p className="section-label">Services</p>
+          <p className="section-label">What We Do</p>
           <div className="work-grid">
             <div className="work-card">
-              <p className="work-number">01</p>
-              <h3 className="work-title">Lead Generation</h3>
+              <h3 className="work-title">The Magnetic Content Engine</h3>
+              <p className="work-subtitle">Your expertise, amplified.</p>
               <p className="work-desc">
-                Paid acquisition on Google and Meta for high-value, long-cycle products.
-                I specialize in luxury markets where a single conversion justifies
-                significant ad spend — and where precision matters more than volume.
+                Our engineering approach to audience growth. We map your audience and design
+                a content strategy that serves them, then build the systems that keep your
+                brand growing while you focus on your business.
               </p>
             </div>
             <div className="work-card">
-              <p className="work-number">02</p>
-              <h3 className="work-title">Personal Brand Strategy</h3>
+              <h3 className="work-title">The Growth Engine</h3>
+              <p className="work-subtitle">Your pipeline, on demand.</p>
               <p className="work-desc">
-                Positioning and content strategy for executives, thought leaders, and
-                industry figures who need to show up credibly online. LinkedIn presence,
-                content calendars, and narrative architecture.
+                We map your audience, identify what they&rsquo;re struggling with right now,
+                and build the acquisition systems that put qualified prospects on your calendar.
+                Every conversation starts with the right person, at the right time, already
+                knowing they need what you offer.
               </p>
             </div>
             <div className="work-card">
-              <p className="work-number">03</p>
-              <h3 className="work-title">Campaign Management</h3>
+              <h3 className="work-title">The Intelligence Engine</h3>
+              <p className="work-subtitle">Are you using AI to its full potential?</p>
               <p className="work-desc">
-                Ongoing management of paid campaigns with rigorous reporting and
-                continuous optimization. No vanity metrics — just the numbers that
-                actually connect to revenue.
+                Most companies know they need to automate their workflows and processes with AI,
+                but have no idea where to begin. We identify the highest impact AI automation
+                opportunities in your business and build systems to automate that manual work entirely.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About */}
-      <section id="about">
-        <div className="about-grid">
-          <div>
-            <p className="section-label">About</p>
-            <h2 className="about-title">
-              I treat every client's business like it's my own.
-            </h2>
-            <p className="about-body">
-              I'm a data-driven marketer based in Canada. I work with a
-              deliberately small roster of clients — which means you get my full
-              attention, not a junior account manager.
-            </p>
-            <p className="about-body">
-              My background is in performance marketing, offer design, and
-              lead generation. Over time, I've moved upmarket toward clients
-              where the stakes are high and the work is complex.
-            </p>
+      {/* Results */}
+      <section className="results-section">
+        <div className="results-inner">
+          <p className="section-label" style={{ justifyContent: 'center' }}>Results</p>
+          <div className="results-grid">
+            <div className="results-stat">
+              <span className="results-number">$14.5M</span>
+              <span className="results-label">Qualified pipeline. Luxury yachts.</span>
+            </div>
+            <div className="results-stat">
+              <span className="results-number">226K</span>
+              <span className="results-label">Audience built from scratch.</span>
+            </div>
+            <div className="results-stat">
+              <span className="results-number">30%</span>
+              <span className="results-label">Close rate. $1,000 product.</span>
+            </div>
           </div>
-          <div>
-            <p className="section-label" style={{ marginBottom: '40px' }}>Who I Work With</p>
-            <div className="client-type">
-              <div className="client-dot" />
-              <div>
-                <p className="client-label">Luxury Products</p>
-                <p className="client-desc">
-                  High-ticket, considered-purchase products with long sales cycles —
-                  where qualified leads are scarce and ad spend needs to be surgical.
-                </p>
-              </div>
+        </div>
+      </section>
+
+      {/* The Work */}
+      <section className="thework-section">
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <p className="section-label">The Work</p>
+          <div className="work-grid">
+            <div className="work-card">
+              <p className="work-engine-label">The Growth Engine</p>
+              <h3 className="work-case-headline">$14.5M in qualified pipeline.</h3>
+              <p className="work-desc">
+                A high-end luxury catamaran brand with no predictable way to bring in new clients.
+                We built the full digital acquisition system from scratch.
+              </p>
+              <p className="work-client">Balance Catamarans</p>
             </div>
-            <div className="client-type">
-              <div className="client-dot" />
-              <div>
-                <p className="client-label">Executives & Thought Leaders</p>
-                <p className="client-desc">
-                  Industry leaders — from Hollywood producers to Fortune 500
-                  advisors — who need a professional digital presence that
-                  reflects the weight of their work.
-                </p>
-              </div>
+            <div className="work-card">
+              <p className="work-engine-label">The Magnetic Content Engine</p>
+              <h3 className="work-case-headline">226K on TikTok. 25K on YouTube. Built from scratch.</h3>
+              <p className="work-desc">
+                A men&rsquo;s self-development brand built entirely from content. We identified
+                the audience, built the engine, and monetized it.
+              </p>
+              <p className="work-client">Quit by Healing</p>
             </div>
-            <div className="client-type">
-              <div className="client-dot" />
-              <div>
-                <p className="client-label">The Right Fit</p>
-                <p className="client-desc">
-                  Clients who value depth over volume, and want a long-term
-                  relationship rather than a vendor transaction.
-                </p>
-              </div>
+            <div className="work-card">
+              <p className="work-engine-label">The Intelligence Engine</p>
+              <h3 className="work-case-headline">Custom software. University of Toronto.</h3>
+              <p className="work-desc">
+                Resident ophthalmologists needed a training tool that didn&rsquo;t exist.
+                We built it, secured it to medical-grade standards, and deployed it.
+              </p>
+              <p className="work-client">University of Toronto, Department of Ophthalmology</p>
             </div>
           </div>
         </div>
