@@ -798,7 +798,12 @@ section { padding: 112px 60px; }
 
 .contact-section {
   text-align: center;
-  padding: 140px 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px;
 }
 
 .contact-title {
