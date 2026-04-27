@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* Who We Work With */}
-      <section className="who-section">
+      <section className="who-section" style={{ padding: '160px 60px' }}>
         <div className="who-inner">
           <p className="section-label">Who We Work With</p>
           <h2 className="who-headline">
@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       {/* Results */}
-      <section className="results-section">
+      <section className="results-section" style={{ padding: '0 60px' }}>
         <div className="results-inner">
           <p className="section-label">Results</p>
           <div className="results-grid">

@@ -333,13 +333,18 @@ section { padding: 112px 60px; }
 .results-section {
   background: color-mix(in srgb, #B8962E 12%, #FAFAF8);
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 [data-theme="dark"] .results-section {
   background: color-mix(in srgb, #B8962E 10%, #0E0D0C);
 }
 
-.results-inner { max-width: 1000px; margin: 0 auto; }
+.results-inner { max-width: 1000px; width: 100%; }
 
 .results-grid {
   display: grid;
