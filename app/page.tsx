@@ -161,7 +161,7 @@ export default function Home() {
       {/* The Work */}
       <section className="thework-section">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <p className="section-label">The Work</p>
+          <p className="section-label">Our Work</p>
           <div className="work-grid">
             <div className="work-card">
               <p className="work-engine-label">The Growth Engine</p>
@@ -197,7 +197,7 @@ export default function Home() {
       {/* Testimonials */}
       <section className="testimonials-section">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <p className="section-label">Results</p>
+          <p className="section-label">What They Say</p>
           <div className="testimonials-grid">
             <div className="testimonial-card">
               <span className="quote-mark">"</span>
@@ -229,21 +229,17 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="contact-section">
-        <p className="section-label" style={{ justifyContent: 'center', marginBottom: '48px' }}>
-          Contact
-        </p>
         <h2 className="contact-title">
-          Let's talk about<br />
+          Let&rsquo;s talk about<br />
           <em style={{ fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', color: 'var(--gold)' }}>
-            what's possible.
+            what&rsquo;s possible.
           </em>
         </h2>
         <p className="contact-sub">
-          If you're working on something that matters and need a marketer
-          who will treat it that way, I'd like to hear from you.
+          If you&rsquo;re as obsessed with excellence as we are, we&rsquo;d love to hear from you.
         </p>
-        <a href="mailto:hello@nava45.com" className="btn-primary">
-          hello@nava45.com
+        <a href="#" className="btn-primary">
+          Get in Touch
         </a>
       </section>
 

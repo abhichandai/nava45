@@ -335,7 +335,7 @@ section { padding: 112px 60px; }
 
 /* ─── RESULTS ─────────────────────────────────────────────────────────────── */
 
-.results-section { background: var(--bg-alt); text-align: center; }
+.results-section { background: #0E0D0C; text-align: center; }
 .results-inner { max-width: 1000px; margin: 0 auto; }
 
 .results-grid {
@@ -356,16 +356,24 @@ section { padding: 112px 60px; }
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 300;
-  color: var(--gold);
+  color: var(--gold-400);
   line-height: 1;
 }
 
 .results-label {
   font-size: 0.8rem;
-  color: var(--gold);
+  color: var(--gold-400);
   font-style: italic;
   letter-spacing: 0.04em;
   line-height: 1.5;
+}
+
+.results-section .section-label {
+  color: var(--gold-400);
+}
+
+.results-section .section-label::before {
+  background: var(--gold-400);
 }
 
 /* ─── THE WORK ────────────────────────────────────────────────────────────── */
@@ -428,7 +436,7 @@ section { padding: 112px 60px; }
   background: var(--bg-alt);
   padding: 48px 36px;
   position: relative;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 /* Refactoring UI: accent borders — one gold line at top of card */
@@ -441,7 +449,10 @@ section { padding: 112px 60px; }
   transition: background 0.3s ease;
 }
 .work-card:hover::before { background: var(--gold); }
-.work-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(184,150,46,0.18), 0 2px 8px rgba(0,0,0,0.06);
+}
 
 .work-number {
   font-family: 'Cormorant Garamond', serif;
