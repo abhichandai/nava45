@@ -53,11 +53,6 @@
   background: #1A1714;
 }
 
-[data-theme="dark"] .testimonial-card {
-  background: #1A1714;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-}
-
 [data-theme="dark"] .nav-cta {
   color: var(--text);
   border-color: var(--border);
@@ -362,7 +357,7 @@ section { padding: 112px 60px; }
 
 .results-number {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(3.5rem, 6vw, 6rem);
   font-weight: 300;
   color: var(--gold-800);
   line-height: 1;
@@ -459,7 +454,7 @@ section { padding: 112px 60px; }
 }
 .work-card:hover::before { background: var(--gold); }
 .work-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(184,150,46,0.18), 0 2px 8px rgba(0,0,0,0.06);
 }
 
@@ -548,63 +543,53 @@ section { padding: 112px 60px; }
 }
 
 /* ─── TESTIMONIALS ────────────────────────────────────────────────────────── */
-/* Refactoring UI: use bg difference + shadow, not borders                    */
 
 .testimonials-section { background: var(--bg-alt); }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 28px;
+.testimonials-stack {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 }
 
-.testimonial-card {
-  background: var(--bg);
-  padding: 40px 36px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+.testimonial-pull {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
   position: relative;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  padding-left: 32px;
+  border-left: 2px solid var(--gold-200);
+  transition: border-color 0.3s ease;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(184,150,46,0.18), 0 2px 8px rgba(0,0,0,0.06);
+.testimonial-pull:hover {
+  border-left-color: var(--gold);
 }
 
-.quote-mark {
+.testimonial-pull-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 4.5rem;
-  line-height: 1;
-  color: var(--gold-100);
-  position: absolute;
-  top: 16px;
-  left: 28px;
-}
-
-.testimonial-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
   font-style: italic;
-  color: var(--grey-700);
-  line-height: 1.75;
-  margin-bottom: 28px;
-  margin-top: 20px;
-  position: relative;
-  z-index: 1;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.5;
 }
 
-.testimonial-author {
+.testimonial-pull-author {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--grey-700);
+  color: var(--gold);
   font-weight: 500;
 }
 
-.testimonial-role {
+.testimonial-pull-role {
   font-size: 0.78rem;
   color: var(--muted);
-  margin-top: 4px;
+  margin-top: -12px;
 }
 
 /* ─── HERO QUOTE ──────────────────────────────────────────────────────────── */

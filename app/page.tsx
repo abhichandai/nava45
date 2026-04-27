@@ -194,34 +194,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* What They Say */}
       <section className="testimonials-section">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p className="section-label">What They Say</p>
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <span className="quote-mark">"</span>
-              <p className="testimonial-text">
-                Seriously, congrats on this launch — how the hell did you get almost $20K from a stale old list?
+          <div className="testimonials-stack">
+            <div className="testimonial-pull">
+              <p className="testimonial-pull-text">
+                &ldquo;Seriously, congrats on this launch — how the hell did you get almost $20K from a stale old list?&rdquo;
               </p>
-              <p className="testimonial-author">Shane Melaugh</p>
-              <p className="testimonial-role">ikario — Self-Development</p>
+              <p className="testimonial-pull-author">Shane Melaugh</p>
+              <p className="testimonial-pull-role">ikario — Self-Development</p>
             </div>
-            <div className="testimonial-card">
-              <span className="quote-mark">"</span>
-              <p className="testimonial-text">
-                I recommend him whole-heartedly. He's done a great job for us and everyone I've referred him to.
+            <div className="testimonial-pull">
+              <p className="testimonial-pull-text">
+                &ldquo;I recommend him whole-heartedly. He&rsquo;s done a great job for us and everyone I&rsquo;ve referred him to.&rdquo;
               </p>
-              <p className="testimonial-author">Dr. Dan Hagi</p>
-              <p className="testimonial-role">DH Smile Center — Dentistry</p>
+              <p className="testimonial-pull-author">Dr. Dan Hagi</p>
+              <p className="testimonial-pull-role">DH Smile Center — Dentistry</p>
             </div>
-            <div className="testimonial-card">
-              <span className="quote-mark">"</span>
-              <p className="testimonial-text">
-                My business income two and three X'd within just three or four weeks.
+            <div className="testimonial-pull">
+              <p className="testimonial-pull-text">
+                &ldquo;My business income two and three X&rsquo;d within just three or four weeks.&rdquo;
               </p>
-              <p className="testimonial-author">Sam Overton</p>
-              <p className="testimonial-role">Fluid Social</p>
+              <p className="testimonial-pull-author">Sam Overton</p>
+              <p className="testimonial-pull-role">Fluid Social</p>
             </div>
           </div>
         </div>
