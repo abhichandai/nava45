@@ -140,7 +140,7 @@ export default function Home() {
       {/* Results */}
       <section className="results-section">
         <div className="results-inner">
-          <p className="section-label" style={{ justifyContent: 'center' }}>Results</p>
+          <p className="section-label">Results</p>
           <div className="results-grid">
             <div className="results-stat">
               <span className="results-number">$14.5M</span>

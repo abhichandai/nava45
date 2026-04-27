@@ -335,7 +335,15 @@ section { padding: 112px 60px; }
 
 /* ─── RESULTS ─────────────────────────────────────────────────────────────── */
 
-.results-section { background: #0E0D0C; text-align: center; }
+.results-section {
+  background: color-mix(in srgb, #B8962E 12%, #FAFAF8);
+  text-align: center;
+}
+
+[data-theme="dark"] .results-section {
+  background: color-mix(in srgb, #B8962E 10%, #0E0D0C);
+}
+
 .results-inner { max-width: 1000px; margin: 0 auto; }
 
 .results-grid {
@@ -356,24 +364,25 @@ section { padding: 112px 60px; }
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 300;
-  color: var(--gold-400);
+  color: var(--gold-800);
   line-height: 1;
 }
 
 .results-label {
   font-size: 0.8rem;
-  color: var(--gold-400);
+  color: var(--gold-800);
   font-style: italic;
   letter-spacing: 0.04em;
   line-height: 1.5;
 }
 
 .results-section .section-label {
-  color: var(--gold-400);
+  color: var(--gold-800);
+  justify-content: center;
 }
 
 .results-section .section-label::before {
-  background: var(--gold-400);
+  background: var(--gold-800);
 }
 
 /* ─── THE WORK ────────────────────────────────────────────────────────────── */
@@ -554,6 +563,12 @@ section { padding: 112px 60px; }
   padding: 40px 36px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.05);
   position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(184,150,46,0.18), 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .quote-mark {
