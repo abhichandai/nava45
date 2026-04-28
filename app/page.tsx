@@ -56,25 +56,25 @@ export default function Home() {
             {[0, 1, 2, 3].map((i) => (
               <div className="ticker-set" key={i} aria-hidden={i > 0 ? 'true' : 'false'}>
                 <div className="ticker-item">
-                  <img src="/logos/olympus.png" alt={i === 0 ? "Olympus" : ""} className="ticker-logo ticker-logo-blend" />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/olympus.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Olympus" : undefined} />
                 </div>
                 <div className="ticker-item">
-                  <img src="/logos/welch-allyn.png" alt={i === 0 ? "Welch Allyn" : ""} className="ticker-logo ticker-logo-blend" />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/welch-allyn.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Welch Allyn" : undefined} />
                 </div>
                 <div className="ticker-item">
-                  <img src="/logos/balance-catamarans.png" alt={i === 0 ? "Balance Catamarans" : ""} className="ticker-logo ticker-logo-blend" />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/balance-catamarans.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Balance Catamarans" : undefined} />
                 </div>
                 <div className="ticker-item">
-                  <img src="/logos/adam-leipzig.png" alt={i === 0 ? "Adam Leipzig" : ""} className="ticker-logo ticker-logo-blend" />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/adam-leipzig.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Adam Leipzig" : undefined} />
                 </div>
                 <div className="ticker-item">
-                  <img src="/logos/dh-smile-center.png" alt={i === 0 ? "DH Smile Center" : ""} className="ticker-logo ticker-logo-blend" />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/dh-smile-center.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "DH Smile Center" : undefined} />
                 </div>
                 <div className="ticker-item">
-                  <img src="/logos/focus-and-action.png" alt={i === 0 ? "Focus & Action" : ""} className="ticker-logo ticker-logo-blend" />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/focus-and-action.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Focus & Action" : undefined} />
                 </div>
                 <div className="ticker-item">
-                  <img src="/logos/quit-by-healing.png" alt={i === 0 ? "Quit by Healing" : ""} className="ticker-logo ticker-logo-blend" />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/quit-by-healing.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Quit by Healing" : undefined} />
                 </div>
               </div>
             ))}
