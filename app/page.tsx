@@ -56,19 +56,22 @@ export default function Home() {
             {[0, 1, 2, 3].map((i) => (
               <div className="ticker-set" key={i} aria-hidden={i > 0 ? 'true' : 'false'}>
                 <div className="ticker-item">
-                  <img src="/logos/university-of-toronto.png" alt={i === 0 ? "University of Toronto" : ""} className="ticker-logo ticker-logo-blend" />
+                  <img src="/logos/olympus.png" alt={i === 0 ? "Olympus" : ""} className="ticker-logo ticker-logo-blend" />
                 </div>
                 <div className="ticker-item">
-                  <img src="/logos/adam-leipzig.png" alt={i === 0 ? "Adam Leipzig Productions" : ""} className="ticker-logo ticker-logo-blend" />
+                  <img src="/logos/welch-allyn.png" alt={i === 0 ? "Welch Allyn" : ""} className="ticker-logo ticker-logo-blend" />
                 </div>
-                <div className="ticker-item ticker-item-text">
-                  <span className="ticker-text-logo">Balance Catamarans</span>
+                <div className="ticker-item">
+                  <img src="/logos/balance-catamarans.png" alt={i === 0 ? "Balance Catamarans" : ""} className="ticker-logo ticker-logo-blend" />
                 </div>
-                <div className="ticker-item ticker-item-text">
-                  <span className="ticker-text-logo">Focus in Action</span>
+                <div className="ticker-item">
+                  <img src="/logos/adam-leipzig.png" alt={i === 0 ? "Adam Leipzig" : ""} className="ticker-logo ticker-logo-blend" />
                 </div>
-                <div className="ticker-item ticker-item-text">
-                  <span className="ticker-text-logo">Quit by Healing</span>
+                <div className="ticker-item">
+                  <img src="/logos/dh-smile-center.png" alt={i === 0 ? "DH Smile Center" : ""} className="ticker-logo ticker-logo-blend" />
+                </div>
+                <div className="ticker-item">
+                  <img src="/logos/quit-by-healing.png" alt={i === 0 ? "Quit by Healing" : ""} className="ticker-logo ticker-logo-blend" />
                 </div>
               </div>
             ))}
