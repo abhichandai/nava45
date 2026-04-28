@@ -71,6 +71,9 @@ export default function Home() {
                   <img src="/logos/dh-smile-center.png" alt={i === 0 ? "DH Smile Center" : ""} className="ticker-logo ticker-logo-blend" />
                 </div>
                 <div className="ticker-item">
+                  <img src="/logos/focus-and-action.png" alt={i === 0 ? "Focus & Action" : ""} className="ticker-logo ticker-logo-blend" />
+                </div>
+                <div className="ticker-item">
                   <img src="/logos/quit-by-healing.png" alt={i === 0 ? "Quit by Healing" : ""} className="ticker-logo ticker-logo-blend" />
                 </div>
               </div>
