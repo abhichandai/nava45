@@ -771,27 +771,27 @@ section { padding: 112px 60px; }
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: transparent;
-  /* invert: black bg → white bg, grey marks → light marks */
-  /* multiply: white bg × page bg = page bg (disappears) */
-  filter: invert(1) opacity(0.6);
-  mix-blend-mode: multiply;
+  /* Match ticker section bg exactly — screen blend makes black invisible */
+  background-color: color-mix(in srgb, #B8962E 5%, #FAFAF8);
+  background-blend-mode: screen;
+  opacity: 0.75;
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 [data-theme="dark"] .ticker-logo {
-  filter: none;
-  mix-blend-mode: screen;
-  opacity: 0.55;
-  background-color: transparent;
+  background-color: color-mix(in srgb, #B8962E 5%, #0E0D0C);
+  background-blend-mode: screen;
+  opacity: 0.6;
 }
 
 .ticker-item:hover .ticker-logo {
-  filter: invert(1) opacity(0.9) sepia(0.4) saturate(3) hue-rotate(5deg);
+  opacity: 1;
+  filter: sepia(0.5) saturate(2) hue-rotate(5deg);
 }
 
 [data-theme="dark"] .ticker-item:hover .ticker-logo {
-  filter: brightness(0) invert(1) opacity(0.9) sepia(0.4) saturate(3) hue-rotate(5deg);
+  opacity: 1;
+  filter: sepia(0.5) saturate(2) hue-rotate(5deg);
 }
 
 .ticker-item-text {
