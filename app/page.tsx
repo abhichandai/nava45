@@ -30,7 +30,7 @@ export default function Home() {
         <div className="hero-quote-inner">
           <span className="hero-quote-mark">&ldquo;</span>
           <blockquote className="hero-quote-text">
-            <em>I&rsquo;ve worked with 10 companies like yours and nobody does it better. You are<br /><span className="hero-quote-gold">the best I&rsquo;ve ever seen.</span></em>
+            <em>I&rsquo;ve worked with 10 companies like yours and nobody does it better. You are<br /><span className="hero-quote-gold">the best I have ever seen.</span></em>
           </blockquote>
           <div className="hero-quote-attribution">
             <span className="hero-quote-dash">—</span>
@@ -41,7 +41,7 @@ export default function Home() {
                 <span className="hero-quote-dot"> · </span>
                 <span className="hero-quote-credential">Former President, National Geographic Films</span>
                 <span className="hero-quote-dot"> · </span>
-                <span className="hero-quote-credential">Former Disney Executive</span>
+                <span className="hero-quote-credential">Former Senior Vice President, Walt Disney Studios</span>
               </p>
             </div>
           </div>
