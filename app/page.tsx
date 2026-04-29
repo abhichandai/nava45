@@ -30,7 +30,7 @@ export default function Home() {
         <div className="hero-quote-inner">
           <span className="hero-quote-mark">&ldquo;</span>
           <blockquote className="hero-quote-text">
-            <em>I&rsquo;ve worked with 10 companies like yours and nobody does it better. You are<br /><span className="hero-quote-gold">the best I&rsquo;ve ever seen.</span></em>
+            <em>I&rsquo;ve worked with 10 companies like yours and nobody does it better.<br /><span className="hero-quote-gold">You are the best I&rsquo;ve ever seen.</span></em>
           </blockquote>
           <div className="hero-quote-attribution">
             <span className="hero-quote-dash">—</span>
