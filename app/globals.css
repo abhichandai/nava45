@@ -745,7 +745,7 @@ section { padding: 112px 60px; }
   display: flex;
   align-items: center;
   width: max-content;
-  animation: ticker-scroll 30s linear infinite;
+  animation: ticker-scroll 55s linear infinite;
 }
 
 /* Each set is its own flex row — -50% lands exactly at the set boundary */
@@ -765,28 +765,31 @@ section { padding: 112px 60px; }
 }
 
 .ticker-logo {
-  height: 52px;
-  width: 200px;
+  height: 60px;
+  width: 220px;
   flex-shrink: 0;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  /* Match ticker section bg exactly — screen blend makes black invisible */
-  background-color: color-mix(in srgb, #B8962E 5%, #FAFAF8);
-  background-blend-mode: screen;
-  opacity: 0.75;
+  background-color: transparent;
+  /* invert: black bg → white, dark logos → light marks */
+  /* multiply: white × gold-wash section bg = section bg (rectangle disappears) */
+  filter: invert(1) opacity(0.65);
+  mix-blend-mode: multiply;
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 [data-theme="dark"] .ticker-logo {
+  /* dark mode: screen blend works — keep background-color match approach */
   background-color: color-mix(in srgb, #B8962E 5%, #0E0D0C);
   background-blend-mode: screen;
-  opacity: 0.6;
+  filter: none;
+  mix-blend-mode: normal;
+  opacity: 0.65;
 }
 
 .ticker-item:hover .ticker-logo {
-  opacity: 1;
-  filter: sepia(0.5) saturate(2) hue-rotate(5deg);
+  filter: invert(1) opacity(0.9) sepia(0.5) saturate(2) hue-rotate(5deg);
 }
 
 [data-theme="dark"] .ticker-item:hover .ticker-logo {
