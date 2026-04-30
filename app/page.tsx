@@ -65,7 +65,7 @@ export default function Home() {
                   <div className="ticker-logo ticker-logo--wide" style={{backgroundImage:"url('/logos/university-of-toronto.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "University of Toronto" : undefined} />
                 </div>
                 <div className="ticker-item">
-                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/balance-catamarans.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Balance Catamarans" : undefined} />
+                  <div className="ticker-logo ticker-logo--wide" style={{backgroundImage:"url('/logos/balance-catamarans.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Balance Catamarans" : undefined} />
                 </div>
                 <div className="ticker-item">
                   <div className="ticker-logo ticker-logo--wide" style={{backgroundImage:"url('/logos/adam-leipzig.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Adam Leipzig" : undefined} />

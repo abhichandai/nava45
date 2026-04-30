@@ -774,7 +774,7 @@ section { padding: 112px 60px; }
   background-position: center;
   background-color: transparent;
   filter: grayscale(1) opacity(0.55);
-  transition: filter 0.7s ease;
+  transition: filter 1.2s ease;
 }
 
 .ticker-logo--wide {
@@ -785,13 +785,13 @@ section { padding: 112px 60px; }
   filter: grayscale(1) invert(1) opacity(0.55);
 }
 
-/* brightness(0) → black, invert(1) → white, sepia+saturate+hue → gold #B8962E */
+/* Push harder toward #B8962E: high saturation + lower brightness to darken */
 .ticker-item:hover .ticker-logo {
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(10deg) brightness(0.75);
+  filter: brightness(0) invert(1) sepia(1) hue-rotate(10deg) saturate(8) brightness(0.5);
 }
 
 [data-theme="dark"] .ticker-item:hover .ticker-logo {
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(10deg) brightness(0.85);
+  filter: brightness(0) invert(1) sepia(1) hue-rotate(10deg) saturate(8) brightness(0.6);
 }
 
 .ticker-item-text {
