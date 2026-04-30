@@ -893,4 +893,6 @@ footer {
   .hero-quote-section { padding: 80px 28px 72px; }
   .hero-quote-mark { font-size: 6rem; }
   .ticker-set { gap: 56px; padding-right: 56px; }
+  .results-grid { grid-template-columns: 1fr; gap: 48px; }
+  .results-stat { text-align: center; }
 }
