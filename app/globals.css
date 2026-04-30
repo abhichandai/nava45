@@ -773,29 +773,28 @@ section { padding: 112px 60px; }
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
-  /* invert: black bg → white, dark logos → light marks */
-  /* multiply: white × gold-wash section bg = section bg (rectangle disappears) */
-  filter: invert(1) opacity(0.65);
+  filter: invert(1) opacity(0.85);
   mix-blend-mode: multiply;
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
 [data-theme="dark"] .ticker-logo {
-  /* dark mode: screen blend works — keep background-color match approach */
   background-color: color-mix(in srgb, #B8962E 5%, #0E0D0C);
   background-blend-mode: screen;
   filter: none;
   mix-blend-mode: normal;
-  opacity: 0.65;
+  opacity: 0.75;
 }
 
+/* Gold hover: targets #B8962E exactly using sepia+saturate+hue chain */
 .ticker-item:hover .ticker-logo {
-  filter: invert(1) opacity(0.9) sepia(0.5) saturate(2) hue-rotate(5deg);
+  filter: invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.85);
 }
 
 [data-theme="dark"] .ticker-item:hover .ticker-logo {
+  background-color: transparent;
+  filter: sepia(1) saturate(3) hue-rotate(5deg) brightness(0.85);
   opacity: 1;
-  filter: sepia(0.5) saturate(2) hue-rotate(5deg);
 }
 
 .ticker-item-text {
