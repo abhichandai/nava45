@@ -773,22 +773,20 @@ section { padding: 112px 60px; }
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
-  opacity: 0.55;
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  filter: grayscale(1) opacity(0.55);
+  transition: filter 0.3s ease;
 }
 
 [data-theme="dark"] .ticker-logo {
-  opacity: 0.5;
+  filter: grayscale(1) invert(1) opacity(0.55);
 }
 
 .ticker-item:hover .ticker-logo {
-  opacity: 1;
-  filter: sepia(1) saturate(4) hue-rotate(5deg) brightness(0.8);
+  filter: grayscale(1) opacity(1) sepia(1) saturate(4) hue-rotate(5deg) brightness(0.8);
 }
 
 [data-theme="dark"] .ticker-item:hover .ticker-logo {
-  opacity: 1;
-  filter: sepia(1) saturate(4) hue-rotate(5deg) brightness(0.8);
+  filter: grayscale(1) invert(1) opacity(1) sepia(1) saturate(4) hue-rotate(5deg) brightness(0.8);
 }
 
 .ticker-item-text {
