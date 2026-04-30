@@ -41,7 +41,7 @@ export default function Home() {
                 <span className="hero-quote-dot"> · </span>
                 <span className="hero-quote-credential">Former President, National Geographic Films</span>
                 <span className="hero-quote-dot"> · </span>
-                <span className="hero-quote-credential">Former Senior Vice President, Walt Disney Studios</span>
+                <span className="hero-quote-credential">Former SVP, Walt Disney Studios</span>
               </p>
             </div>
           </div>

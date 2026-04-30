@@ -689,9 +689,8 @@ section { padding: 112px 60px; }
   font-weight: 400;
   color: var(--muted);
   margin: 0 0 5px;
-  line-height: 1.6;
+  line-height: 1.7;
   letter-spacing: 0.02em;
-  white-space: nowrap;
 }
 
 .hero-quote-credential {
@@ -774,7 +773,7 @@ section { padding: 112px 60px; }
   background-position: center;
   background-color: transparent;
   filter: grayscale(1) opacity(0.55);
-  transition: filter 1.8s ease-in;
+  transition: filter 2s linear;
 }
 
 .ticker-logo--wide {
@@ -785,13 +784,13 @@ section { padding: 112px 60px; }
   filter: grayscale(1) invert(1) opacity(0.55);
 }
 
-/* sepia without hue-rotate stays warm amber — closer to #B8962E */
+/* negative hue-rotate pushes sepia toward orange-gold, away from olive */
 .ticker-item:hover .ticker-logo {
-  filter: brightness(0) invert(1) sepia(1) saturate(4) brightness(0.58);
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(-15deg) brightness(0.65);
 }
 
 [data-theme="dark"] .ticker-item:hover .ticker-logo {
-  filter: brightness(0) invert(1) sepia(1) saturate(4) brightness(0.68);
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(-15deg) brightness(0.75);
 }
 
 .ticker-item-text {
