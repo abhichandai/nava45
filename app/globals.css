@@ -63,9 +63,7 @@
 }
 
 [data-theme="dark"] .hero-bg {
-  background:
-    radial-gradient(ellipse at 2% 0%, rgba(184,150,46,0.18) 0%, transparent 50%),
-    radial-gradient(ellipse at 98% 100%, rgba(184,150,46,0.10) 0%, transparent 45%);
+  background: radial-gradient(ellipse at 2% 0%, rgba(184,150,46,0.18) 0%, transparent 50%);
   opacity: 1;
 }
 
@@ -175,9 +173,7 @@ nav {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 2% 0%, var(--gold-100) 0%, transparent 45%),
-    radial-gradient(ellipse at 98% 100%, var(--gold-50) 0%, transparent 45%);
+  background: radial-gradient(ellipse at 2% 0%, var(--gold-100) 0%, transparent 45%);
 }
 .hero {
   min-height: 100vh;
