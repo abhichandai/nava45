@@ -56,16 +56,19 @@ export default function Home() {
             {[0, 1, 2, 3].map((i) => (
               <div className="ticker-set" key={i} aria-hidden={i > 0 ? 'true' : 'false'}>
                 <div className="ticker-item">
-                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/olympus.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Olympus" : undefined} />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/olympus.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Olympus" : undefined} />
                 </div>
                 <div className="ticker-item">
-                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/welch-allyn.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Welch Allyn" : undefined} />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/welch-allyn.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Welch Allyn" : undefined} />
                 </div>
                 <div className="ticker-item">
-                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/balance-catamarans.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Balance Catamarans" : undefined} />
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/balance-catamarans.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Balance Catamarans" : undefined} />
                 </div>
                 <div className="ticker-item">
                   <div className="ticker-logo" style={{backgroundImage:"url('/logos/university-of-toronto.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "University of Toronto" : undefined} />
+                </div>
+                <div className="ticker-item">
+                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/adam-leipzig.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Adam Leipzig" : undefined} />
                 </div>
                 <div className="ticker-item">
                   <div className="ticker-logo" style={{backgroundImage:"url('/logos/dh-smile-center.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "DH Smile Center" : undefined} />
