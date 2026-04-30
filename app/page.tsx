@@ -252,8 +252,8 @@ export default function Home() {
       {/* Footer */}
       <footer>
         <p className="footer-text">© 2026 Nava45</p>
-        <p className="footer-text" style={{ letterSpacing: '0.05em' }}>
-          Based in Canada · Working Globally
+        <p className="footer-text" style={{ letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          Proudly Canadian <img src="/canada-flag.svg" alt="Canada" style={{ height: '14px', width: 'auto', display: 'inline-block' }} /> · Serving Clients Globally
         </p>
       </footer>
     </>
