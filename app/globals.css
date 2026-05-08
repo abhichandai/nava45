@@ -894,3 +894,592 @@ footer {
   .hero-quote-mark { font-size: 6rem; }
   .ticker-set { gap: 56px; padding-right: 56px; }
 }
+
+/* ─── CLIENT SUCCESS — LISTING PAGE ──────────────────────────────────────── */
+
+.cs-header {
+  min-height: 52vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 160px 60px 96px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.cs-header-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.cs-page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.cs-page-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.8;
+}
+
+.cs-grid-section {
+  background: var(--bg-alt);
+  padding: 80px 60px 112px;
+}
+
+.cs-grid-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* Live cards — clickable */
+.cs-card {
+  background: var(--bg);
+  padding: 44px 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cs-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold-200);
+  transition: background 0.3s ease;
+}
+
+.cs-card--live:hover::before { background: var(--gold); }
+.cs-card--live:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(184,150,46,0.18), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Greyed out coming soon cards */
+.cs-card--soon {
+  opacity: 0.52;
+}
+.cs-card--soon::before { background: var(--border); }
+
+.cs-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.cs-engine-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.cs-card-stat {
+  text-align: right;
+}
+
+.cs-stat-number {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.cs-stat-label {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.cs-coming-soon-badge {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+}
+
+.cs-card-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.cs-card-headline--muted {
+  color: var(--muted);
+}
+
+.cs-card-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 32px;
+}
+
+.cs-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.cs-client-name {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cs-read-more {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  transition: letter-spacing 0.25s ease;
+}
+
+.cs-card--live:hover .cs-read-more {
+  letter-spacing: 0.15em;
+}
+
+/* CTA section on listing page */
+.cs-cta-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 112px 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.cs-cta-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.cs-cta-sub {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 44px;
+}
+
+/* ─── CASE STUDY — INDIVIDUAL PAGE ───────────────────────────────────────── */
+
+.case-hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 160px 60px 96px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.case-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.case-breadcrumb {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.case-breadcrumb-link {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.case-breadcrumb-link:hover {
+  color: var(--gold);
+}
+
+.case-breadcrumb-sep {
+  margin: 0 8px;
+  opacity: 0.5;
+}
+
+.case-engine-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.case-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.case-subtitle {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 64px;
+}
+
+/* Stats bar across the hero bottom */
+.case-stats-bar {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 48px;
+}
+
+.case-stat {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.case-stat-divider {
+  width: 1px;
+  background: var(--border);
+  margin-right: 40px;
+  align-self: stretch;
+}
+
+.case-stat-number {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.case-stat-label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Body sections */
+.case-body-section {
+  padding: 96px 60px;
+}
+
+.case-body-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.case-body-prose {
+  max-width: 760px;
+}
+
+.case-section-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.case-section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold-400);
+  flex-shrink: 0;
+}
+
+.case-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 36px;
+}
+
+.case-body-text {
+  font-size: 0.96rem;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 24px;
+  max-width: 680px;
+}
+
+/* Pull quote inside body */
+.case-pull-quote {
+  margin: 56px 0;
+  padding: 36px 48px;
+  border-left: 2px solid var(--gold);
+  background: var(--bg-alt);
+}
+
+.case-pull-quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.case-pull-quote-cite {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* Client profile strip */
+.case-profile {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.case-profile-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.case-profile-value {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Approach cards */
+.case-approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.case-approach-card {
+  padding: 40px 36px;
+  background: var(--bg);
+  position: relative;
+}
+
+.case-approach-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--border);
+}
+
+.case-approach-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--gold-200);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.case-approach-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.case-approach-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+/* Results section */
+.case-results-section {
+  padding: 112px 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.case-results-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 2% 0%, var(--gold-100) 0%, transparent 50%),
+              radial-gradient(ellipse at 98% 100%, var(--gold-50) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+[data-theme="dark"] .case-results-bg {
+  background: radial-gradient(ellipse at 2% 0%, rgba(184,150,46,0.18) 0%, transparent 50%),
+              radial-gradient(ellipse at 98% 100%, rgba(184,150,46,0.10) 0%, transparent 50%);
+}
+
+.case-results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 64px;
+  margin-top: 16px;
+}
+
+.case-result-item {
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.case-result-number {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.case-result-label {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.case-result-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+/* Closing quote */
+.case-closing-quote {
+  padding: 72px 0;
+}
+
+.case-closing-quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.45;
+  margin-bottom: 28px;
+}
+
+.case-closing-quote-cite {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* Footer on inner pages */
+.site-footer {
+  padding: 28px 60px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+/* ─── RESPONSIVE — CLIENT SUCCESS & CASE STUDY PAGES ─────────────────────── */
+
+@media (max-width: 900px) {
+  .cs-header { padding: 120px 24px 72px; }
+  .cs-grid-section { padding: 64px 24px; }
+  .cs-grid { grid-template-columns: 1fr; gap: 24px; }
+  .cs-cta-section { padding: 80px 24px; }
+  .case-hero { padding: 120px 24px 72px; }
+  .case-body-section { padding: 72px 24px; }
+  .case-stats-bar { flex-wrap: wrap; gap: 32px; }
+  .case-stat-divider { display: none; }
+  .case-profile { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .case-approach-grid { grid-template-columns: 1fr; gap: 24px; }
+  .case-results-section { padding: 80px 24px; }
+  .case-results-grid { grid-template-columns: 1fr; gap: 36px; }
+  .case-pull-quote { padding: 28px 24px; }
+  .site-footer { padding: 22px 24px; }
+}
+
+.work-see-all {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-decoration: none;
+  transition: letter-spacing 0.25s ease;
+}
+.work-see-all:hover {
+  letter-spacing: 0.2em;
+}

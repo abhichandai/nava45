@@ -1,0 +1,203 @@
+import ThemeToggle from '../components/ThemeToggle'
+import Link from 'next/link'
+
+const caseStudies = [
+  {
+    slug: 'adam-leipzig',
+    engine: 'The Magnetic Content Engine',
+    headline: '327% audience growth. Hollywood producer.',
+    description:
+      'A world-class creator with stalled growth and no repeatable system. We rebuilt the strategy from audience intelligence up — and tripled his hook retention rate in the process.',
+    client: 'Adam Leipzig',
+    stat: '327%',
+    statLabel: 'Audience Growth',
+    live: true,
+  },
+  {
+    slug: 'balance-catamarans',
+    engine: 'The Growth Engine',
+    headline: '$14.5M in qualified pipeline.',
+    description:
+      'A high-end luxury catamaran brand with no predictable way to bring in new clients. We built the full digital acquisition system from scratch.',
+    client: 'Balance Catamarans',
+    stat: '$14.5M',
+    statLabel: 'Qualified Pipeline',
+    live: false,
+  },
+  {
+    slug: 'quit-by-healing',
+    engine: 'The Magnetic Content Engine',
+    headline: '226K on TikTok. 25K on YouTube. Built from scratch.',
+    description:
+      "A men's self-development brand built entirely from content. We identified the audience, built the engine, and monetized it.",
+    client: 'Quit by Healing',
+    stat: '226K',
+    statLabel: 'Audience Built',
+    live: false,
+  },
+  {
+    slug: 'university-of-toronto',
+    engine: 'The Intelligence Engine',
+    headline: 'Custom software. University of Toronto.',
+    description:
+      "Resident ophthalmologists needed a training tool that didn't exist. We built it, secured it to medical-grade standards, and deployed it.",
+    client: 'University of Toronto',
+    stat: '',
+    statLabel: 'Medical-grade',
+    live: false,
+  },
+  {
+    slug: 'dh-smile-center',
+    engine: 'The Growth Engine',
+    headline: 'Coming soon.',
+    description: 'This case study is being prepared.',
+    client: 'DH Smile Center',
+    stat: '',
+    statLabel: '',
+    live: false,
+  },
+  {
+    slug: 'focus-and-action',
+    engine: 'The Magnetic Content Engine',
+    headline: 'Coming soon.',
+    description: 'This case study is being prepared.',
+    client: 'Focus & Action',
+    stat: '',
+    statLabel: '',
+    live: false,
+  },
+  {
+    slug: 'olympus',
+    engine: 'The Intelligence Engine',
+    headline: 'Coming soon.',
+    description: 'This case study is being prepared.',
+    client: 'Olympus',
+    stat: '',
+    statLabel: '',
+    live: false,
+  },
+  {
+    slug: 'welch-allyn',
+    engine: 'The Intelligence Engine',
+    headline: 'Coming soon.',
+    description: 'This case study is being prepared.',
+    client: 'Welch Allyn',
+    stat: '',
+    statLabel: '',
+    live: false,
+  },
+  {
+    slug: 'ikario',
+    engine: 'The Growth Engine',
+    headline: 'Coming soon.',
+    description: 'This case study is being prepared.',
+    client: 'Ikario',
+    stat: '',
+    statLabel: '',
+    live: false,
+  },
+  {
+    slug: 'fluid-social',
+    engine: 'The Magnetic Content Engine',
+    headline: 'Coming soon.',
+    description: 'This case study is being prepared.',
+    client: 'Fluid Social',
+    stat: '',
+    statLabel: '',
+    live: false,
+  },
+]
+
+export default function ClientSuccess() {
+  return (
+    <>
+      {/* Nav */}
+      <nav>
+        <a href="/" className="nav-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <ThemeToggle />
+          <a href="/#contact" className="nav-cta">Apply to Work Together</a>
+        </div>
+      </nav>
+
+      {/* Page Header */}
+      <section className="cs-header">
+        <div className="hero-bg" />
+        <div className="cs-header-inner">
+          <p className="section-label" style={{ marginBottom: '32px' }}>Client Success</p>
+          <h1 className="cs-page-title">
+            The work<br />
+            <em style={{ color: 'var(--gold)' }}>speaks.</em>
+          </h1>
+          <p className="cs-page-sub">
+            Every engagement is built around one question: what does success actually look like for this client?
+            These are the answers.
+          </p>
+        </div>
+      </section>
+
+      {/* Case Study Grid */}
+      <section className="cs-grid-section">
+        <div className="cs-grid-inner">
+          <div className="cs-grid">
+            {caseStudies.map((cs) => (
+              cs.live ? (
+                <Link key={cs.slug} href={`/client-success/${cs.slug}`} className="cs-card cs-card--live">
+                  <div className="cs-card-top">
+                    <p className="cs-engine-label">{cs.engine}</p>
+                    {cs.stat && (
+                      <div className="cs-card-stat">
+                        <span className="cs-stat-number">{cs.stat}</span>
+                        <span className="cs-stat-label">{cs.statLabel}</span>
+                      </div>
+                    )}
+                  </div>
+                  <h2 className="cs-card-headline">{cs.headline}</h2>
+                  <p className="cs-card-desc">{cs.description}</p>
+                  <div className="cs-card-footer">
+                    <span className="cs-client-name">{cs.client}</span>
+                    <span className="cs-read-more">Read case study →</span>
+                  </div>
+                </Link>
+              ) : (
+                <div key={cs.slug} className="cs-card cs-card--soon">
+                  <div className="cs-card-top">
+                    <p className="cs-engine-label">{cs.engine}</p>
+                    <span className="cs-coming-soon-badge">Coming Soon</span>
+                  </div>
+                  <h2 className="cs-card-headline cs-card-headline--muted">{cs.headline}</h2>
+                  <p className="cs-card-desc">{cs.description}</p>
+                  <div className="cs-card-footer">
+                    <span className="cs-client-name">{cs.client}</span>
+                  </div>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="cs-cta-section">
+        <div className="hero-bg" />
+        <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '640px', margin: '0 auto' }}>
+          <p className="section-label" style={{ justifyContent: 'center' }}>Work With Us</p>
+          <h2 className="cs-cta-headline">
+            Ready to be<br />
+            <em style={{ color: 'var(--gold)' }}>next?</em>
+          </h2>
+          <p className="cs-cta-sub">
+            We work with a select group of clients. If you&rsquo;re serious about growth, we&rsquo;d like to hear from you.
+          </p>
+          <a href="/#contact" className="btn-primary">Apply to Work Together</a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="site-footer">
+        <span className="footer-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></span>
+        <span className="footer-copy">© 2025 Nava45. All rights reserved.</span>
+      </footer>
+    </>
+  )
+}

@@ -170,8 +170,20 @@ export default function Home() {
       {/* The Work */}
       <section className="thework-section">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <p className="section-label">Our Work</p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '56px' }}>
+            <p className="section-label" style={{ marginBottom: 0 }}>Our Work</p>
+            <a href="/client-success" className="work-see-all">See all work →</a>
+          </div>
           <div className="work-grid">
+            <a href="/client-success/adam-leipzig" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <p className="work-engine-label">The Magnetic Content Engine</p>
+              <h3 className="work-case-headline">327% audience growth. Hollywood producer.</h3>
+              <p className="work-desc">
+                A world-class creator with stalled growth and no repeatable system. We rebuilt the strategy from audience
+                intelligence up — and tripled his hook retention rate in the process.
+              </p>
+              <p className="work-client">Adam Leipzig</p>
+            </a>
             <div className="work-card">
               <p className="work-engine-label">The Growth Engine</p>
               <h3 className="work-case-headline">$14.5M in qualified pipeline.</h3>
@@ -189,15 +201,6 @@ export default function Home() {
                 the audience, built the engine, and monetized it.
               </p>
               <p className="work-client">Quit by Healing</p>
-            </div>
-            <div className="work-card">
-              <p className="work-engine-label">The Intelligence Engine</p>
-              <h3 className="work-case-headline">Custom software. University of Toronto.</h3>
-              <p className="work-desc">
-                Resident ophthalmologists needed a training tool that didn&rsquo;t exist.
-                We built it, secured it to medical-grade standards, and deployed it.
-              </p>
-              <p className="work-client">University of Toronto, Department of Ophthalmology</p>
             </div>
           </div>
         </div>
