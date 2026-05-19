@@ -22,7 +22,7 @@ const caseStudies = [
     client: 'Balance Catamarans',
     stat: '$14.5M',
     statLabel: 'Qualified Pipeline',
-    live: false,
+    live: true,
   },
   {
     slug: 'quit-by-healing',

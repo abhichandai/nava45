@@ -192,6 +192,7 @@ export default function Home() {
                 We built the full digital acquisition system from scratch.
               </p>
               <p className="work-client">Balance Catamarans</p>
+              <a href="/client-success/balance-catamarans" style={{ display: 'inline-block', marginTop: '20px', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', textDecoration: 'none' }}>Read case study →</a>
             </div>
             <div className="work-card">
               <p className="work-engine-label">The Magnetic Content Engine</p>
