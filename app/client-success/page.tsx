@@ -38,13 +38,13 @@ const caseStudies = [
   {
     slug: 'university-of-toronto',
     engine: 'The Intelligence Engine',
-    headline: 'Custom software. University of Toronto.',
+    headline: 'No solution existed. So we built one.',
     description:
       "Resident ophthalmologists needed a training tool that didn't exist. We built it, secured it to medical-grade standards, and deployed it.",
     client: 'University of Toronto',
-    stat: '',
-    statLabel: 'Medical-grade',
-    live: false,
+    stat: 'PHIPA',
+    statLabel: 'Compliant',
+    live: true,
   },
   {
     slug: 'dh-smile-center',
