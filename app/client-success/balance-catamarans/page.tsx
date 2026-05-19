@@ -15,7 +15,7 @@ export default function BalanceCatamarans() {
       {/* Case Study Hero */}
       <section className="case-hero">
         <div className="hero-bg" />
-        <div className="case-hero-inner" style={{ width: '100%', maxWidth: '1100px', margin: '0 auto' }}>
+        <div className="case-hero-inner" style={{ width: '100%', maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
           <div className="case-breadcrumb">
             <a href="/client-success" className="case-breadcrumb-link">Client Success</a>
             <span className="case-breadcrumb-sep"> / </span>
