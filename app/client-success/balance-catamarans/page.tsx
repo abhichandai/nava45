@@ -13,9 +13,9 @@ export default function BalanceCatamarans() {
       </nav>
 
       {/* Case Study Hero */}
-      <section className="case-hero" style={{ justifyContent: 'center', textAlign: 'center' }}>
+      <section className="case-hero">
         <div className="hero-bg" />
-        <div className="case-hero-inner" style={{ margin: '0 auto' }}>
+        <div className="case-hero-inner">
           <div className="case-breadcrumb">
             <a href="/client-success" className="case-breadcrumb-link">Client Success</a>
             <span className="case-breadcrumb-sep"> / </span>
@@ -24,8 +24,7 @@ export default function BalanceCatamarans() {
           <p className="case-engine-label">The Growth Engine</p>
           <h1 className="case-title">
             Lead generation for a<br />
-            <em style={{ color: 'var(--gold)' }}>15-year luxury</em><br />
-            catamarans brand.
+            <em style={{ color: 'var(--gold)' }}>luxury catamaran brand.</em>
           </h1>
           <p className="case-subtitle">
             $15M&ndash;$20M+ in potential revenue from 9 financially qualified leads. A systematic approach
@@ -83,7 +82,7 @@ export default function BalanceCatamarans() {
 
       {/* Challenge */}
       <section className="case-body-section">
-        <div className="case-body-inner case-body-prose" style={{ margin: '0' }}>
+        <div className="case-body-inner case-body-prose" style={{ margin: '0', maxWidth: '760px' }}>
           <p className="case-section-label">The Challenge</p>
           <h2 className="case-section-title">A legacy brand with limited digital presence.</h2>
           <p className="case-body-text">
