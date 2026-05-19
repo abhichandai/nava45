@@ -5,129 +5,225 @@ export default function BalanceCatamarans() {
     <>
       {/* Nav */}
       <nav>
-        <a href="/" className="nav-logo">Nava<span style={{color:'var(--gold)'}}>45</span></a>
-        <ThemeToggle />
+        <a href="/" className="nav-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <ThemeToggle />
+          <a href="/#contact" className="nav-cta">Apply to Work Together</a>
+        </div>
       </nav>
 
-      {/* Hero */}
-      <section className="hero" style={{ minHeight: '60vh' }}>
+      {/* Case Study Hero */}
+      <section className="case-hero">
         <div className="hero-bg" />
-        <div className="hero-content">
-          <p className="section-label" style={{ justifyContent: 'center' }}>The Growth Engine</p>
-          <h1 className="hero-title animate-fade-up">
+        <div className="case-hero-inner">
+          <div className="case-breadcrumb">
+            <a href="/client-success" className="case-breadcrumb-link">Client Success</a>
+            <span className="case-breadcrumb-sep"> / </span>
+            <span>Balance Catamarans</span>
+          </div>
+          <p className="case-engine-label">The Growth Engine</p>
+          <h1 className="case-title">
             Lead generation for a<br />
-            <em>15-year luxury</em><br />
+            <em style={{ color: 'var(--gold)' }}>15-year luxury</em><br />
             catamarans brand.
           </h1>
-          <p style={{ fontSize: '0.8rem', color: 'var(--muted)', letterSpacing: '0.2em', textTransform: 'uppercase', marginTop: '24px' }}>
-            Balance Catamarans · YouTube, Google & Meta Ads · 2024–Present
+          <p className="case-subtitle">
+            $15M&ndash;$20M+ in potential revenue from 9 financially qualified leads. A systematic approach
+            to digital acquisition for a high-ticket, long-cycle product.
           </p>
+
+          {/* Stats bar */}
+          <div className="case-stats-bar">
+            <div className="case-stat">
+              <span className="case-stat-number">120%</span>
+              <span className="case-stat-label">Website Traffic Increase</span>
+            </div>
+            <div className="case-stat-divider" />
+            <div className="case-stat">
+              <span className="case-stat-number">84</span>
+              <span className="case-stat-label">High-Intent Lead Sign-ups</span>
+            </div>
+            <div className="case-stat-divider" />
+            <div className="case-stat">
+              <span className="case-stat-number">9</span>
+              <span className="case-stat-label">Financially Qualified Leads</span>
+            </div>
+            <div className="case-stat-divider" />
+            <div className="case-stat">
+              <span className="case-stat-number">$20M+</span>
+              <span className="case-stat-label">Potential Revenue</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Highlights */}
-      <section style={{ background: 'var(--bg-alt)', padding: '100px 60px' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <p className="section-label">Highlights</p>
-          <div className="results-grid">
-            <div className="results-stat">
-              <span className="results-number">120%</span>
-              <span className="results-label">Website traffic increase<br />(21K to 46K users)</span>
+      {/* Client Profile */}
+      <section className="case-body-section" style={{ background: 'var(--bg-alt)' }}>
+        <div className="case-body-inner">
+          <div className="case-profile">
+            <div>
+              <p className="case-profile-label">Client</p>
+              <p className="case-profile-value">Balance Catamarans</p>
             </div>
-            <div className="results-stat">
-              <span className="results-number">84</span>
-              <span className="results-label">High-intent newsletter &<br />brochure sign-ups</span>
+            <div>
+              <p className="case-profile-label">Background</p>
+              <p className="case-profile-value">15 years in business · 80+ luxury yachts built · Multi-million dollar product</p>
             </div>
-            <div className="results-stat">
-              <span className="results-number">9</span>
-              <span className="results-label">Financially qualified leads<br />($1M–$4M+ budgets)</span>
+            <div>
+              <p className="case-profile-label">Platforms</p>
+              <p className="case-profile-value">YouTube Ads · Google Ads · Meta Ads</p>
+            </div>
+            <div>
+              <p className="case-profile-label">Engagement</p>
+              <p className="case-profile-value">2024 — Ongoing</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Challenge */}
-      <section style={{ background: 'var(--bg)', padding: '120px 60px' }}>
-        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <p className="section-label">The Challenge</p>
-          <h2 className="who-headline">A legacy brand with limited digital presence.</h2>
-          <p className="who-body" style={{ marginTop: '32px' }}>
-            Balance Catamarans had everything a boat buyer could want — 15 years in business and 80+ yachts built. But newer, lesser-known competitors were getting more recognition. The brand awareness gap was costing them leads they should have already had.
+      <section className="case-body-section">
+        <div className="case-body-inner case-body-prose">
+          <p className="case-section-label">The Challenge</p>
+          <h2 className="case-section-title">A legacy brand with limited digital presence.</h2>
+          <p className="case-body-text">
+            Balance Catamarans had everything a boat buyer could want &mdash; 15 years in business and 80+ yachts built.
+            But newer, lesser-known competitors were getting more recognition. The brand awareness gap was costing
+            them leads they should have already had.
           </p>
-          <p className="who-body">
-            Beyond visibility, they had no predictable way to bring in qualified inquiries. Their sales cycle runs 4 to 12 months, but there was no system to consistently fill the top of that funnel. Marketing relied heavily on traditional channels like boat magazines — expensive, with no measurable return.
+          <p className="case-body-text">
+            Beyond visibility, they had no predictable way to bring in qualified inquiries. Their sales cycle runs
+            4 to 12 months, but there was no system to consistently fill the top of that funnel. Marketing relied
+            heavily on traditional channels like boat magazines &mdash; expensive, with no measurable return.
+          </p>
+          <p className="case-body-text">
+            The challenge wasn&rsquo;t just traffic. For a product priced in the millions, most visitors will never
+            be buyers. The funnel needed to attract the right people, filter out casual browsers, and surface only
+            the serious, financially qualified prospects &mdash; without wasting a single sales conversation.
           </p>
         </div>
       </section>
 
       {/* Approach */}
-      <section style={{ background: 'var(--bg-alt)', padding: '120px 60px' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <p className="section-label">Our Approach</p>
-          <h2 className="who-headline" style={{ marginBottom: '64px' }}>Strategy first. Then execution.</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            <div className="work-card">
-              <p className="work-engine-label">Phase 1</p>
-              <h3 className="work-title">Brand Lift via Message-to-Market Research</h3>
-              <p className="work-desc">Before running a single ad, we conducted deep audience research — reviewing 20+ interview videos with actual yacht owners to build dual Ideal Customer Profiles: the performance-focused husband and the comfort-focused wife. From that research, we developed and tested approximately 200 messages across test audiences targeting the top 10–20% of US household income earners. This identified 5 winning ad angles. We doubled down on the top two to drive sustained top-of-funnel awareness.</p>
+      <section className="case-body-section" style={{ background: 'var(--grey-200)' }}>
+        <div className="case-body-inner">
+          <p className="case-section-label">Our Approach</p>
+          <h2 className="case-section-title">Strategy first. Then execution.</h2>
+          <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '72px' }}>
+            Before running a single ad, we needed to understand exactly who we were talking to &mdash; and what would
+            make them stop scrolling. Everything else flowed from that.
+          </p>
+
+          <div className="case-approach-grid">
+            <div className="case-approach-card">
+              <p className="case-approach-number">01</p>
+              <h3 className="case-approach-title">Brand Lift via Message-to-Market Research</h3>
+              <p className="case-approach-desc">
+                We reviewed 20+ interview videos with actual yacht owners to build dual Ideal Customer Profiles:
+                the performance-focused husband and the comfort-focused wife. From that research, we developed and
+                tested approximately 200 messages across test audiences targeting the top 10&ndash;20% of US household
+                income earners. This identified 5 winning ad angles &mdash; we doubled down on the top two.
+              </p>
             </div>
-            <div className="work-card">
-              <p className="work-engine-label">Phase 2</p>
-              <h3 className="work-title">Omnipresence & Retargeting</h3>
-              <p className="work-desc">Most boat prospects aren&apos;t ready to buy on first contact. We implemented an Omnipresence strategy — retargeting all site visitors with Balance&apos;s best-performing organic content. No hard sell. Just consistent, low-pressure brand presence to stay top-of-mind during the long consideration cycle. Visitors who engaged with specific boat model pages were then served model-relevant content and driven back to configurator pages.</p>
+            <div className="case-approach-card">
+              <p className="case-approach-number">02</p>
+              <h3 className="case-approach-title">Omnipresence &amp; Retargeting</h3>
+              <p className="case-approach-desc">
+                Most boat prospects aren&rsquo;t ready to buy on first contact. We implemented an Omnipresence
+                strategy &mdash; retargeting all site visitors with Balance&rsquo;s best-performing organic content.
+                No hard sell. Just consistent, low-pressure brand presence to stay top-of-mind during the long
+                consideration cycle.
+              </p>
             </div>
-            <div className="work-card">
-              <p className="work-engine-label">Phase 3</p>
-              <h3 className="work-title">High-Intent Lead Generation</h3>
-              <p className="work-desc">Only the top 20–25% of website visitors by time-on-page were shown lead capture ads — newsletter sign-ups and model brochure downloads. The filter was intentional: someone downloading technical specifications for a specific catamaran model is not a casual browser. In parallel, Google Ads captured bottom-of-funnel intent by routing searches like &quot;catamaran pricing&quot; directly to a sales call booking page, bypassing the nurture sequence for prospects who were ready to talk.</p>
+            <div className="case-approach-card">
+              <p className="case-approach-number">03</p>
+              <h3 className="case-approach-title">High-Intent Lead Generation</h3>
+              <p className="case-approach-desc">
+                Only the top 20&ndash;25% of website visitors by time-on-page were shown lead capture ads &mdash; newsletter
+                sign-ups and model brochure downloads. The filter was intentional: someone downloading technical
+                specifications for a specific catamaran model is not a casual browser.
+              </p>
+            </div>
+            <div className="case-approach-card">
+              <p className="case-approach-number">04</p>
+              <h3 className="case-approach-title">Bottom-of-Funnel Capture</h3>
+              <p className="case-approach-desc">
+                Google Ads captured high-intent searches like &ldquo;catamaran pricing&rdquo; and routed them
+                directly to a sales call booking page &mdash; bypassing the nurture sequence entirely for prospects
+                who were already ready to talk. No wasted steps for buyers who had already made up their minds.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Results */}
-      <section style={{ background: 'var(--bg)', padding: '120px 60px', backgroundImage: 'radial-gradient(ellipse at 2% 0%, var(--gold-100) 0%, transparent 45%), radial-gradient(ellipse at 98% 100%, var(--gold-50) 0%, transparent 45%)' }}>
-        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <p className="section-label">The Results</p>
-          <h2 className="who-headline" style={{ marginBottom: '16px' }}>The numbers speak for themselves.</h2>
-          <p className="who-body" style={{ marginBottom: '56px' }}>
-            For a multi-million dollar luxury product, financial qualification is everything. Most buyers want it; far fewer can afford it. Our funnel was built to surface the rare, serious buyers — not inflate a lead count. The 9 leads generated represent potential revenue of $15M to $20M+.
+      <section className="case-results-section">
+        <div className="case-results-bg" />
+        <div className="case-body-inner" style={{ position: 'relative', zIndex: 1 }}>
+          <p className="case-section-label" style={{ color: 'var(--gold)' }}>The Results</p>
+          <h2 className="case-section-title" style={{ marginBottom: '64px' }}>
+            The numbers speak<br />
+            <em style={{ color: 'var(--gold)' }}>for themselves.</em>
+          </h2>
+          <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '64px' }}>
+            For a multi-million dollar luxury product, financial qualification is everything. Most buyers want it;
+            far fewer can afford it. Our funnel was built to surface the rare, serious buyers &mdash; not inflate a lead
+            count. The 9 leads generated represent potential revenue of $15M to $20M+.
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {[
-              { label: 'Website Traffic Growth', stat: '21K → 46K', detail: '167% increase in website traffic, with 44,000 net new visitors.' },
-              { label: 'Lead Sign-ups', stat: '84', detail: 'Newsletter and brochure downloads from highly qualified prospects.' },
-              { label: 'Financially Qualified Leads', stat: '9', detail: 'Leads with declared budgets from $1M to $4M+.' },
-              { label: 'YouTube Audience Growth', stat: '6K → 9K', detail: 'Subscriber growth facilitated through YouTube ad campaigns.' },
-            ].map(({ label, stat, detail }) => (
-              <div key={label} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', alignItems: 'center', padding: '32px 40px', background: 'var(--bg-alt)', borderTop: '2px solid var(--gold-200)' }}>
-                <div>
-                  <p className="work-engine-label" style={{ marginBottom: '8px' }}>{label}</p>
-                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.8rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>{stat}</p>
-                </div>
-                <p style={{ fontSize: '0.9rem', color: 'var(--muted)', lineHeight: 1.8 }}>{detail}</p>
-              </div>
-            ))}
+          <div className="case-results-grid">
+            <div className="case-result-item">
+              <span className="case-result-number">21K &rarr; 46K</span>
+              <span className="case-result-label">Website Traffic Growth</span>
+              <p className="case-result-desc">
+                167% increase in website traffic within the campaign period, with 44,000 net new visitors.
+              </p>
+            </div>
+            <div className="case-result-item">
+              <span className="case-result-number">84</span>
+              <span className="case-result-label">High-Intent Lead Sign-ups</span>
+              <p className="case-result-desc">
+                Newsletter and model-specific brochure downloads from highly qualified prospects &mdash; not casual browsers.
+              </p>
+            </div>
+            <div className="case-result-item">
+              <span className="case-result-number">9</span>
+              <span className="case-result-label">Financially Qualified Leads</span>
+              <p className="case-result-desc">
+                Leads with self-reported budgets from $1M to $4M+, representing $15M&ndash;$20M+ in potential revenue.
+              </p>
+            </div>
+            <div className="case-result-item">
+              <span className="case-result-number">6K &rarr; 9K</span>
+              <span className="case-result-label">YouTube Subscriber Growth</span>
+              <p className="case-result-desc">
+                50% subscriber growth as a byproduct of the brand lift campaign &mdash; audience built while generating leads.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="contact-section">
-        <h2 className="contact-title">
-          Want results<br />
-          <em style={{ fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', color: 'var(--gold)' }}>like these?</em>
-        </h2>
-        <p className="contact-sub">If you&apos;re as obsessed with excellence as we are, we&apos;d love to hear from you.</p>
-        <a href="/#contact" className="btn-primary">Apply to Work Together</a>
+      {/* Bottom CTA */}
+      <section className="cs-cta-section">
+        <div className="hero-bg" />
+        <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '640px', margin: '0 auto' }}>
+          <p className="section-label" style={{ justifyContent: 'center' }}>Work With Us</p>
+          <h2 className="cs-cta-headline">
+            Ready to write<br />
+            <em style={{ color: 'var(--gold)' }}>your story?</em>
+          </h2>
+          <p className="cs-cta-sub">
+            We work with a select group of clients. If you&rsquo;re serious about growth, we&rsquo;d like to hear from you.
+          </p>
+          <a href="/#contact" className="btn-primary">Apply to Work Together</a>
+        </div>
       </section>
 
       {/* Footer */}
-      <footer>
-        <p className="footer-text">© 2026 Nava45</p>
-        <p className="footer-text" style={{ letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '6px' }}>
-          Proudly Canadian <img src="/canada-flag.svg" alt="Canada" style={{ height: '14px', width: 'auto', display: 'inline-block' }} /> · Serving Clients Globally
-        </p>
+      <footer className="site-footer">
+        <span className="footer-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></span>
+        <span className="footer-copy">&copy; 2025 Nava45. All rights reserved.</span>
       </footer>
     </>
   )
