@@ -15,7 +15,7 @@ export default function BalanceCatamarans() {
       {/* Case Study Hero */}
       <section className="case-hero">
         <div className="hero-bg" />
-        <div className="case-hero-inner">
+        <div className="case-hero-inner" style={{ width: '100%', maxWidth: '1100px', margin: '0 auto' }}>
           <div className="case-breadcrumb">
             <a href="/client-success" className="case-breadcrumb-link">Client Success</a>
             <span className="case-breadcrumb-sep"> / </span>
@@ -82,7 +82,7 @@ export default function BalanceCatamarans() {
 
       {/* Challenge */}
       <section className="case-body-section">
-        <div className="case-body-inner case-body-prose" style={{ margin: '0', maxWidth: '760px' }}>
+        <div className="case-body-inner" style={{ maxWidth: '760px' }}>
           <p className="case-section-label">The Challenge</p>
           <h2 className="case-section-title">A legacy brand with limited digital presence.</h2>
           <p className="case-body-text">
@@ -107,7 +107,7 @@ export default function BalanceCatamarans() {
       <section className="case-body-section" style={{ background: 'var(--grey-200)' }}>
         <div className="case-body-inner">
           <p className="case-section-label">Our Approach</p>
-          <h2 className="case-section-title">Strategy first. Then execution.</h2>
+          <h2 className="case-section-title" style={{ color: 'var(--grey-900)' }}>Strategy first. Then execution.</h2>
           <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '72px' }}>
             Before running a single ad, we needed to understand exactly who we were talking to and what would
             make them stop scrolling. Everything else flowed from that.
