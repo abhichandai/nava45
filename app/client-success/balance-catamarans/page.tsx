@@ -13,9 +13,9 @@ export default function BalanceCatamarans() {
       </nav>
 
       {/* Case Study Hero */}
-      <section className="case-hero">
+      <section className="case-hero" style={{ justifyContent: 'center', textAlign: 'center' }}>
         <div className="hero-bg" />
-        <div className="case-hero-inner">
+        <div className="case-hero-inner" style={{ margin: '0 auto' }}>
           <div className="case-breadcrumb">
             <a href="/client-success" className="case-breadcrumb-link">Client Success</a>
             <span className="case-breadcrumb-sep"> / </span>
@@ -83,23 +83,23 @@ export default function BalanceCatamarans() {
 
       {/* Challenge */}
       <section className="case-body-section">
-        <div className="case-body-inner case-body-prose">
+        <div className="case-body-inner case-body-prose" style={{ margin: '0' }}>
           <p className="case-section-label">The Challenge</p>
           <h2 className="case-section-title">A legacy brand with limited digital presence.</h2>
           <p className="case-body-text">
-            Balance Catamarans had everything a boat buyer could want &mdash; 15 years in business and 80+ yachts built.
+            Balance Catamarans had everything a boat buyer could want 15 years in business and 80+ yachts built.
             But newer, lesser-known competitors were getting more recognition. The brand awareness gap was costing
             them leads they should have already had.
           </p>
           <p className="case-body-text">
             Beyond visibility, they had no predictable way to bring in qualified inquiries. Their sales cycle runs
             4 to 12 months, but there was no system to consistently fill the top of that funnel. Marketing relied
-            heavily on traditional channels like boat magazines &mdash; expensive, with no measurable return.
+            heavily on traditional channels like boat magazines expensive, with no measurable return.
           </p>
           <p className="case-body-text">
             The challenge wasn&rsquo;t just traffic. For a product priced in the millions, most visitors will never
             be buyers. The funnel needed to attract the right people, filter out casual browsers, and surface only
-            the serious, financially qualified prospects &mdash; without wasting a single sales conversation.
+            the serious, financially qualified prospects without wasting a single sales conversation.
           </p>
         </div>
       </section>
@@ -110,7 +110,7 @@ export default function BalanceCatamarans() {
           <p className="case-section-label">Our Approach</p>
           <h2 className="case-section-title">Strategy first. Then execution.</h2>
           <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '72px' }}>
-            Before running a single ad, we needed to understand exactly who we were talking to &mdash; and what would
+            Before running a single ad, we needed to understand exactly who we were talking to and what would
             make them stop scrolling. Everything else flowed from that.
           </p>
 
@@ -122,7 +122,7 @@ export default function BalanceCatamarans() {
                 We reviewed 20+ interview videos with actual yacht owners to build dual Ideal Customer Profiles:
                 the performance-focused husband and the comfort-focused wife. From that research, we developed and
                 tested approximately 200 messages across test audiences targeting the top 10&ndash;20% of US household
-                income earners. This identified 5 winning ad angles &mdash; we doubled down on the top two.
+                income earners. This identified 5 winning ad angles we doubled down on the top two.
               </p>
             </div>
             <div className="case-approach-card">
@@ -130,7 +130,7 @@ export default function BalanceCatamarans() {
               <h3 className="case-approach-title">Omnipresence &amp; Retargeting</h3>
               <p className="case-approach-desc">
                 Most boat prospects aren&rsquo;t ready to buy on first contact. We implemented an Omnipresence
-                strategy &mdash; retargeting all site visitors with Balance&rsquo;s best-performing organic content.
+                strategy retargeting all site visitors with Balance&rsquo;s best-performing organic content.
                 No hard sell. Just consistent, low-pressure brand presence to stay top-of-mind during the long
                 consideration cycle.
               </p>
@@ -139,7 +139,7 @@ export default function BalanceCatamarans() {
               <p className="case-approach-number">03</p>
               <h3 className="case-approach-title">High-Intent Lead Generation</h3>
               <p className="case-approach-desc">
-                Only the top 20&ndash;25% of website visitors by time-on-page were shown lead capture ads &mdash; newsletter
+                Only the top 20&ndash;25% of website visitors by time-on-page were shown lead capture ads newsletter
                 sign-ups and model brochure downloads. The filter was intentional: someone downloading technical
                 specifications for a specific catamaran model is not a casual browser.
               </p>
@@ -149,7 +149,7 @@ export default function BalanceCatamarans() {
               <h3 className="case-approach-title">Bottom-of-Funnel Capture</h3>
               <p className="case-approach-desc">
                 Google Ads captured high-intent searches like &ldquo;catamaran pricing&rdquo; and routed them
-                directly to a sales call booking page &mdash; bypassing the nurture sequence entirely for prospects
+                directly to a sales call booking page bypassing the nurture sequence entirely for prospects
                 who were already ready to talk. No wasted steps for buyers who had already made up their minds.
               </p>
             </div>
@@ -168,7 +168,7 @@ export default function BalanceCatamarans() {
           </h2>
           <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '64px' }}>
             For a multi-million dollar luxury product, financial qualification is everything. Most buyers want it;
-            far fewer can afford it. Our funnel was built to surface the rare, serious buyers &mdash; not inflate a lead
+            far fewer can afford it. Our funnel was built to surface the rare, serious buyers not inflate a lead
             count. The 9 leads generated represent potential revenue of $15M to $20M+.
           </p>
           <div className="case-results-grid">
@@ -183,7 +183,7 @@ export default function BalanceCatamarans() {
               <span className="case-result-number">84</span>
               <span className="case-result-label">High-Intent Lead Sign-ups</span>
               <p className="case-result-desc">
-                Newsletter and model-specific brochure downloads from highly qualified prospects &mdash; not casual browsers.
+                Newsletter and model-specific brochure downloads from highly qualified prospects not casual browsers.
               </p>
             </div>
             <div className="case-result-item">
@@ -197,7 +197,7 @@ export default function BalanceCatamarans() {
               <span className="case-result-number">6K &rarr; 9K</span>
               <span className="case-result-label">YouTube Subscriber Growth</span>
               <p className="case-result-desc">
-                50% subscriber growth as a byproduct of the brand lift campaign &mdash; audience built while generating leads.
+                50% subscriber growth as a byproduct of the brand lift campaign audience built while generating leads.
               </p>
             </div>
           </div>
