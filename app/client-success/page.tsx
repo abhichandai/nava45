@@ -27,13 +27,13 @@ const caseStudies = [
   {
     slug: 'quit-by-healing',
     engine: 'The Magnetic Content Engine',
-    headline: '226K on TikTok. 25K on YouTube. Built from scratch.',
+    headline: '185K on TikTok. 25K on YouTube. Built from scratch.',
     description:
-      "A men's self-development brand built entirely from content. We identified the audience, built the engine, and monetized it.",
+      "A men's self-development brand built entirely from content. No brand, no audience, no product. We built every piece from zero.",
     client: 'Quit by Healing',
-    stat: '226K',
-    statLabel: 'Audience Built',
-    live: false,
+    stat: '185K',
+    statLabel: 'TikTok Followers',
+    live: true,
   },
   {
     slug: 'university-of-toronto',

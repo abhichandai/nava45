@@ -202,6 +202,7 @@ export default function Home() {
                 the audience, built the engine, and monetized it.
               </p>
               <p className="work-client">Quit by Healing</p>
+              <a href="/client-success/quit-by-healing" style={{ display: 'inline-block', marginTop: '20px', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', textDecoration: 'none' }}>Read case study →</a>
             </div>
           </div>
         </div>
