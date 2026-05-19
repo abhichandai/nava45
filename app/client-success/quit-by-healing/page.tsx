@@ -23,12 +23,11 @@ export default function QuitByHealing() {
           </div>
           <p className="case-engine-label">The Magnetic Content Engine</p>
           <h1 className="case-title">
-            Organic to unstoppable.<br />
-            <em style={{ color: 'var(--gold)' }}>0 to 185K without paid ads.</em>
+            Built from scratch.<br />
+            <em style={{ color: 'var(--gold)' }}>Built to last.</em>
           </h1>
           <p className="case-subtitle">
-            A business built from nothing. No brand, no audience, no product.
-            Just a validated message and a system designed to scale.
+            Zero to 185K followers without paid ads. An audience built from scratch through a system designed to scale.
           </p>
 
           {/* Stats bar */}
