@@ -27,7 +27,7 @@ const caseStudies = [
   {
     slug: 'quit-by-healing',
     engine: 'The Magnetic Content Engine',
-    headline: '185K on TikTok. 25K on YouTube. Built from scratch.',
+    headline: '185K TikTok followers. Built from scratch.',
     description:
       "A men's self-development brand built entirely from content. No brand, no audience, no product. We built every piece from zero.",
     client: 'Quit by Healing',
@@ -49,7 +49,7 @@ const caseStudies = [
   {
     slug: 'dominique-leipzig',
     engine: 'The Magnetic Content Engine',
-    headline: 'From minimal impressions to 2,700 subscribers.',
+    headline: 'From minimal impressions to 2.7K newsletter subscribers.',
     description:
       "A LinkedIn presence that wasn't reaching the right people. We cracked the algorithm, built the system, and gave Dominique a direct owned channel to her ideal clients.",
     client: 'Dominique Leipzig',
