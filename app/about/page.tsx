@@ -19,7 +19,7 @@ export default function About() {
       </section>
 
       {/* Who We Are */}
-      <section className="case-body-section">
+      <section className="case-body-section" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="case-body-inner" style={{ maxWidth: '760px' }}>
           <p className="case-section-label">Who We Are</p>
           <h2 className="case-section-title">We engineer growth with our audience-first approach.</h2>
