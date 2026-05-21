@@ -144,7 +144,7 @@ export default function ClientSuccess() {
       {/* Page Header */}
       <section className="cs-header">
         <div className="hero-bg" />
-        <div className="cs-header-inner">
+        <div className="cs-header-inner" style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <p className="section-label" style={{ marginBottom: '32px' }}>Client Success</p>
           <h1 className="cs-page-title">
             The work<br />
