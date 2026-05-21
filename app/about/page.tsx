@@ -4,15 +4,15 @@ export default function About() {
     <>
 
       {/* Hero */}
-      <section className="case-hero" style={{ minHeight: 'auto', padding: '120px 60px 80px' }}>
+      <section className="cs-header">
         <div className="hero-bg" />
-        <div className="case-hero-inner" style={{ width: '100%', maxWidth: '1100px', margin: '0 auto' }}>
+        <div className="cs-header-inner" style={{ maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
           <p className="case-engine-label">About</p>
-          <h1 className="case-title">
+          <h1 className="cs-page-title">
             We don&rsquo;t follow the playbook.<br />
             <em style={{ color: 'var(--gold)' }}>We write it.</em>
           </h1>
-          <p className="case-subtitle" style={{ maxWidth: '520px' }}>
+          <p className="cs-page-sub" style={{ maxWidth: '520px' }}>
             A global growth and marketing agency combining research, strategy, and AI to build presence that drives real results.
           </p>
         </div>
