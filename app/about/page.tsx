@@ -17,13 +17,9 @@ export default function About() {
         <div className="case-hero-inner" style={{ width: '100%', maxWidth: '1100px', margin: '0 auto' }}>
           <p className="case-engine-label">About</p>
           <h1 className="case-title">
-            Ten years of building<br />
-            <em style={{ color: 'var(--gold)' }}>what the market remembers.</em>
+            We exist to engineer growth for brands<br />
+            <em style={{ color: 'var(--gold)' }}>with our &ldquo;audience first&rdquo; approach.</em>
           </h1>
-          <p className="case-subtitle">
-            We combine marketing strategy, AI, and deep audience research to build growth
-            systems for discerning brands and leaders. Not louder. Better.
-          </p>
         </div>
       </section>
 
@@ -31,28 +27,28 @@ export default function About() {
       <section className="case-body-section">
         <div className="case-body-inner" style={{ maxWidth: '760px' }}>
           <p className="case-section-label">Who We Are</p>
-          <h2 className="case-section-title">Built different. By design.</h2>
+          <h2 className="case-section-title">We don&rsquo;t follow the playbook. We write it.</h2>
           <p className="case-body-text">
-            Nava45 is a growth and marketing engineering firm with over a decade of experience
-            disrupting the traditional media and marketing ecosystem. We work at the intersection
-            of consumer research, strategic marketing, and artificial intelligence — combining
-            what most agencies treat as separate disciplines into one integrated system.
+            Nava45 is a global growth and marketing agency. For over a decade, Nava45 has helped
+            brands grow with smarter strategy, better content, and marketing systems that actually
+            work. We work at the intersection of consumer research, strategic marketing, and
+            artificial intelligence to help brands cut through the noise and build presence that
+            drives real results.
           </p>
           <p className="case-body-text">
-            We are researchers, strategists, and builders. Every engagement starts with a
-            question most agencies skip: what does this audience actually need? The answer
-            shapes everything — the message, the channel, the content, the offer. We don't
-            guess. We listen, validate, and build around what we find.
+            At Nava45, every engagement starts with a question: &ldquo;What does this audience
+            actually need?&rdquo; The answer shapes everything — the message, the channel, the
+            content, the offer. We don&rsquo;t speculate. We listen, validate, and build around
+            the audience.
           </p>
           <p className="case-body-text">
             Our clients range from world-class creators and founders to global medical institutions
-            and luxury brands. What they share is a commitment to excellence — and the recognition
-            that being the best at what you do is not enough if the market doesn't know it yet.
+            and luxury brands. What they share is a commitment to excellence and the recognition
+            that being the best at what you do is not enough if the market doesn&rsquo;t know it yet.
           </p>
           <p className="case-body-text">
-            We partner with a select group of clients at a time. Not to be exclusive for its own
-            sake — but because doing this work properly demands full attention. When you work
-            with Nava45, you get the whole team. Every time.
+            We partner with a select group of clients at a time because we believe each client
+            demands full attention. When you work with Nava45, you get the whole team. Every time.
           </p>
         </div>
       </section>
@@ -63,22 +59,22 @@ export default function About() {
           <p className="case-section-label">The Marketing Engineers</p>
           <h2 className="case-section-title" style={{ marginBottom: '16px' }}>The team behind the engines.</h2>
           <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '72px' }}>
-            A small team with an outsized impact. Every person here owns their engine completely.
+            A fun, energetic team of diverse individuals who are passionate about what we do
+            and what our clients can achieve with the help of our experienced team.
           </p>
 
+          {/* Team — horizontal strip, names and titles only */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '40px',
           }}>
-            {/* Abhi */}
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{
                 width: '100%',
-                aspectRatio: '3/4',
+                aspectRatio: '1/1',
                 overflow: 'hidden',
-                marginBottom: '24px',
-                filter: 'grayscale(20%)',
+                marginBottom: '20px',
               }}>
                 <img
                   src="/team-abhi.png"
@@ -86,31 +82,22 @@ export default function About() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
               </div>
-              <p className="work-engine-label" style={{ marginBottom: '6px' }}>Chief Architect</p>
+              <p className="work-engine-label" style={{ marginBottom: '6px' }}>CEO & Strategy Engineer</p>
               <h3 style={{
                 fontFamily: 'Cormorant Garamond, serif',
-                fontSize: '1.4rem',
+                fontSize: '1.5rem',
                 fontWeight: 400,
                 color: 'var(--text)',
-                marginBottom: '12px',
                 lineHeight: 1.2
               }}>Abhi Chand</h3>
-              <p style={{ fontSize: '0.88rem', color: 'var(--muted)', lineHeight: 1.8 }}>
-                Founder and the strategic force behind every engine. Abhi built Nava45 on a
-                single conviction: that research, not instinct, is the foundation of every
-                successful campaign. Over a decade, he has developed the systems and frameworks
-                that power every client engagement.
-              </p>
             </div>
 
-            {/* Aly */}
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{
                 width: '100%',
-                aspectRatio: '3/4',
+                aspectRatio: '1/1',
                 overflow: 'hidden',
-                marginBottom: '24px',
-                filter: 'grayscale(20%)',
+                marginBottom: '20px',
               }}>
                 <img
                   src="/team-aly.png"
@@ -118,31 +105,22 @@ export default function About() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
               </div>
-              <p className="work-engine-label" style={{ marginBottom: '6px' }}>Magnetic Content Engineer</p>
+              <p className="work-engine-label" style={{ marginBottom: '6px' }}>Social Media Engineer</p>
               <h3 style={{
                 fontFamily: 'Cormorant Garamond, serif',
-                fontSize: '1.4rem',
+                fontSize: '1.5rem',
                 fontWeight: 400,
                 color: 'var(--text)',
-                marginBottom: '12px',
                 lineHeight: 1.2
               }}>Alyssandra Raycci Codal</h3>
-              <p style={{ fontSize: '0.88rem', color: 'var(--muted)', lineHeight: 1.8 }}>
-                The strategist behind the content. Alyssandra turns audience research into content
-                that earns attention — consistently, at scale. She owns the full content and social
-                media operation, from strategy to execution, and has a track record of building
-                audiences that convert.
-              </p>
             </div>
 
-            {/* Viola */}
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{
                 width: '100%',
-                aspectRatio: '3/4',
+                aspectRatio: '1/1',
                 overflow: 'hidden',
-                marginBottom: '24px',
-                filter: 'grayscale(20%)',
+                marginBottom: '20px',
               }}>
                 <img
                   src="/team-viola.png"
@@ -150,20 +128,14 @@ export default function About() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
               </div>
-              <p className="work-engine-label" style={{ marginBottom: '6px' }}>Intelligence Engineer</p>
+              <p className="work-engine-label" style={{ marginBottom: '6px' }}>Execution Engineer</p>
               <h3 style={{
                 fontFamily: 'Cormorant Garamond, serif',
-                fontSize: '1.4rem',
+                fontSize: '1.5rem',
                 fontWeight: 400,
                 color: 'var(--text)',
-                marginBottom: '12px',
                 lineHeight: 1.2
               }}>Viola Kazira</h3>
-              <p style={{ fontSize: '0.88rem', color: 'var(--muted)', lineHeight: 1.8 }}>
-                The engine that keeps everything moving. Viola bridges strategy and execution —
-                ensuring every deliverable is built to the standard the client was promised.
-                Detail-driven, systems-minded, and the reason nothing falls through the cracks.
-              </p>
             </div>
           </div>
         </div>
@@ -174,31 +146,36 @@ export default function About() {
         <div className="case-body-inner">
           <p className="case-section-label">What We Believe</p>
           <h2 className="case-section-title" style={{ color: 'var(--grey-900)', marginBottom: '16px' }}>
-            Business is personal.<br />Growth is a responsibility.
+            Delivering Happiness.
           </h2>
           <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '16px' }}>
-            Our philosophy is shaped by the conviction that the best businesses are built on
-            genuine connection — with their audience, and within their team. Inspired by Tony
-            Hsieh&rsquo;s{' '}
+            Our philosophy is rooted in a simple belief: &ldquo;The best businesses are built on
+            genuine connection with their audience, and within their team.&rdquo;
+          </p>
+          <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '16px' }}>
+            Inspired by Tony Hsieh&rsquo;s{' '}
             <em>Delivering Happiness: A Path to Profits, Passion, and Purpose</em>, we believe
-            that culture, care, and commitment to the people you serve are not soft values —
-            they are the strategy.
+            that when you lead with care, serve people well, and build a culture of excellence
+            from the inside out, the results follow.
           </p>
           <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '72px' }}>
-            Everything we build is designed to create real connection: between your brand and
-            your audience, between your message and the people who need to hear it. That is
-            what makes growth sustainable.
+            At Nava45, we believe that a company built on genuine values, deep customer
+            connection, and a team that loves what they do will always outperform one that
+            chases numbers alone. That is the standard we hold ourselves to, and the standard
+            we bring to every client we work with.
           </p>
 
+          {/* Why Brands Choose Us */}
+          <p className="case-section-label" style={{ marginBottom: '48px' }}>Why Brands Choose Us</p>
           <div className="case-approach-grid">
             <div className="case-approach-card">
               <p className="case-approach-number">01</p>
               <h3 className="case-approach-title">Your Best Interests. Always.</h3>
               <p className="case-approach-desc">
-                We will never sell you a service you don&rsquo;t need. If the honest answer is
-                that something won&rsquo;t move the needle for your business, we will say so.
-                A partnership only works if it&rsquo;s genuinely good for both sides — and we
-                take that seriously every time.
+                Your success is the only measure of ours. If something won&rsquo;t move the
+                needle for your business, we&rsquo;ll say so — even when it costs us. A
+                partnership only works if it&rsquo;s genuinely good for both sides and we take
+                that seriously every time.
               </p>
             </div>
             <div className="case-approach-card">
@@ -234,19 +211,17 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="cs-cta-section">
-        <div className="hero-bg" />
-        <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '640px', margin: '0 auto' }}>
-          <p className="section-label" style={{ justifyContent: 'center' }}>Work With Us</p>
-          <h2 className="cs-cta-headline">
-            Ready to build<br />
-            <em style={{ color: 'var(--gold)' }}>something that lasts?</em>
-          </h2>
-          <p className="cs-cta-sub">
-            We work with a select group of clients. If you&rsquo;re serious about growth, we&rsquo;d like to hear from you.
-          </p>
-          <a href="/#contact" className="btn-primary">Apply to Work Together</a>
-        </div>
+      <section className="contact-section">
+        <h2 className="contact-title">
+          Let&rsquo;s talk about<br />
+          <em style={{ fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', color: 'var(--gold)' }}>
+            what&rsquo;s possible.
+          </em>
+        </h2>
+        <p className="contact-sub">
+          If you&rsquo;re as obsessed with excellence as we are, we&rsquo;d love to hear from you.
+        </p>
+        <a href="/#contact" className="btn-primary">Apply here to work with us</a>
       </section>
 
       <footer className="site-footer">
