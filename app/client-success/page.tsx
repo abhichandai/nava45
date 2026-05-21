@@ -1,13 +1,12 @@
 import ThemeToggle from '../components/ThemeToggle'
 import Link from 'next/link'
 
-const caseStudies = [
+const group1 = [
   {
     slug: 'adam-leipzig',
     engine: 'The Magnetic Content Engine',
     headline: '327% audience growth. Hollywood producer.',
-    description:
-      'A world-class creator with stalled growth and no repeatable system. We rebuilt the strategy from audience intelligence up — and tripled his hook retention rate in the process.',
+    description: 'A world-class creator with stalled growth and no repeatable system. We rebuilt the strategy from audience intelligence up — and tripled his hook retention rate in the process.',
     client: 'Adam Leipzig',
     stat: '327%',
     statLabel: 'Audience Growth',
@@ -17,8 +16,7 @@ const caseStudies = [
     slug: 'balance-catamarans',
     engine: 'The Growth Engine',
     headline: '$14.5M in qualified pipeline.',
-    description:
-      'A high-end luxury catamaran brand with no predictable way to bring in new clients. We built the full digital acquisition system from scratch.',
+    description: 'A high-end luxury catamaran brand with no predictable way to bring in new clients. We built the full digital acquisition system from scratch.',
     client: 'Balance Catamarans',
     stat: '$14.5M',
     statLabel: 'Qualified Pipeline',
@@ -27,36 +25,79 @@ const caseStudies = [
   {
     slug: 'quit-by-healing',
     engine: 'The Magnetic Content Engine',
-    headline: '185K on TikTok. 25K on YouTube. Built from scratch.',
-    description:
-      "A men's self-development brand built entirely from content. No brand, no audience, no product. We built every piece from zero.",
+    headline: '185K TikTok followers. Built from scratch.',
+    description: "A men's self-development brand built entirely from content. No brand, no audience, no product. We built every piece from zero.",
     client: 'Quit by Healing',
     stat: '185K',
     statLabel: 'TikTok Followers',
     live: true,
   },
   {
+    slug: 'dominique-leipzig',
+    engine: 'The Magnetic Content Engine',
+    headline: 'From minimal impressions to 2,700 subscribers.',
+    description: "A LinkedIn presence that wasn't reaching the right people. We cracked the algorithm, built the system, and gave Dominique a direct owned channel to her ideal clients.",
+    client: 'Dominique Leipzig',
+    stat: '2.7K',
+    statLabel: 'Newsletter Subscribers',
+    live: true,
+  },
+  {
+    slug: 'ikario',
+    engine: 'The Growth Engine',
+    headline: 'Coming soon.',
+    description: 'This case study is being prepared.',
+    client: 'Ikario',
+    stat: '',
+    statLabel: '',
+    live: false,
+  },
+  {
+    slug: 'fluid-social',
+    engine: 'The Magnetic Content Engine',
+    headline: 'Coming soon.',
+    description: 'This case study is being prepared.',
+    client: 'Fluid Social',
+    stat: '',
+    statLabel: '',
+    live: false,
+  },
+]
+
+const group2 = [
+  {
     slug: 'university-of-toronto',
     engine: 'The Intelligence Engine',
     headline: 'No solution existed. So we built one.',
-    description:
-      "Resident ophthalmologists needed a training tool that didn't exist. We built it, secured it to medical-grade standards, and deployed it.",
+    description: "Resident ophthalmologists needed a training tool that didn't exist. We built it, secured it to medical-grade standards, and deployed it.",
     client: 'University of Toronto',
     stat: 'PHIPA',
     statLabel: 'Compliant',
     live: true,
   },
   {
-    slug: 'dominique-leipzig',
-    engine: 'The Magnetic Content Engine',
-    headline: 'From minimal impressions to 2,700 subscribers.',
-    description:
-      "A LinkedIn presence that wasn't reaching the right people. We cracked the algorithm, built the system, and gave Dominique a direct owned channel to her ideal clients.",
-    client: 'Dominique Leipzig',
-    stat: '2.7K',
-    statLabel: 'Newsletter Subscribers',
+    slug: 'kensington-cancer-screening',
+    engine: 'The Intelligence Engine',
+    headline: 'From paper to digital.',
+    description: "One of Canada's top cancer screening facilities was running entirely on paper. We built the custom EMR that digitised their entire patient journey and secured their government funding.",
+    client: 'Kensington Cancer Screening Clinic',
+    stat: 'Funded',
+    statLabel: 'Ministry of Health',
     live: true,
   },
+  {
+    slug: 'olympus-welch-allyn',
+    engine: 'The Intelligence Engine',
+    headline: 'Global medical systems integration.',
+    description: 'Three international medical systems. Three different companies. None of them connected. We unified them so the anesthesiologist could focus entirely on the patient.',
+    client: 'Olympus & Welch Allyn',
+    stat: '3',
+    statLabel: 'Systems Integrated',
+    live: true,
+  },
+]
+
+const group3 = [
   {
     slug: 'mgsd',
     engine: 'The Magnetic Content Engine',
@@ -87,52 +128,48 @@ const caseStudies = [
     statLabel: 'Revenue in 2 Weeks',
     live: true,
   },
-  {
-    slug: 'kensington-cancer-screening',
-    engine: 'The Intelligence Engine',
-    headline: 'From paper to digital.',
-    description: "One of Canada's top cancer screening facilities was running entirely on paper. We built the custom EMR that digitised their entire patient journey and secured their government funding.",
-    client: 'Kensington Cancer Screening Clinic',
-    stat: 'Funded',
-    statLabel: 'Ministry of Health',
-    live: true,
-  },
-  {
-    slug: 'olympus-welch-allyn',
-    engine: 'The Intelligence Engine',
-    headline: 'Global medical systems integration.',
-    description: 'Three international medical systems. Three different companies. None of them connected. We unified them so the anesthesiologist could focus entirely on the patient.',
-    client: 'Olympus & Welch Allyn',
-    stat: '3',
-    statLabel: 'Systems Integrated',
-    live: true,
-  },
-  {
-    slug: 'ikario',
-    engine: 'The Growth Engine',
-    headline: 'Coming soon.',
-    description: 'This case study is being prepared.',
-    client: 'Ikario',
-    stat: '',
-    statLabel: '',
-    live: false,
-  },
-  {
-    slug: 'fluid-social',
-    engine: 'The Magnetic Content Engine',
-    headline: 'Coming soon.',
-    description: 'This case study is being prepared.',
-    client: 'Fluid Social',
-    stat: '',
-    statLabel: '',
-    live: false,
-  },
 ]
+
+function CaseStudyCard({ cs }: { cs: typeof group1[0] }) {
+  if (cs.live) {
+    return (
+      <Link href={`/client-success/${cs.slug}`} className="cs-card cs-card--live">
+        <div className="cs-card-top">
+          <p className="cs-engine-label">{cs.engine}</p>
+          {cs.stat && (
+            <div className="cs-card-stat">
+              <span className="cs-stat-number">{cs.stat}</span>
+              <span className="cs-stat-label">{cs.statLabel}</span>
+            </div>
+          )}
+        </div>
+        <h2 className="cs-card-headline">{cs.headline}</h2>
+        <p className="cs-card-desc">{cs.description}</p>
+        <div className="cs-card-footer">
+          <span className="cs-client-name">{cs.client}</span>
+          <span className="cs-read-more">Read case study →</span>
+        </div>
+      </Link>
+    )
+  }
+  return (
+    <div className="cs-card cs-card--soon">
+      <div className="cs-card-top">
+        <p className="cs-engine-label">{cs.engine}</p>
+        <span className="cs-coming-soon-badge">Coming Soon</span>
+      </div>
+      <h2 className="cs-card-headline cs-card-headline--muted">{cs.headline}</h2>
+      <p className="cs-card-desc">{cs.description}</p>
+      <div className="cs-card-footer">
+        <span className="cs-client-name">{cs.client}</span>
+      </div>
+    </div>
+  )
+}
 
 export default function ClientSuccess() {
   return (
     <>
-      {/* Nav */}
       <nav>
         <a href="/" className="nav-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></a>
         <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
@@ -141,7 +178,6 @@ export default function ClientSuccess() {
         </div>
       </nav>
 
-      {/* Page Header */}
       <section className="cs-header">
         <div className="hero-bg" />
         <div className="cs-header-inner">
@@ -157,48 +193,51 @@ export default function ClientSuccess() {
         </div>
       </section>
 
-      {/* Case Study Grid */}
+      {/* Group 1 */}
       <section className="cs-grid-section">
         <div className="cs-grid-inner">
+          <div style={{ marginBottom: '48px' }}>
+            <p className="section-label" style={{ marginBottom: '8px' }}>01</p>
+            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', fontWeight: 300, color: 'var(--text)', lineHeight: 1.2 }}>
+              Content, Audience Growth & Lead Generation
+            </h2>
+          </div>
           <div className="cs-grid">
-            {caseStudies.map((cs) => (
-              cs.live ? (
-                <Link key={cs.slug} href={`/client-success/${cs.slug}`} className="cs-card cs-card--live">
-                  <div className="cs-card-top">
-                    <p className="cs-engine-label">{cs.engine}</p>
-                    {cs.stat && (
-                      <div className="cs-card-stat">
-                        <span className="cs-stat-number">{cs.stat}</span>
-                        <span className="cs-stat-label">{cs.statLabel}</span>
-                      </div>
-                    )}
-                  </div>
-                  <h2 className="cs-card-headline">{cs.headline}</h2>
-                  <p className="cs-card-desc">{cs.description}</p>
-                  <div className="cs-card-footer">
-                    <span className="cs-client-name">{cs.client}</span>
-                    <span className="cs-read-more">Read case study →</span>
-                  </div>
-                </Link>
-              ) : (
-                <div key={cs.slug} className="cs-card cs-card--soon">
-                  <div className="cs-card-top">
-                    <p className="cs-engine-label">{cs.engine}</p>
-                    <span className="cs-coming-soon-badge">Coming Soon</span>
-                  </div>
-                  <h2 className="cs-card-headline cs-card-headline--muted">{cs.headline}</h2>
-                  <p className="cs-card-desc">{cs.description}</p>
-                  <div className="cs-card-footer">
-                    <span className="cs-client-name">{cs.client}</span>
-                  </div>
-                </div>
-              )
-            ))}
+            {group1.map((cs) => <CaseStudyCard key={cs.slug} cs={cs} />)}
           </div>
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* Group 2 */}
+      <section className="cs-grid-section" style={{ background: 'var(--bg-alt)' }}>
+        <div className="cs-grid-inner">
+          <div style={{ marginBottom: '48px' }}>
+            <p className="section-label" style={{ marginBottom: '8px' }}>02</p>
+            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', fontWeight: 300, color: 'var(--text)', lineHeight: 1.2 }}>
+              Software, Automations & Tech
+            </h2>
+          </div>
+          <div className="cs-grid">
+            {group2.map((cs) => <CaseStudyCard key={cs.slug} cs={cs} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* Group 3 */}
+      <section className="cs-grid-section">
+        <div className="cs-grid-inner">
+          <div style={{ marginBottom: '48px' }}>
+            <p className="section-label" style={{ marginBottom: '8px' }}>03</p>
+            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', fontWeight: 300, color: 'var(--text)', lineHeight: 1.2 }}>
+              Course Launches
+            </h2>
+          </div>
+          <div className="cs-grid">
+            {group3.map((cs) => <CaseStudyCard key={cs.slug} cs={cs} />)}
+          </div>
+        </div>
+      </section>
+
       <section className="cs-cta-section">
         <div className="hero-bg" />
         <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '640px', margin: '0 auto' }}>
@@ -214,10 +253,9 @@ export default function ClientSuccess() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="site-footer">
         <span className="footer-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></span>
-        <span className="footer-copy">© 2025 Nava45. All rights reserved.</span>
+        <span className="footer-copy">&copy; 2025 Nava45. All rights reserved.</span>
       </footer>
     </>
   )
