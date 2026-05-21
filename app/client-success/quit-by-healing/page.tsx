@@ -23,8 +23,8 @@ export default function QuitByHealing() {
           </div>
           <p className="case-engine-label">The Magnetic Content Engine</p>
           <h1 className="case-title">
-            Built from scratch.<br />
-            <em style={{ color: 'var(--gold)' }}>Built to last.</em>
+            185K on TikTok. 25K on YouTube.<br />
+            <em style={{ color: 'var(--gold)' }}>Built from scratch.</em>
           </h1>
           <p className="case-subtitle">
             Zero to 185K followers without paid ads. An audience built from scratch through a system designed to scale.

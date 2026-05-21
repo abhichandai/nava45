@@ -196,7 +196,7 @@ export default function Home() {
             </div>
             <div className="work-card">
               <p className="work-engine-label">The Magnetic Content Engine</p>
-              <h3 className="work-case-headline">185K TikTok followers. Built from scratch.</h3>
+              <h3 className="work-case-headline">185K on TikTok. 25K on YouTube. Built from scratch.</h3>
               <p className="work-desc">
                 A men&rsquo;s self-development brand built entirely from content. We identified
                 the audience, built the engine, and monetized it.

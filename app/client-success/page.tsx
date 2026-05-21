@@ -27,7 +27,7 @@ const caseStudies = [
   {
     slug: 'quit-by-healing',
     engine: 'The Magnetic Content Engine',
-    headline: '185K TikTok followers. Built from scratch.',
+    headline: '185K on TikTok. 25K on YouTube. Built from scratch.',
     description:
       "A men's self-development brand built entirely from content. No brand, no audience, no product. We built every piece from zero.",
     client: 'Quit by Healing',
