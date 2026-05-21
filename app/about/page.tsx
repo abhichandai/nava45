@@ -5,7 +5,10 @@ export default function About() {
     <>
       <nav>
         <a href="/" className="nav-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></a>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+          <a href="/about" style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text)', textDecoration: 'none' }}>About</a>
+          <a href="/client-success" style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text)', textDecoration: 'none' }}>Our Work</a>
+          <a href="/#work" style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text)', textDecoration: 'none' }}>What We Do</a>
           <ThemeToggle />
           <a href="/#contact" className="nav-cta">Apply to Work Together</a>
         </div>
@@ -18,7 +21,7 @@ export default function About() {
           <p className="case-engine-label">About</p>
           <h1 className="case-title">
             We exist to engineer growth for brands<br />
-            <em style={{ color: 'var(--gold)' }}>with our &ldquo;audience first&rdquo; approach.</em>
+            <em style={{ color: 'var(--gold)' }}>with our audience-first approach.</em>
           </h1>
         </div>
       </section>
@@ -37,7 +40,7 @@ export default function About() {
           </p>
           <p className="case-body-text">
             At Nava45, every engagement starts with a question: &ldquo;What does this audience
-            actually need?&rdquo; The answer shapes everything — the message, the channel, the
+            actually need?&rdquo; The answer shapes everything the message, the channel, the
             content, the offer. We don&rsquo;t speculate. We listen, validate, and build around
             the audience.
           </p>
@@ -48,7 +51,7 @@ export default function About() {
           </p>
           <p className="case-body-text">
             We partner with a select group of clients at a time because we believe each client
-            demands full attention. When you work with Nava45, you get the whole team. Every time.
+            deserves our full attention. When you work with Nava45, you get the whole team. Every time.
           </p>
         </div>
       </section>
@@ -59,11 +62,10 @@ export default function About() {
           <p className="case-section-label">The Marketing Engineers</p>
           <h2 className="case-section-title" style={{ marginBottom: '16px' }}>The team behind the engines.</h2>
           <p className="case-body-text" style={{ maxWidth: '680px', marginBottom: '72px' }}>
-            A fun, energetic team of diverse individuals who are passionate about what we do
-            and what our clients can achieve with the help of our experienced team.
+            We&rsquo;re a fun, energetic team of diverse individuals who are passionate about what we do AND what we can help our clients achieve.
           </p>
 
-          {/* Team — horizontal strip, names and titles only */}
+          {/* Team horizontal strip, names and titles only */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
@@ -173,7 +175,7 @@ export default function About() {
               <h3 className="case-approach-title">Your Best Interests. Always.</h3>
               <p className="case-approach-desc">
                 Your success is the only measure of ours. If something won&rsquo;t move the
-                needle for your business, we&rsquo;ll say so — even when it costs us. A
+                needle for your business, we&rsquo;ll say so even when it costs us. A
                 partnership only works if it&rsquo;s genuinely good for both sides and we take
                 that seriously every time.
               </p>
@@ -182,7 +184,7 @@ export default function About() {
               <p className="case-approach-number">02</p>
               <h3 className="case-approach-title">Quality Is Non-Negotiable.</h3>
               <p className="case-approach-desc">
-                Reputation is everything — yours and ours. We follow best practices at every
+                Reputation is everything yours and ours. We follow best practices at every
                 stage, hold our work to the highest standard, and never ship something we
                 wouldn&rsquo;t be proud to put our name on. Sub-par is not in our vocabulary.
               </p>
@@ -202,7 +204,7 @@ export default function About() {
               <h3 className="case-approach-title">We Show Up.</h3>
               <p className="case-approach-desc">
                 Responsiveness is a form of respect. When you have a question, a concern, or
-                an idea, you hear back from us — promptly and directly. We are accessible,
+                an idea, you hear back from us promptly and directly. We are accessible,
                 accountable, and present throughout every engagement. Not just at the start.
               </p>
             </div>
