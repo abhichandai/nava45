@@ -1,16 +1,7 @@
-import ThemeToggle from '../../components/ThemeToggle'
 
 export default function DominiqueLeipzig() {
   return (
     <>
-      {/* Nav */}
-      <nav>
-        <a href="/" className="nav-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></a>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-          <ThemeToggle />
-          <a href="/#contact" className="nav-cta">Apply to Work Together</a>
-        </div>
-      </nav>
 
       {/* Case Study Hero */}
       <section className="case-hero">

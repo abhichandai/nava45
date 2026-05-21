@@ -1,15 +1,7 @@
-import ThemeToggle from '../../components/ThemeToggle'
 
 export default function KensingtonCancerScreening() {
   return (
     <>
-      <nav>
-        <a href="/" className="nav-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></a>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-          <ThemeToggle />
-          <a href="/#contact" className="nav-cta">Apply to Work Together</a>
-        </div>
-      </nav>
 
       <section className="case-hero">
         <div className="hero-bg" />

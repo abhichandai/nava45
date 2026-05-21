@@ -1,4 +1,3 @@
-import ThemeToggle from '../components/ThemeToggle'
 import Link from 'next/link'
 
 const caseStudies = [
@@ -132,14 +131,6 @@ const caseStudies = [
 export default function ClientSuccess() {
   return (
     <>
-      {/* Nav */}
-      <nav>
-        <a href="/" className="nav-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></a>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-          <ThemeToggle />
-          <a href="/#contact" className="nav-cta">Apply to Work Together</a>
-        </div>
-      </nav>
 
       {/* Page Header */}
       <section className="cs-header">
