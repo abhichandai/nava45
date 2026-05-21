@@ -4,15 +4,15 @@ export default function About() {
     <>
 
       {/* Hero */}
-      <section className="case-hero" style={{ textAlign: 'center' }}>
+      <section className="case-hero" style={{ minHeight: 'auto', padding: '120px 60px 80px' }}>
         <div className="hero-bg" />
         <div className="case-hero-inner" style={{ width: '100%', maxWidth: '1100px', margin: '0 auto' }}>
-          <p className="case-engine-label" style={{ justifyContent: 'center' }}>About</p>
+          <p className="case-engine-label">About</p>
           <h1 className="case-title">
             We don&rsquo;t follow the playbook.<br />
             <em style={{ color: 'var(--gold)' }}>We write it.</em>
           </h1>
-          <p className="case-subtitle" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <p className="case-subtitle" style={{ maxWidth: '520px' }}>
             A global growth and marketing agency combining research, strategy, and AI to build presence that drives real results.
           </p>
         </div>
@@ -22,7 +22,7 @@ export default function About() {
       <section className="case-body-section">
         <div className="case-body-inner" style={{ maxWidth: '760px' }}>
           <p className="case-section-label">Who We Are</p>
-          <h2 className="case-section-title">We exist to engineer growth with our audience-first approach.</h2>
+          <h2 className="case-section-title">We engineer growth with our audience-first approach.</h2>
           <p className="case-body-text">
             Nava45 is a global growth and marketing agency. For over a decade, we have helped
             brands grow with smarter strategy, better content, and marketing systems that actually
@@ -57,56 +57,75 @@ export default function About() {
             We&rsquo;re a fun, energetic team of diverse individuals who are passionate about what we do AND what we can help our clients achieve.
           </p>
 
-          {/* Team hover cards */}
+          {/* Team cards */}
           <style>{`
-            .team-card { position: relative; overflow: hidden; cursor: default; }
-            .team-card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.4s ease, filter 0.4s ease; }
-            .team-card:hover img { transform: scale(1.04); filter: brightness(0.35); }
-            .team-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); }
-            .team-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease, transform 0.35s ease; }
-            .team-card:hover .team-tags { opacity: 1; transform: translateY(0); }
-            .team-tag { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 4px 10px; }
+            .team-card-wrap { display: flex; flex-direction: column; }
+            .team-photo { position: relative; overflow: hidden; aspect-ratio: 3/4; }
+            .team-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.4s ease, filter 0.4s ease; }
+            .team-card-wrap:hover .team-photo img { transform: scale(1.04); filter: brightness(0.4); }
+            .team-hover-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 20px 24px; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease, transform 0.35s ease; }
+            .team-card-wrap:hover .team-hover-overlay { opacity: 1; transform: translateY(0); }
+            .team-hover-overlay .team-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+            .team-tag { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 3px 9px; }
+            .team-info { padding: 16px 4px 0; }
           `}</style>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
-            <div>
-              <div className="team-card" style={{ aspectRatio: '3/4' }}>
+
+            {/* Abhi */}
+            <div className="team-card-wrap">
+              <div className="team-photo">
                 <img src="/team-abhi.png" alt="Abhi Chand" />
-                <div className="team-overlay">
-                  <p style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '6px' }}>CEO & Strategy Engineer</p>
-                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Abhi Chand</p>
+                <div className="team-hover-overlay">
+                  <p style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>CEO & Strategy Engineer</p>
+                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Abhi Chand</p>
                   <div className="team-tags">
                     {['Team Leader', 'Strategist', 'AI Expert', 'Bookworm'].map(tag => <span key={tag} className="team-tag">{tag}</span>)}
                   </div>
                 </div>
               </div>
+              <div className="team-info">
+                <p style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>CEO & Strategy Engineer</p>
+                <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2 }}>Abhi Chand</p>
+              </div>
             </div>
 
-            <div>
-              <div className="team-card" style={{ aspectRatio: '3/4' }}>
+            {/* Aly */}
+            <div className="team-card-wrap">
+              <div className="team-photo">
                 <img src="/team-aly.png" alt="Alyssandra Raycci Codal" />
-                <div className="team-overlay">
-                  <p style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '6px' }}>Social Media Engineer</p>
-                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Alyssandra Raycci Codal</p>
+                <div className="team-hover-overlay">
+                  <p style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>Social Media Engineer</p>
+                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Alyssandra Raycci Codal</p>
                   <div className="team-tags">
                     {['Content', 'Social Media', 'Creative'].map(tag => <span key={tag} className="team-tag">{tag}</span>)}
                   </div>
                 </div>
               </div>
+              <div className="team-info">
+                <p style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>Social Media Engineer</p>
+                <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2 }}>Alyssandra Raycci Codal</p>
+              </div>
             </div>
 
-            <div>
-              <div className="team-card" style={{ aspectRatio: '3/4' }}>
+            {/* Viola */}
+            <div className="team-card-wrap">
+              <div className="team-photo">
                 <img src="/team-viola.png" alt="Viola Kazira" />
-                <div className="team-overlay">
-                  <p style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '6px' }}>Execution Engineer</p>
-                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Viola Kazira</p>
+                <div className="team-hover-overlay">
+                  <p style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>Execution Engineer</p>
+                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Viola Kazira</p>
                   <div className="team-tags">
                     {['Execution', 'Quality Control', 'Detail Driven', 'Curious Cat'].map(tag => <span key={tag} className="team-tag">{tag}</span>)}
                   </div>
                 </div>
               </div>
+              <div className="team-info">
+                <p style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>Execution Engineer</p>
+                <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2 }}>Viola Kazira</p>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
