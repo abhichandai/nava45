@@ -49,7 +49,7 @@ export default function About() {
       </section>
 
       {/* Meet the Team */}
-      <section className="case-body-section" style={{ background: 'var(--bg-alt)' }}>
+      <section className="case-body-section" style={{ background: 'var(--bg)' }}>
         <div className="case-body-inner">
           <p className="case-section-label">The Marketing Engineers</p>
           <h2 className="case-section-title" style={{ marginBottom: '16px' }}>The team behind the engines.</h2>
