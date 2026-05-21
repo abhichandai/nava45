@@ -19,10 +19,10 @@ export default function About() {
       </section>
 
       {/* Who We Are */}
-      <section className="case-body-section" style={{ borderTop: '1px solid var(--border)' }}>
+      <section className="case-body-section" style={{ background: 'var(--bg-alt)' }}>
         <div className="case-body-inner" style={{ maxWidth: '760px' }}>
           <p className="case-section-label">Who We Are</p>
-          <h2 className="case-section-title">We engineer growth with our audience-first approach.</h2>
+          <h2 className="case-section-title">Engineering growth with our audience-first approach.</h2>
           <p className="case-body-text">
             Nava45 is a global growth and marketing agency. For over a decade, we have helped
             brands grow with smarter strategy, better content, and marketing systems that actually
