@@ -4,14 +4,17 @@ export default function About() {
     <>
 
       {/* Hero */}
-      <section className="case-hero">
+      <section className="case-hero" style={{ textAlign: 'center' }}>
         <div className="hero-bg" />
         <div className="case-hero-inner" style={{ width: '100%', maxWidth: '1100px', margin: '0 auto' }}>
-          <p className="case-engine-label">About</p>
+          <p className="case-engine-label" style={{ justifyContent: 'center' }}>About</p>
           <h1 className="case-title">
             We don&rsquo;t follow the playbook.<br />
             <em style={{ color: 'var(--gold)' }}>We write it.</em>
           </h1>
+          <p className="case-subtitle" style={{ maxWidth: '600px', margin: '0 auto' }}>
+            A global growth and marketing agency combining research, strategy, and AI to build presence that drives real results.
+          </p>
         </div>
       </section>
 
@@ -58,10 +61,10 @@ export default function About() {
           <style>{`
             .team-card { position: relative; overflow: hidden; cursor: default; }
             .team-card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.4s ease, filter 0.4s ease; }
-            .team-card:hover img { transform: scale(1.04); filter: brightness(0.4); }
-            .team-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; transform: translateY(20px); opacity: 0; transition: opacity 0.4s ease, transform 0.4s ease; }
-            .team-card:hover .team-overlay { opacity: 1; transform: translateY(0); }
-            .team-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+            .team-card:hover img { transform: scale(1.04); filter: brightness(0.35); }
+            .team-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); }
+            .team-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease, transform 0.35s ease; }
+            .team-card:hover .team-tags { opacity: 1; transform: translateY(0); }
             .team-tag { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 4px 10px; }
           `}</style>
 
@@ -71,7 +74,7 @@ export default function About() {
                 <img src="/team-abhi.png" alt="Abhi Chand" />
                 <div className="team-overlay">
                   <p style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '6px' }}>CEO & Strategy Engineer</p>
-                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', lineHeight: 1.2, marginBottom: '12px' }}>Abhi Chand</p>
+                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Abhi Chand</p>
                   <div className="team-tags">
                     {['Team Leader', 'Strategist', 'AI Expert', 'Bookworm'].map(tag => <span key={tag} className="team-tag">{tag}</span>)}
                   </div>
@@ -84,7 +87,7 @@ export default function About() {
                 <img src="/team-aly.png" alt="Alyssandra Raycci Codal" />
                 <div className="team-overlay">
                   <p style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '6px' }}>Social Media Engineer</p>
-                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', lineHeight: 1.2, marginBottom: '12px' }}>Alyssandra Raycci Codal</p>
+                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Alyssandra Raycci Codal</p>
                   <div className="team-tags">
                     {['Content', 'Social Media', 'Creative'].map(tag => <span key={tag} className="team-tag">{tag}</span>)}
                   </div>
@@ -97,7 +100,7 @@ export default function About() {
                 <img src="/team-viola.png" alt="Viola Kazira" />
                 <div className="team-overlay">
                   <p style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '6px' }}>Execution Engineer</p>
-                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', lineHeight: 1.2, marginBottom: '12px' }}>Viola Kazira</p>
+                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Viola Kazira</p>
                   <div className="team-tags">
                     {['Execution', 'Quality Control', 'Detail Driven', 'Curious Cat'].map(tag => <span key={tag} className="team-tag">{tag}</span>)}
                   </div>
