@@ -54,8 +54,12 @@ export default function About() {
             We don&rsquo;t follow the playbook.<br />
             <em>We write it.</em>
           </h1>
-          <p style={{ fontSize: '1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.8, marginTop: '16px', textAlign: 'center' }}>
-            A global growth and marketing agency combining research, strategy, and AI to build presence that drives real results.
+          <p style={{ fontSize: '0.8rem', color: 'var(--muted)', marginTop: '48px', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+            Scroll for more
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ animation: 'bounce 2s infinite' }}>
+              <path d="M10 4v12M4 10l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <style>{`@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }`}</style>
           </p>
         </div>
       </section>
@@ -202,7 +206,7 @@ export default function About() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
               <img
-                src="https://images-na.ssl-images-amazon.com/images/I/71xt4ndLXlL.jpg"
+                src="/delivering-happiness-book.png"
                 alt="Delivering Happiness by Tony Hsieh"
                 style={{ width: '100%', boxShadow: '0 20px 60px rgba(0,0,0,0.2)', borderRadius: '2px' }}
               />
