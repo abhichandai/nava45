@@ -11,7 +11,7 @@ export default function About() {
       title: 'Chief Engineer & Strategist',
       photo: '/team-abhi.png',
       tags: ['Team Leader', 'Strategist', 'AI Intelligence', 'Bookworm'],
-      bio: 'Founder and the strategic force behind Nava45. Abhi built Nava45 on a single conviction: that research, not instinct, is the foundation of every successful campaign. Over a decade, he has developed the systems and solutions that power every client engagement.',
+      bio: 'Founder and the architect behind every engine at Nava45. Abhi built this firm on one unshakeable conviction: that deep audience research, not instinct, is the foundation of every campaign that works. Over a decade, he has developed the proprietary systems and frameworks that drive results for every client, combining strategic clarity with cutting-edge AI to stay ahead of every market.',
     },
     {
       id: 'aly',
@@ -19,7 +19,7 @@ export default function About() {
       title: 'Content Engineer',
       photo: '/team-aly.png',
       tags: ['Content', 'Social Media', 'Creative'],
-      bio: 'The strategist behind social media and content. Alyssandra turns audience research into content that earns attention. She owns the full content and social media operation, from strategy to execution, and has a track record of building audiences that convert.',
+      bio: 'The strategic mind behind every content decision at Nava45. Alyssandra transforms audience research into content that earns attention at scale, owning the full operation from strategy to execution. She has a proven track record of building audiences that convert and brands that people genuinely care about.',
     },
     {
       id: 'viola',
@@ -27,7 +27,7 @@ export default function About() {
       title: 'Marketing Engineer',
       photo: '/team-viola.png',
       tags: ['Strategy', 'Audience Intelligence', 'Execution', 'Music Lover'],
-      bio: 'The engine that keeps everything moving. Viola bridges strategy and execution, ensuring every deliverable is built to the standard the client was promised. Detail-driven, and the reason nothing falls through the cracks.',
+      bio: 'With years of marketing experience working with global brands, Viola is the force that turns strategy into results. She sits at the intersection of audience intelligence and flawless execution, ensuring every deliverable not only meets the brief but exceeds the standard. Where others see complexity, Viola sees a system waiting to be built.',
     },
   ]
 
@@ -41,7 +41,7 @@ export default function About() {
             We don&rsquo;t follow the playbook.<br />
             <em>We write it.</em>
           </h1>
-          <p style={{ fontSize: '1rem', color: 'var(--muted)', maxWidth: '520px', lineHeight: 1.8, marginTop: '16px' }}>
+          <p style={{ fontSize: '1rem', color: 'var(--muted)', maxWidth: '520px', lineHeight: 1.8, marginTop: '16px', textAlign: 'center' }}>
             A global growth and marketing agency combining research, strategy, and AI to build presence that drives real results.
           </p>
         </div>
