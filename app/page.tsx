@@ -18,14 +18,16 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-scroll-cue animate-fade-up delay-3">
-          <svg className="hero-scroll-arrow" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 5v13M6 12l6 6 6-6" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <a href="#quote" className="hero-scroll-link" aria-label="Scroll to next section">
+            <svg className="hero-scroll-arrow" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 5v13M6 12l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </div>
       </section>
 
       {/* Hero Quote — Adam Leipzig */}
-      <section className="hero-quote-section">
+      <section id="quote" className="hero-quote-section">
         <div className="hero-quote-inner">
           <span className="hero-quote-mark">&ldquo;</span>
           <blockquote className="hero-quote-text">

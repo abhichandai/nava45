@@ -54,18 +54,18 @@ export default function About() {
             We don&rsquo;t follow the playbook.<br />
             <em>We write it.</em>
           </h1>
-          <p style={{ fontSize: '0.8rem', color: 'var(--muted)', marginTop: '48px', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-            Discover Nava45
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ animation: 'bounce 2s infinite' }}>
-              <path d="M10 4v12M4 10l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </div>
+        <div className="hero-scroll-cue animate-fade-up delay-3">
+          <a href="#who-we-are" className="hero-scroll-link" aria-label="Scroll to next section">
+            <svg className="hero-scroll-arrow" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 5v13M6 12l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <style>{`@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }`}</style>
-          </p>
+          </a>
         </div>
       </section>
 
       {/* Who We Are */}
-      <section className="case-body-section" style={{ background: 'var(--bg-alt)' }}>
+      <section id="who-we-are" className="case-body-section" style={{ background: 'var(--bg-alt)' }}>
         <div className="case-body-inner" style={{ maxWidth: '760px' }}>
           <p className="case-section-label">Who We Are</p>
           <h2 className="case-section-title">Engineering growth with our audience-first approach.</h2>

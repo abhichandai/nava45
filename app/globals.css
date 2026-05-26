@@ -117,17 +117,25 @@ body {
 }
 .hero-scroll-cue {
   position: absolute;
-  bottom: 40px;
+  bottom: 80px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
   pointer-events: none;
 }
+.hero-scroll-link {
+  pointer-events: auto;
+  display: inline-flex;
+  cursor: pointer;
+  color: var(--gold);
+}
 .hero-scroll-arrow {
   color: var(--gold);
   animation: bounce 2s ease-in-out infinite;
 }
+/* Offset anchor targets so the revealed fixed nav doesn't overlap the heading */
+#quote, #who-we-are { scroll-margin-top: 96px; }
 
 /* ─── SHARED ──────────────────────────────────────────────────────────────── */
 
