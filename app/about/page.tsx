@@ -27,7 +27,7 @@ export default function About() {
       title: 'Marketing Engineer',
       photo: '/team-viola.png',
       tags: ['Strategy', 'Audience Intelligence', 'Execution', 'Music Lover'],
-      bio: 'With years of marketing experience working with global brands, Viola is the force that turns strategy into results. She sits at the intersection of audience intelligence and flawless execution, ensuring every deliverable not only meets the brief but exceeds the standard. Where others see complexity, Viola sees a system waiting to be built.',
+      bio: 'The strategist who never stops at the plan. With over 10 years of marketing experience, Viola works with brands to build growth strategies that are as sharp in thinking as they are in delivery, combining audience intelligence with the execution rigour that turns good ideas into measurable results. When the strategy is right and the execution is flawless, growth follows.',
     },
   ]
 
