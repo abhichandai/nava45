@@ -57,8 +57,10 @@ export default function About() {
         </div>
         <div className="hero-scroll-cue animate-fade-up delay-3">
           <a href="#who-we-are" className="hero-scroll-link" aria-label="Scroll to next section">
-            <svg className="hero-scroll-arrow" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 5v13M6 12l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <span className="hero-scroll-label">Discover Nava45</span>
+            <svg className="hero-scroll-arrow" width="40" height="46" viewBox="0 0 24 28" fill="none" aria-hidden="true">
+              <path d="M5 8l7 7 7-7" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M5 16l7 7 7-7" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
         </div>

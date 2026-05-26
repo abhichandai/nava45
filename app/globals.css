@@ -42,6 +42,11 @@
   --border:   #2A2724;
   --gold:     var(--gold-400);
   --cta:      var(--gold-400);
+  /* Raw greys consumed directly by case-body sections (About + case studies) —
+     the semantic aliases above are already literal in dark mode, so these only
+     affect those direct uses and must be flipped here too */
+  --grey-200: #1A1714;
+  --grey-900: #F0EDE6;
 }
 
 [data-theme="dark"] body {
@@ -117,7 +122,7 @@ body {
 }
 .hero-scroll-cue {
   position: absolute;
-  bottom: 80px;
+  bottom: 140px;
   left: 0;
   right: 0;
   display: flex;
@@ -127,8 +132,17 @@ body {
 .hero-scroll-link {
   pointer-events: auto;
   display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   cursor: pointer;
   color: var(--gold);
+}
+.hero-scroll-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 .hero-scroll-arrow {
   color: var(--gold);

@@ -110,13 +110,13 @@ export default function ClientSuccess() {
       {/* Page Header */}
       <section className="cs-header">
         <div className="hero-bg" />
-        <div className="cs-header-inner" style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <p className="section-label" style={{ marginBottom: '32px' }}>Client Success</p>
+        <div className="cs-header-inner" style={{ maxWidth: '760px', margin: '0 auto', width: '100%', textAlign: 'center' }}>
+          <p className="section-label" style={{ marginBottom: '32px', justifyContent: 'center' }}>Client Success</p>
           <h1 className="cs-page-title">
             The work<br />
             <em style={{ color: 'var(--gold)' }}>speaks.</em>
           </h1>
-          <p className="cs-page-sub">
+          <p className="cs-page-sub" style={{ margin: '0 auto' }}>
             Every engagement is built around one question: what does success actually look like for this client?
             These are the answers.
           </p>
