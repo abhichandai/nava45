@@ -106,8 +106,13 @@ export default function About() {
           <style>{`
             .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
             .team-member { display: flex; flex-direction: column; }
-            .team-photo-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; margin-bottom: 20px; background: var(--bg-alt); }
-            .team-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(15%); }
+            .team-photo-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; margin-bottom: 20px; background: var(--bg-alt); position: relative; }
+            .team-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(15%); transition: transform 0.4s ease, filter 0.4s ease; }
+            .team-member:hover .team-photo-wrap img { transform: scale(1.04); filter: brightness(0.35); }
+            .team-hover-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease, transform 0.35s ease; }
+            .team-member:hover .team-hover-overlay { opacity: 1; transform: translateY(0); }
+            .team-hover-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+            .team-hover-tag { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 3px 9px; }
             .team-member-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--text); margin-bottom: 4px; line-height: 1.2; }
             .team-member-title { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
             .team-bio-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; color: var(--text); text-decoration: none; cursor: pointer; background: none; border: none; padding: 0; letter-spacing: 0.02em; transition: color 0.2s; }
@@ -137,6 +142,11 @@ export default function About() {
               <div className="team-member" key={member.id}>
                 <div className="team-photo-wrap">
                   <img src={member.photo} alt={member.name} />
+                  <div className="team-hover-overlay">
+                    <div className="team-hover-tags">
+                      {member.tags.map(tag => <span key={tag} className="team-hover-tag">{tag}</span>)}
+                    </div>
+                  </div>
                 </div>
                 <p className="team-member-name">{member.name}</p>
                 <p className="team-member-title">{member.title}</p>
@@ -185,7 +195,7 @@ export default function About() {
             Delivering Happiness.
           </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 200px', gap: '64px', alignItems: 'start', marginBottom: '72px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 200px', gap: '64px', alignItems: 'center', marginBottom: '72px' }}>
             <div>
               <p className="case-body-text" style={{ marginBottom: '16px' }}>
                 Our philosophy is rooted in a simple belief: &ldquo;The best businesses are built on
@@ -208,7 +218,7 @@ export default function About() {
               <img
                 src="/delivering-happiness-book.png"
                 alt="Delivering Happiness by Tony Hsieh"
-                style={{ width: '100%', boxShadow: '0 20px 60px rgba(0,0,0,0.2)', borderRadius: '2px' }}
+                style={{ width: '100%', boxShadow: '0 20px 60px rgba(0,0,0,0.2)', borderRadius: '2px', display: 'block', margin: '0 auto' }}
               />
               <p style={{ fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', textAlign: 'center' }}>Tony Hsieh</p>
             </div>
