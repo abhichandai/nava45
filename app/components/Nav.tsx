@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react'
 import ThemeToggle from './ThemeToggle'
 
 export default function Nav() {
-  const [visible, setVisible] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
-      // Reveal the nav once the user scrolls past most of the hero fold
-      setVisible(window.scrollY > window.innerHeight * 0.7)
+      // Logo is always visible; the menu reveals once past most of the hero fold
+      setScrolled(window.scrollY > window.innerHeight * 0.7)
     }
     onScroll() // set correct state on mount (handles reload mid-page / anchor loads)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -16,9 +16,9 @@ export default function Nav() {
   }, [])
 
   return (
-    <nav className={visible ? 'nav--visible' : 'nav--hidden'}>
+    <nav className={scrolled ? 'nav--scrolled' : 'nav--top'}>
       <a href="/" className="nav-logo">Nava<span style={{ color: 'var(--gold)' }}>45</span></a>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+      <div className="nav-actions">
         <a href="/about" style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text)', textDecoration: 'none' }}>About Us</a>
         <a href="/client-success" style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text)', textDecoration: 'none' }}>Our Work</a>
         <a href="/#work" style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text)', textDecoration: 'none' }}>What We Do</a>

@@ -58,7 +58,7 @@
   border-color: var(--border);
 }
 
-[data-theme="dark"] nav {
+[data-theme="dark"] .nav--scrolled {
   background: linear-gradient(to bottom, rgba(14,13,12,0.97) 60%, transparent);
 }
 
@@ -110,6 +110,25 @@ body {
 .delay-2 { animation-delay: 0.24s; opacity: 0; }
 .delay-3 { animation-delay: 0.36s; opacity: 0; }
 
+/* Hero scroll cue — large gold down arrow, gently bouncing */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(12px); }
+}
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.hero-scroll-arrow {
+  color: var(--gold);
+  animation: bounce 2s ease-in-out infinite;
+}
+
 /* ─── SHARED ──────────────────────────────────────────────────────────────── */
 
 .gold-line {
@@ -130,8 +149,17 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: transparent;
+  transition: background 0.4s ease;
+}
+
+/* At top: only the logo shows; the bar itself shouldn't intercept hero clicks */
+.nav--top { pointer-events: none; }
+.nav--top .nav-logo { pointer-events: auto; }
+
+/* On scroll: the warm-white bar fades in behind the full menu */
+.nav--scrolled {
   background: linear-gradient(to bottom, rgba(250,250,248,0.96) 60%, transparent);
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .nav-logo {
@@ -159,13 +187,17 @@ nav {
 }
 .nav-cta:hover { background: var(--gold-800); }
 
-/* Reveal on scroll: nav stays clear of the hero, fades in past the fold */
-.nav--hidden {
+/* Reveal on scroll: logo stays put, the menu fades in past the fold */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
   opacity: 0;
   transform: translateY(-8px);
   pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.nav--visible {
+.nav--scrolled .nav-actions {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;

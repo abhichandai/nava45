@@ -17,6 +17,11 @@ export default function Home() {
             <a href="#contact" className="btn-primary">Apply to Work Together</a>
           </div>
         </div>
+        <div className="hero-scroll-cue animate-fade-up delay-3">
+          <svg className="hero-scroll-arrow" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v13M6 12l6 6 6-6" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
       </section>
 
       {/* Hero Quote — Adam Leipzig */}
