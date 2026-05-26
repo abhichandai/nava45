@@ -1,47 +1,60 @@
 'use client'
 import { useState } from 'react'
 
+const team = [
+  {
+    id: 'abhi',
+    name: 'Abhi Chand',
+    title: 'Chief Engineer & Strategist',
+    photo: '/team-abhi.png',
+    tags: ['Team Leader', 'Strategist', 'AI Intelligence', 'Bookworm'],
+    bio: [
+      'Abhi is the architect behind every engine at Nava45. He built this firm on one unshakeable conviction: that deep audience research, not instinct, is the only reliable foundation for a campaign that works.',
+      'Over more than a decade, Abhi has developed the proprietary systems and frameworks that drive results across every client engagement — combining strategic clarity with cutting-edge AI to build growth that lasts. His approach is simple: understand the audience completely, build the right system around them, and execute with precision.',
+      'Before Nava45, Abhi honed his expertise across industries ranging from luxury products to medical technology, giving him a uniquely cross-sector lens that most marketing strategists never develop. That breadth is what allows Nava45 to serve clients others can\'t.',
+    ],
+  },
+  {
+    id: 'aly',
+    name: 'Alyssandra Raycci Codal',
+    title: 'Content Engineer',
+    photo: '/team-aly.png',
+    tags: ['Content', 'Social Media', 'Creative'],
+    bio: [
+      'Alyssandra is the strategic mind behind every content decision at Nava45. She transforms audience research into content that earns attention at scale — owning the full operation from strategy to execution.',
+      'Her process starts with data and ends with impact. Alyssandra reverse-engineers what audiences are already responding to, builds content systems designed to compound over time, and manages every stage of production without losing the creative edge that makes the work perform.',
+      'She has a proven track record of building audiences that convert and brands that people genuinely care about — across TikTok, YouTube, LinkedIn, and beyond. When Alyssandra is behind a content strategy, the numbers move.',
+    ],
+  },
+  {
+    id: 'viola',
+    name: 'Viola Kazira',
+    title: 'Marketing Engineer',
+    photo: '/team-viola.png',
+    tags: ['Strategy', 'Audience Intelligence', 'Execution', 'Music Lover'],
+    bio: [
+      'The strategist who never stops at the plan. With over 10 years of marketing experience, Viola works with brands to build growth strategies that are as sharp in thinking as they are in delivery.',
+      'Viola sits at the intersection of audience intelligence and flawless execution — combining the analytical rigour to identify what will work with the operational discipline to make sure it does. She doesn\'t hand things off. She sees them through.',
+      'Her experience spans global brands across multiple industries, giving her a rare ability to move between strategic vision and ground-level delivery without losing momentum. When the strategy is right and the execution is flawless, growth follows. That is the standard Viola holds herself to on every engagement.',
+    ],
+  },
+]
+
 export default function About() {
   const [openBio, setOpenBio] = useState<string | null>(null)
-
-  const team = [
-    {
-      id: 'abhi',
-      name: 'Abhi Chand',
-      title: 'Chief Engineer & Strategist',
-      photo: '/team-abhi.png',
-      tags: ['Team Leader', 'Strategist', 'AI Intelligence', 'Bookworm'],
-      bio: 'Founder and the architect behind every engine at Nava45. Abhi built this firm on one unshakeable conviction: that deep audience research, not instinct, is the foundation of every campaign that works. Over a decade, he has developed the proprietary systems and frameworks that drive results for every client, combining strategic clarity with cutting-edge AI to stay ahead of every market.',
-    },
-    {
-      id: 'aly',
-      name: 'Alyssandra Raycci Codal',
-      title: 'Content Engineer',
-      photo: '/team-aly.png',
-      tags: ['Content', 'Social Media', 'Creative'],
-      bio: 'The strategic mind behind every content decision at Nava45. Alyssandra transforms audience research into content that earns attention at scale, owning the full operation from strategy to execution. She has a proven track record of building audiences that convert and brands that people genuinely care about.',
-    },
-    {
-      id: 'viola',
-      name: 'Viola Kazira',
-      title: 'Marketing Engineer',
-      photo: '/team-viola.png',
-      tags: ['Strategy', 'Audience Intelligence', 'Execution', 'Music Lover'],
-      bio: 'The strategist who never stops at the plan. With over 10 years of marketing experience, Viola works with brands to build growth strategies that are as sharp in thinking as they are in delivery, combining audience intelligence with the execution rigour that turns good ideas into measurable results. When the strategy is right and the execution is flawless, growth follows.',
-    },
-  ]
+  const activeMember = team.find(m => m.id === openBio)
 
   return (
     <>
-      {/* Hero — full screen, centred */}
+      {/* Hero */}
       <section className="hero">
         <div className="hero-bg" />
         <div className="hero-content" style={{ textAlign: 'center', alignItems: 'center' }}>
-          <h1 className="hero-title animate-fade-up">
+          <h1 className="hero-title animate-fade-up" style={{ maxWidth: '800px' }}>
             We don&rsquo;t follow the playbook.<br />
             <em>We write it.</em>
           </h1>
-          <p style={{ fontSize: '1rem', color: 'var(--muted)', maxWidth: '520px', lineHeight: 1.8, marginTop: '16px', textAlign: 'center' }}>
+          <p style={{ fontSize: '1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.8, marginTop: '16px', textAlign: 'center' }}>
             A global growth and marketing agency combining research, strategy, and AI to build presence that drives real results.
           </p>
         </div>
@@ -87,48 +100,76 @@ export default function About() {
           </p>
 
           <style>{`
-            .team-card-wrap { display: flex; flex-direction: column; }
-            .team-photo { position: relative; overflow: hidden; aspect-ratio: 3/4; }
-            .team-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.4s ease, filter 0.4s ease; }
-            .team-card-wrap:hover .team-photo img { transform: scale(1.04); filter: brightness(0.4); }
-            .team-hover-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 20px 24px; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease, transform 0.35s ease; }
-            .team-card-wrap:hover .team-hover-overlay { opacity: 1; transform: translateY(0); }
-            .team-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-            .team-tag { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 3px 9px; }
-            .team-info { padding: 16px 4px 0; }
-            .bio-toggle { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); background: none; border: none; cursor: pointer; padding: 0; margin-top: 10px; display: flex; align-items: center; gap: 6px; }
-            .bio-text { font-size: 0.85rem; color: var(--muted); line-height: 1.8; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+            .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+            .team-member { display: flex; flex-direction: column; }
+            .team-photo-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; margin-bottom: 20px; background: var(--bg-alt); }
+            .team-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(15%); }
+            .team-member-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--text); margin-bottom: 4px; line-height: 1.2; }
+            .team-member-title { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+            .team-bio-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; color: var(--text); text-decoration: none; cursor: pointer; background: none; border: none; padding: 0; letter-spacing: 0.02em; transition: color 0.2s; }
+            .team-bio-link:hover { color: var(--gold); }
+            .team-bio-link svg { transition: transform 0.2s; }
+            .team-bio-link:hover svg { transform: translateX(4px); }
+
+            /* Modal */
+            .bio-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(4px); }
+            .bio-modal { background: var(--bg); max-width: 860px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; display: grid; grid-template-columns: 280px 1fr; }
+            .bio-modal-photo { width: 100%; aspect-ratio: 3/4; overflow: hidden; }
+            .bio-modal-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+            .bio-modal-content { padding: 48px 48px 48px 40px; display: flex; flex-direction: column; }
+            .bio-modal-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: var(--bg-alt); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text); z-index: 1; transition: background 0.2s; }
+            .bio-modal-close:hover { background: var(--border); }
+            .bio-modal-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+            .bio-modal-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--text); margin-bottom: 6px; line-height: 1.1; }
+            .bio-modal-title { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; }
+            .bio-modal-para { font-size: 0.92rem; color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
+            .bio-modal-para:last-child { margin-bottom: 0; }
+            .bio-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+            .bio-tag { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 4px 10px; }
           `}</style>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
+          <div className="team-grid">
             {team.map(member => (
-              <div className="team-card-wrap" key={member.id}>
-                <div className="team-photo">
+              <div className="team-member" key={member.id}>
+                <div className="team-photo-wrap">
                   <img src={member.photo} alt={member.name} />
-                  <div className="team-hover-overlay">
-                    <p style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>{member.title}</p>
-                    <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>{member.name}</p>
-                    <div className="team-tags">
-                      {member.tags.map(tag => <span key={tag} className="team-tag">{tag}</span>)}
-                    </div>
-                  </div>
                 </div>
-                <div className="team-info">
-                  <p style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '4px' }}>{member.title}</p>
-                  <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, color: 'var(--text)', lineHeight: 1.2 }}>{member.name}</p>
-                  <button
-                    className="bio-toggle"
-                    onClick={() => setOpenBio(openBio === member.id ? null : member.id)}
-                  >
-                    {openBio === member.id ? '— Less' : '+ About'}
-                  </button>
-                  {openBio === member.id && (
-                    <p className="bio-text">{member.bio}</p>
-                  )}
-                </div>
+                <p className="team-member-name">{member.name}</p>
+                <p className="team-member-title">{member.title}</p>
+                <button className="team-bio-link" onClick={() => setOpenBio(member.id)}>
+                  View full bio
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
               </div>
             ))}
           </div>
+
+          {/* Bio Modal */}
+          {activeMember && (
+            <div className="bio-modal-overlay" onClick={() => setOpenBio(null)}>
+              <div className="bio-modal" onClick={e => e.stopPropagation()}>
+                <div className="bio-modal-photo">
+                  <img src={activeMember.photo} alt={activeMember.name} />
+                </div>
+                <div className="bio-modal-content">
+                  <button className="bio-modal-close" onClick={() => setOpenBio(null)}>✕</button>
+                  <p className="bio-modal-label">About</p>
+                  <p className="bio-modal-name">{activeMember.name}</p>
+                  <p className="bio-modal-title">{activeMember.title}</p>
+                  {activeMember.bio.map((para, i) => (
+                    <p key={i} className="bio-modal-para">{para}</p>
+                  ))}
+                  <div className="bio-tags">
+                    {activeMember.tags.map(tag => (
+                      <span key={tag} className="bio-tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -140,7 +181,6 @@ export default function About() {
             Delivering Happiness.
           </h2>
 
-          {/* Book + text layout */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 200px', gap: '64px', alignItems: 'start', marginBottom: '72px' }}>
             <div>
               <p className="case-body-text" style={{ marginBottom: '16px' }}>
@@ -170,7 +210,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Why Brands Choose Us */}
           <p className="case-section-label" style={{ marginBottom: '48px' }}>Why Brands Choose Us</p>
           <div className="case-approach-grid">
             <div className="case-approach-card">
