@@ -55,7 +55,7 @@ export default function About() {
             <em>We write it.</em>
           </h1>
           <p style={{ fontSize: '0.8rem', color: 'var(--muted)', marginTop: '48px', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-            Scroll for more
+            Discover Nava45
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ animation: 'bounce 2s infinite' }}>
               <path d="M10 4v12M4 10l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -109,7 +109,7 @@ export default function About() {
             .team-photo-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; margin-bottom: 20px; background: var(--bg-alt); }
             .team-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(15%); }
             .team-member-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--text); margin-bottom: 4px; line-height: 1.2; }
-            .team-member-title { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+            .team-member-title { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
             .team-bio-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; color: var(--text); text-decoration: none; cursor: pointer; background: none; border: none; padding: 0; letter-spacing: 0.02em; transition: color 0.2s; }
             .team-bio-link:hover { color: var(--gold); }
             .team-bio-link svg { transition: transform 0.2s; }
@@ -204,7 +204,7 @@ export default function About() {
                 we bring to every client we work with.
               </p>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
               <img
                 src="/delivering-happiness-book.png"
                 alt="Delivering Happiness by Tony Hsieh"
