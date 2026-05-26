@@ -33,9 +33,9 @@ const team = [
     photo: '/team-viola.png',
     tags: ['Strategy', 'Audience Intelligence', 'Execution', 'Music Lover'],
     bio: [
-      'The strategist who never stops at the plan. With over 10 years of marketing experience, Viola works with brands to build growth strategies that are as sharp in thinking as they are in delivery.',
-      'Viola sits at the intersection of audience intelligence and flawless execution — combining the analytical rigour to identify what will work with the operational discipline to make sure it does. She doesn\'t hand things off. She sees them through.',
-      'Her experience spans global brands across multiple industries, giving her a rare ability to move between strategic vision and ground-level delivery without losing momentum. When the strategy is right and the execution is flawless, growth follows. That is the standard Viola holds herself to on every engagement.',
+      'With over 10 years of marketing experience, Viola works with brands to build growth strategies that are as sharp in thinking as they are in delivery.',
+      'Viola sits at the intersection of marketing strategy, audience intelligence, and flawless execution, combining the analytical rigour to identify what will work with the operational discipline to make sure it does. She doesn't just develop strategies. She sees them through.',
+      'Her experience spans global brands, giving her the rare versatility to work with brands in multiple industries. When the strategy is right and the execution is flawless, growth follows. That is the standard Viola holds herself to on every engagement.',
     ],
   },
 ]
