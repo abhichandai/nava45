@@ -34,7 +34,7 @@ const team = [
     tags: ['Strategy', 'Audience Intelligence', 'Execution', 'Music Lover'],
     bio: [
       'With over 10 years of marketing experience, Viola works with brands to build growth strategies that are as sharp in thinking as they are in delivery.',
-      'Viola sits at the intersection of marketing strategy, audience intelligence, and flawless execution, combining the analytical rigour to identify what will work with the operational discipline to make sure it does. She doesn't just develop strategies. She sees them through.',
+      'Viola sits at the intersection of marketing strategy, audience intelligence, and flawless execution, combining the analytical rigour to identify what will work with the operational discipline to make sure it does. She doesn\'t just develop strategies. She sees them through.',
       'Her experience spans global brands, giving her the rare versatility to work with brands in multiple industries. When the strategy is right and the execution is flawless, growth follows. That is the standard Viola holds herself to on every engagement.',
     ],
   },
