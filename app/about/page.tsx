@@ -140,7 +140,7 @@ export default function About() {
           <div className="team-grid">
             {team.map(member => (
               <div className="team-member" key={member.id}>
-                <div className="team-photo-wrap">
+                <div className="team-photo-wrap" onClick={() => setOpenBio(member.id)} style={{ cursor: 'pointer' }}>
                   <img src={member.photo} alt={member.name} />
                   <div className="team-hover-overlay">
                     <div className="team-hover-tags">
