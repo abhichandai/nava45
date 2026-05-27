@@ -1564,3 +1564,258 @@ footer {
 .work-see-all:hover {
   letter-spacing: 0.2em;
 }
+
+/* ─── Chunk 2: Hub + Growth Engine + Stubs + Dropdown ───────────────────── */
+
+/* Hero sub copy used across hub, engine pages, and stubs */
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 32px auto 0;
+  text-align: center;
+}
+
+/* Stub page CTA row */
+.stub-cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 48px;
+}
+.stub-text-link {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.stub-text-link:hover { color: var(--gold); }
+
+/* Case body link — read the case study with arrow */
+.case-body-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 6px;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.case-body-link:hover {
+  color: var(--gold);
+  gap: 14px;
+}
+.case-body-link svg { transition: transform 0.2s ease; }
+.case-body-link:hover svg { transform: translateX(2px); }
+
+/* Calculator placeholder — signals the interactive coming next */
+.calc-placeholder {
+  margin-top: 48px;
+  padding: 72px 48px;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--gold);
+  background: var(--bg-alt);
+  text-align: center;
+}
+.calc-placeholder-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.4;
+  margin: 0 auto 36px;
+  max-width: 580px;
+}
+.calc-placeholder-status {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+}
+
+/* ── /what-we-do hub ─────────────────────────────────────────────────── */
+.wwd-engines {
+  padding: 120px 60px;
+  background: var(--bg);
+}
+.wwd-engines-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wwd-framing-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.5;
+  max-width: 760px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+.wwd-engines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.wwd-engine-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 40px;
+  background: var(--bg-alt);
+  border: 1px solid rgba(184,150,46,0.15);
+  border-top: 2px solid var(--gold);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.wwd-engine-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(184,150,46,0.18), 0 2px 8px rgba(0,0,0,0.06);
+}
+.wwd-engine-card--coming { opacity: 0.78; }
+.wwd-engine-card--coming:hover { opacity: 1; }
+.wwd-engine-coming-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  background: var(--bg);
+}
+.wwd-engine-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.wwd-engine-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 28px;
+  line-height: 1.3;
+}
+.wwd-engine-desc {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  flex-grow: 1;
+}
+.wwd-engine-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  transition: gap 0.2s ease;
+}
+.wwd-engine-card:hover .wwd-engine-link { gap: 12px; }
+
+/* ── Nav dropdown for What We Do ─────────────────────────────────────── */
+.nav-dropdown-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-dropdown-trigger svg {
+  transition: transform 0.2s ease;
+  color: var(--gold);
+}
+.nav-dropdown-wrap:hover .nav-dropdown-trigger svg,
+.nav-dropdown-wrap:focus-within .nav-dropdown-trigger svg {
+  transform: rotate(180deg);
+}
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  margin-top: 14px;
+  min-width: 300px;
+  background: var(--bg);
+  border: 1px solid rgba(184,150,46,0.18);
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 8px 32px rgba(40,30,10,0.12), 0 4px 12px rgba(0,0,0,0.06);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+}
+.nav-dropdown-wrap:hover .nav-dropdown,
+.nav-dropdown-wrap:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.nav-dropdown-item:hover {
+  color: var(--gold);
+  background: var(--bg-alt);
+}
+.nav-dropdown-item--coming { color: var(--muted); }
+.nav-dropdown-item--coming:hover { color: var(--muted); background: var(--bg-alt); }
+.nav-dropdown-coming-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+}
+[data-theme="dark"] .nav-dropdown {
+  background: var(--bg-alt);
+  border-color: rgba(201,168,76,0.20);
+}
+
+/* ── Responsive: stack engine cards on smaller screens ───────────────── */
+@media (max-width: 900px) {
+  .wwd-engines-grid { grid-template-columns: 1fr; }
+  .wwd-engines { padding: 80px 24px; }
+  .wwd-framing-text { margin-bottom: 56px; }
+}

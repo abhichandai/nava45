@@ -116,7 +116,7 @@ export default function Home() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p className="section-label">What We Do</p>
           <div className="work-grid">
-            <div className="work-card">
+            <a href="/what-we-do/magnetic-content-engine" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3 className="work-title">The Magnetic Content Engine</h3>
               <p className="work-subtitle">Your expertise, amplified.</p>
               <p className="work-desc">
@@ -124,8 +124,8 @@ export default function Home() {
                 a content strategy that serves them, then build the systems that keep your
                 brand growing while you focus on your business.
               </p>
-            </div>
-            <div className="work-card">
+            </a>
+            <a href="/what-we-do/growth-engine" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3 className="work-title">The Growth Engine</h3>
               <p className="work-subtitle">Your pipeline, on demand.</p>
               <p className="work-desc">
@@ -134,8 +134,8 @@ export default function Home() {
                 Every conversation starts with the right person, at the right time, already
                 knowing they need what you offer.
               </p>
-            </div>
-            <div className="work-card">
+            </a>
+            <a href="/what-we-do/intelligence-engine" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3 className="work-title">The Intelligence Engine</h3>
               <p className="work-subtitle">Are you using AI to its full potential?</p>
               <p className="work-desc">
@@ -143,7 +143,7 @@ export default function Home() {
                 but have no idea where to begin. We identify the highest impact AI automation
                 opportunities in your business and build systems to automate that manual work entirely.
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
