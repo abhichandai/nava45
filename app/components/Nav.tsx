@@ -108,13 +108,14 @@ export default function Nav() {
           <a href="/apply" className="nav-cta">Apply to Work Together</a>
         </div>
 
-        {/* Burger (mobile only via CSS) */}
+        {/* Burger (mobile only via CSS) — opens the menu; closing happens via the X inside it */}
         <button
           type="button"
-          className={`nav-burger ${mobileOpen ? 'nav-burger--open' : ''}`}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          className="nav-burger"
+          aria-label="Open menu"
           aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((v) => !v)}
+          aria-controls="nav-mobile-menu"
+          onClick={() => setMobileOpen(true)}
         >
           <span className="nav-burger-line" />
           <span className="nav-burger-line" />
@@ -124,11 +125,22 @@ export default function Nav() {
 
       {/* Full-screen mobile menu overlay */}
       <div
+        id="nav-mobile-menu"
         className={`nav-mobile-menu ${mobileOpen ? 'nav-mobile-menu--open' : ''}`}
         role="dialog"
         aria-modal="true"
         aria-hidden={!mobileOpen}
       >
+        <button
+          type="button"
+          className="nav-mobile-close"
+          aria-label="Close menu"
+          onClick={closeMobile}
+        >
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M5 5l12 12M17 5L5 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        </button>
         <div className="nav-mobile-inner">
           <div className="nav-mobile-links">
             <a href="/about" className="nav-mobile-link" onClick={closeMobile}>About Us</a>

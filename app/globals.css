@@ -1857,7 +1857,6 @@ footer {
   padding: 0;
   cursor: pointer;
   position: relative;
-  z-index: 1001;
   -webkit-tap-highlight-color: transparent;
 }
 .nav-burger-line {
@@ -1866,12 +1865,7 @@ footer {
   height: 1.5px;
   background: var(--text);
   border-radius: 1px;
-  transform-origin: center;
-  transition: transform 0.3s ease, opacity 0.2s ease, background 0.3s ease;
 }
-.nav-burger--open .nav-burger-line:nth-child(1) { transform: translateY(8.25px) rotate(45deg); }
-.nav-burger--open .nav-burger-line:nth-child(2) { opacity: 0; }
-.nav-burger--open .nav-burger-line:nth-child(3) { transform: translateY(-8.25px) rotate(-45deg); }
 
 /* Full-screen mobile menu overlay */
 .nav-mobile-menu {
@@ -1898,6 +1892,27 @@ footer {
     radial-gradient(ellipse at 2% 0%, rgba(184,150,46,0.18) 0%, transparent 55%),
     var(--bg);
 }
+
+/* In-menu close X — clear, generous tap target, top-right */
+.nav-mobile-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--text);
+  z-index: 5;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s ease;
+}
+.nav-mobile-close svg { width: 22px; height: 22px; }
+.nav-mobile-close:hover, .nav-mobile-close:active { color: var(--gold); }
 
 .nav-mobile-inner {
   flex: 1;
