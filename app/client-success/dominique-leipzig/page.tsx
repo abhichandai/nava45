@@ -10,7 +10,7 @@ export default function DominiqueLeipzig() {
           <div className="case-breadcrumb">
             <a href="/client-success" className="case-breadcrumb-link">Client Success</a>
             <span className="case-breadcrumb-sep"> / </span>
-            <span>Dominique Leipzig</span>
+            <span>Dominique Shelton Leipzig</span>
           </div>
           <p className="case-engine-label">The Magnetic Content Engine</p>
           <h1 className="case-title">
@@ -53,7 +53,7 @@ export default function DominiqueLeipzig() {
           <div className="case-profile">
             <div>
               <p className="case-profile-label">Client</p>
-              <p className="case-profile-value">Dominique Leipzig</p>
+              <p className="case-profile-value">Dominique Shelton Leipzig</p>
             </div>
             <div>
               <p className="case-profile-label">Background</p>

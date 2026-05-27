@@ -1,9 +1,11 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ThemeToggle from './ThemeToggle'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const dropdownWrapRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => {
@@ -14,6 +16,25 @@ export default function Nav() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  // Close dropdown on click outside or Escape
+  useEffect(() => {
+    if (!dropdownOpen) return
+    const onPointerDown = (e: MouseEvent) => {
+      if (dropdownWrapRef.current && !dropdownWrapRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setDropdownOpen(false)
+    }
+    document.addEventListener('mousedown', onPointerDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [dropdownOpen])
 
   const linkStyle = {
     fontSize: '0.75rem',
@@ -29,13 +50,24 @@ export default function Nav() {
       <div className="nav-actions">
         <a href="/about" style={linkStyle}>About Us</a>
         <a href="/client-success" style={linkStyle}>Client Success</a>
-        <div className="nav-dropdown-wrap">
-          <a href="/what-we-do" className="nav-dropdown-trigger" style={linkStyle}>
+        <div
+          ref={dropdownWrapRef}
+          className={`nav-dropdown-wrap ${dropdownOpen ? 'nav-dropdown-wrap--open' : ''}`}
+        >
+          <a href="/what-we-do" className="nav-dropdown-label" style={linkStyle}>
             What We Do
+          </a>
+          <button
+            type="button"
+            className="nav-dropdown-caret"
+            aria-label="Toggle What We Do menu"
+            aria-expanded={dropdownOpen}
+            onClick={() => setDropdownOpen((v) => !v)}
+          >
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
               <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
+          </button>
           <div className="nav-dropdown" role="menu">
             <a href="/what-we-do/growth-engine" className="nav-dropdown-item">
               The Growth Engine

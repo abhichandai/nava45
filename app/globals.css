@@ -1741,18 +1741,30 @@ footer {
   position: relative;
   display: inline-flex;
   align-items: center;
+  gap: 2px;
 }
-.nav-dropdown-trigger {
+.nav-dropdown-label {
+  /* uses inline linkStyle from Nav.tsx — consistent with other nav links */
+}
+.nav-dropdown-caret {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 10px;
+  margin: -10px -6px -10px -4px;
+  color: var(--gold);
+  -webkit-tap-highlight-color: transparent;
 }
-.nav-dropdown-trigger svg {
+.nav-dropdown-caret svg {
   transition: transform 0.2s ease;
   color: var(--gold);
 }
-.nav-dropdown-wrap:hover .nav-dropdown-trigger svg,
-.nav-dropdown-wrap:focus-within .nav-dropdown-trigger svg {
+.nav-dropdown-wrap:hover .nav-dropdown-caret svg,
+.nav-dropdown-wrap:focus-within .nav-dropdown-caret svg,
+.nav-dropdown-wrap--open .nav-dropdown-caret svg {
   transform: rotate(180deg);
 }
 .nav-dropdown {
@@ -1783,7 +1795,8 @@ footer {
   height: 14px;
 }
 .nav-dropdown-wrap:hover .nav-dropdown,
-.nav-dropdown-wrap:focus-within .nav-dropdown {
+.nav-dropdown-wrap:focus-within .nav-dropdown,
+.nav-dropdown-wrap--open .nav-dropdown {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;

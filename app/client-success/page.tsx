@@ -36,7 +36,7 @@ const caseStudies = [
     engine: 'The Magnetic Content Engine',
     headline: 'From minimal impressions to 2.7K newsletter subscribers.',
     description: "A LinkedIn presence that wasn't reaching the right people. We cracked the algorithm, built the system, and gave Dominique a direct owned channel to her ideal clients.",
-    client: 'Dominique Leipzig',
+    client: 'Dominique Shelton Leipzig',
     stat: '2.7K',
     statLabel: 'Newsletter Subscribers',
     live: true,
