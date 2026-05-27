@@ -67,7 +67,7 @@ export default function Calculator() {
   const [adSpend, setAdSpend] = useState(10000)
   const [cpc, setCpc] = useState(5)
   const [signupRate, setSignupRate] = useState(5)
-  const [bookRate, setBookRate] = useState(50)
+  const [bookRate, setBookRate] = useState(30)
   const [showRate, setShowRate] = useState(75)
   const [closeRate, setCloseRate] = useState(30)
   const [dealSize, setDealSize] = useState(5000)
