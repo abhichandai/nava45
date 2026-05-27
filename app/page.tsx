@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* Results */}
-      <section className="results-section" style={{ padding: '0 60px' }}>
+      <section className="results-section">
         <div className="results-inner">
           <p className="section-label">Results</p>
           <div className="results-grid">
