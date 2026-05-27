@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Calculator from './Calculator'
 
 export const metadata: Metadata = {
   title: 'The Growth Engine · Nava45',
@@ -84,17 +85,12 @@ export default function GrowthEnginePage() {
         </div>
       </section>
 
-      {/* Calculator placeholder */}
+      {/* Calculator */}
       <section className="case-body-section">
         <div className="case-body-inner">
           <p className="case-section-label">The Pipeline Calculator</p>
           <h2 className="case-section-title">See it on your numbers.</h2>
-          <div className="calc-placeholder">
-            <p className="calc-placeholder-headline">
-              A live model. Drag your ad spend, conversion rates, and deal size to see exactly how the engine translates investment into pipeline.
-            </p>
-            <p className="calc-placeholder-status">Coming next</p>
-          </div>
+          <Calculator />
         </div>
       </section>
 

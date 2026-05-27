@@ -1991,3 +1991,254 @@ footer {
   .results-section { padding: 80px 24px; min-height: auto; }
   .results-grid { grid-template-columns: 1fr; gap: 56px; }
 }
+
+/* ─── Chunk 3: Growth Engine Pipeline Calculator ───────────────────────── */
+
+.calc {
+  margin-top: 56px;
+  width: 100%;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.calc-col-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+/* ── Inputs (left column) ────────────────────────────────────────────── */
+.calc-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.calc-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calc-slider-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.calc-slider-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.calc-slider-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* Native range input — reset + cross-browser custom thumb/track */
+.calc-slider-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+.calc-slider-input:focus { outline: none; }
+
+/* Track — gold fill up to the thumb, light track after */
+.calc-slider-input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(to right,
+    var(--gold) 0%,
+    var(--gold) var(--pct, 0%),
+    var(--border) var(--pct, 0%),
+    var(--border) 100%
+  );
+}
+.calc-slider-input::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--border);
+  border: 0;
+}
+.calc-slider-input::-moz-range-progress {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--gold);
+}
+
+/* Thumb */
+.calc-slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 0;
+  margin-top: -7.5px; /* center on the 3px track */
+  cursor: grab;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.calc-slider-input::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 6px rgba(184,150,46,0.15);
+}
+.calc-slider-input::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.12);
+}
+.calc-slider-input:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 6px rgba(184,150,46,0.22);
+}
+
+.calc-slider-input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 0;
+  cursor: grab;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.calc-slider-input::-moz-range-thumb:hover {
+  box-shadow: 0 0 0 6px rgba(184,150,46,0.15);
+}
+.calc-slider-input::-moz-range-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.12);
+}
+.calc-slider-input:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 6px rgba(184,150,46,0.22);
+}
+
+/* ── Outputs (right column) ──────────────────────────────────────────── */
+.calc-outputs {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 40px 36px;
+  background: var(--bg-alt);
+  border-left: 2px solid var(--gold);
+}
+
+.calc-output {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calc-output-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.calc-output-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.calc-output--hero .calc-output-value { font-size: clamp(2.4rem, 4vw, 3.6rem); }
+.calc-output .calc-output-value { font-size: clamp(1.8rem, 2.8vw, 2.4rem); }
+
+.calc-output-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.calc-output--small .calc-output-value {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+}
+
+/* ── Funnel narrative ────────────────────────────────────────────────── */
+.calc-funnel {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+.calc-funnel-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.calc-funnel-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+.calc-funnel-text strong {
+  font-weight: 500;
+  color: var(--gold);
+}
+.calc-funnel-sep {
+  color: var(--gold);
+  margin: 0 12px;
+  display: inline-block;
+}
+
+.calc-note {
+  margin-top: 28px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+/* ── Mobile: stack columns, tighter outputs ──────────────────────────── */
+@media (max-width: 900px) {
+  .calc { margin-top: 40px; }
+  .calc-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .calc-outputs {
+    padding: 32px 24px;
+  }
+  .calc-funnel { margin-top: 40px; }
+  .calc-funnel-sep { margin: 0 8px; }
+  /* Larger touch target on thumb */
+  .calc-slider-input::-webkit-slider-thumb { width: 22px; height: 22px; margin-top: -9.5px; }
+  .calc-slider-input::-moz-range-thumb { width: 22px; height: 22px; }
+}
