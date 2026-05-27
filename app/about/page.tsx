@@ -281,7 +281,7 @@ export default function About() {
         <p className="contact-sub">
           If you&rsquo;re as obsessed with excellence as we are, we&rsquo;d love to hear from you.
         </p>
-        <a href="/#contact" className="btn-primary">Apply to work together</a>
+        <a href="/apply" className="btn-primary">Apply to Work Together</a>
       </section>
 
       <footer className="site-footer">

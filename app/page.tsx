@@ -14,7 +14,7 @@ export default function Home() {
             brands & leaders.
           </h1>
           <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <a href="#contact" className="btn-primary">Apply to Work Together</a>
+            <a href="/apply" className="btn-primary">Apply to Work Together</a>
           </div>
         </div>
         <div className="hero-scroll-cue animate-fade-up delay-3">
@@ -251,8 +251,8 @@ export default function Home() {
         <p className="contact-sub">
           If you&rsquo;re as obsessed with excellence as we are, we&rsquo;d love to hear from you.
         </p>
-        <a href="#" className="btn-primary">
-          Get in Touch
+        <a href="/apply" className="btn-primary">
+          Apply to Work Together
         </a>
       </section>
 

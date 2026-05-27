@@ -23,7 +23,7 @@ export default function Nav() {
         <a href="/client-success" style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text)', textDecoration: 'none' }}>Client Success</a>
         <a href="/#work" style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text)', textDecoration: 'none' }}>What We Do</a>
         <ThemeToggle />
-        <a href="/#contact" className="nav-cta">Apply to Work Together</a>
+        <a href="/apply" className="nav-cta">Apply to Work Together</a>
       </div>
     </nav>
   )

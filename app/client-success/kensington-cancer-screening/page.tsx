@@ -197,7 +197,7 @@ export default function KensingtonCancerScreening() {
           <p className="cs-cta-sub">
             We work with a select group of clients. If you&rsquo;re serious about growth, we&rsquo;d like to hear from you.
           </p>
-          <a href="/#contact" className="btn-primary">Apply to Work Together</a>
+          <a href="/apply" className="btn-primary">Apply to Work Together</a>
         </div>
       </section>
 
