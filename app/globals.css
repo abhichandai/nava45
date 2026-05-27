@@ -1772,6 +1772,16 @@ footer {
   pointer-events: none;
   transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
 }
+/* Invisible bridge: extends hover area up across the 14px gap to the trigger
+   so the menu doesn't close mid-traverse */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
 .nav-dropdown-wrap:hover .nav-dropdown,
 .nav-dropdown-wrap:focus-within .nav-dropdown {
   opacity: 1;
