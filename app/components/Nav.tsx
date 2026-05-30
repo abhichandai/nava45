@@ -94,9 +94,8 @@ export default function Nav() {
               <a href="/what-we-do/growth-engine" className="nav-dropdown-item">
                 The Growth Engine
               </a>
-              <a href="/what-we-do/magnetic-content-engine" className="nav-dropdown-item nav-dropdown-item--coming">
-                <span>The Magnetic Content Engine</span>
-                <span className="nav-dropdown-coming-tag">Coming Soon</span>
+              <a href="/what-we-do/magnetic-content-engine" className="nav-dropdown-item">
+                The Magnetic Content Engine
               </a>
               <a href="/what-we-do/intelligence-engine" className="nav-dropdown-item nav-dropdown-item--coming">
                 <span>The Intelligence Engine</span>
@@ -150,9 +149,8 @@ export default function Nav() {
               <a href="/what-we-do/growth-engine" className="nav-mobile-sublink" onClick={closeMobile}>
                 The Growth Engine
               </a>
-              <a href="/what-we-do/magnetic-content-engine" className="nav-mobile-sublink nav-mobile-sublink--coming" onClick={closeMobile}>
-                <span>The Magnetic Content Engine</span>
-                <span className="nav-dropdown-coming-tag">Coming Soon</span>
+              <a href="/what-we-do/magnetic-content-engine" className="nav-mobile-sublink" onClick={closeMobile}>
+                The Magnetic Content Engine
               </a>
               <a href="/what-we-do/intelligence-engine" className="nav-mobile-sublink nav-mobile-sublink--coming" onClick={closeMobile}>
                 <span>The Intelligence Engine</span>

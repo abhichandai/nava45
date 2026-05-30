@@ -11,7 +11,7 @@ const engines = [
     name: 'The Magnetic Content Engine',
     tagline: 'Your expertise, amplified.',
     desc: 'Turn what you know into an audience that compounds, and a brand the market can\u2019t overlook.',
-    live: false,
+    live: true,
   },
   {
     slug: 'growth-engine',
