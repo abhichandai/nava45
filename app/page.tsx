@@ -1,13 +1,7 @@
-import ThemeToggle from './components/ThemeToggle'
 
 export default function Home() {
   return (
     <>
-      {/* Nav */}
-      <nav>
-        <a href="/" className="nav-logo">Nava<span style={{color:'var(--gold)'}}>45</span></a>
-        <ThemeToggle />
-      </nav>
 
       {/* Hero */}
       <section className="hero">
@@ -20,13 +14,21 @@ export default function Home() {
             brands & leaders.
           </h1>
           <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <a href="#contact" className="btn-primary">Apply to Work Together</a>
+            <a href="/apply" className="btn-primary">Apply to Work Together</a>
           </div>
+        </div>
+        <div className="hero-scroll-cue animate-fade-up delay-3">
+          <a href="#quote" className="hero-scroll-link" aria-label="Scroll to next section">
+            <svg className="hero-scroll-arrow" width="40" height="46" viewBox="0 0 24 28" fill="none" aria-hidden="true">
+              <path d="M5 8l7 7 7-7" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M5 16l7 7 7-7" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </div>
       </section>
 
       {/* Hero Quote — Adam Leipzig */}
-      <section className="hero-quote-section">
+      <section id="quote" className="hero-quote-section">
         <div className="hero-quote-inner">
           <span className="hero-quote-mark">&ldquo;</span>
           <blockquote className="hero-quote-text">
@@ -114,7 +116,7 @@ export default function Home() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p className="section-label">What We Do</p>
           <div className="work-grid">
-            <div className="work-card">
+            <a href="/what-we-do/magnetic-content-engine" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3 className="work-title">The Magnetic Content Engine</h3>
               <p className="work-subtitle">Your expertise, amplified.</p>
               <p className="work-desc">
@@ -122,8 +124,8 @@ export default function Home() {
                 a content strategy that serves them, then build the systems that keep your
                 brand growing while you focus on your business.
               </p>
-            </div>
-            <div className="work-card">
+            </a>
+            <a href="/what-we-do/growth-engine" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3 className="work-title">The Growth Engine</h3>
               <p className="work-subtitle">Your pipeline, on demand.</p>
               <p className="work-desc">
@@ -132,8 +134,8 @@ export default function Home() {
                 Every conversation starts with the right person, at the right time, already
                 knowing they need what you offer.
               </p>
-            </div>
-            <div className="work-card">
+            </a>
+            <a href="/what-we-do/intelligence-engine" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3 className="work-title">The Intelligence Engine</h3>
               <p className="work-subtitle">Are you using AI to its full potential?</p>
               <p className="work-desc">
@@ -141,13 +143,13 @@ export default function Home() {
                 but have no idea where to begin. We identify the highest impact AI automation
                 opportunities in your business and build systems to automate that manual work entirely.
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Results */}
-      <section className="results-section" style={{ padding: '0 60px' }}>
+      <section className="results-section">
         <div className="results-inner">
           <p className="section-label">Results</p>
           <div className="results-grid">
@@ -170,8 +172,20 @@ export default function Home() {
       {/* The Work */}
       <section className="thework-section">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <p className="section-label">Our Work</p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '56px' }}>
+            <p className="section-label" style={{ marginBottom: 0 }}>Our Work</p>
+            <a href="/client-success" className="work-see-all">See all work →</a>
+          </div>
           <div className="work-grid">
+            <a href="/client-success/adam-leipzig" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <p className="work-engine-label">The Magnetic Content Engine</p>
+              <h3 className="work-case-headline">327% audience growth. Hollywood producer.</h3>
+              <p className="work-desc">
+                A world-class creator with stalled growth and no repeatable system. We rebuilt the strategy from audience
+                intelligence up — and tripled his hook retention rate in the process.
+              </p>
+              <p className="work-client">Adam Leipzig</p>
+            </a>
             <div className="work-card">
               <p className="work-engine-label">The Growth Engine</p>
               <h3 className="work-case-headline">$14.5M in qualified pipeline.</h3>
@@ -180,24 +194,17 @@ export default function Home() {
                 We built the full digital acquisition system from scratch.
               </p>
               <p className="work-client">Balance Catamarans</p>
+              <a href="/client-success/balance-catamarans" style={{ display: 'inline-block', marginTop: '20px', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', textDecoration: 'none' }}>Read case study →</a>
             </div>
             <div className="work-card">
               <p className="work-engine-label">The Magnetic Content Engine</p>
-              <h3 className="work-case-headline">226K on TikTok. 25K on YouTube. Built from scratch.</h3>
+              <h3 className="work-case-headline">185K on TikTok. 25K on YouTube. Built from scratch.</h3>
               <p className="work-desc">
                 A men&rsquo;s self-development brand built entirely from content. We identified
                 the audience, built the engine, and monetized it.
               </p>
               <p className="work-client">Quit by Healing</p>
-            </div>
-            <div className="work-card">
-              <p className="work-engine-label">The Intelligence Engine</p>
-              <h3 className="work-case-headline">Custom software. University of Toronto.</h3>
-              <p className="work-desc">
-                Resident ophthalmologists needed a training tool that didn&rsquo;t exist.
-                We built it, secured it to medical-grade standards, and deployed it.
-              </p>
-              <p className="work-client">University of Toronto, Department of Ophthalmology</p>
+              <a href="/client-success/quit-by-healing" style={{ display: 'inline-block', marginTop: '20px', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', textDecoration: 'none' }}>Read case study →</a>
             </div>
           </div>
         </div>
@@ -244,8 +251,8 @@ export default function Home() {
         <p className="contact-sub">
           If you&rsquo;re as obsessed with excellence as we are, we&rsquo;d love to hear from you.
         </p>
-        <a href="#" className="btn-primary">
-          Get in Touch
+        <a href="/apply" className="btn-primary">
+          Apply to Work Together
         </a>
       </section>
 
