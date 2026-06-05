@@ -137,7 +137,7 @@ export default function Home() {
             </a>
             <a href="/what-we-do/intelligence-engine" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3 className="work-title">The Intelligence Engine</h3>
-              <p className="work-subtitle">Are you using AI to its full potential?</p>
+              <p className="work-subtitle">Your workflows, automated.</p>
               <p className="work-desc">
                 Most companies know they need to automate their workflows and processes with AI,
                 but have no idea where to begin. We identify the highest impact AI automation

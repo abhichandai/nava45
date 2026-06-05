@@ -23,7 +23,7 @@ const engines = [
   {
     slug: 'intelligence-engine',
     name: 'The Intelligence Engine',
-    tagline: 'AI, actually applied.',
+    tagline: 'Your workflows, automated.',
     desc: 'Custom automation that takes the manual work off your plate entirely. Built, secured, and deployed around how you already work.',
     live: false,
   },
