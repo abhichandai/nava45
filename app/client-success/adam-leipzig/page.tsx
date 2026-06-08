@@ -25,7 +25,7 @@ export default function AdamLeipzig() {
           {/* Stats bar */}
           <div className="case-stats-bar">
             <div className="case-stat">
-              <span className="case-stat-number">327%</span>
+              <span className="case-stat-number">227%</span>
               <span className="case-stat-label">Audience Growth</span>
             </div>
             <div className="case-stat-divider" />

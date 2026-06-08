@@ -121,9 +121,9 @@ export default function MagneticContentEnginePage() {
       <section className="case-body-section">
         <div className="case-body-inner">
           <p className="case-section-label">Proof</p>
-          <h2 className="case-section-title">22K to 72K+ followers. 327% growth.</h2>
+          <h2 className="case-section-title">22K to 72K+ followers. 227% growth.</h2>
           <p className="case-body-text">
-            Adam Leipzig is a Hollywood producer with the credentials of a generation: former SVP at Walt Disney Studios, National Geographic Films. He came in with the reputation but not the digital footprint to match. We engineered his content engine to make the online presence catch up with the real-life one. 327% audience growth, a 68% hook retention rate, and a system he called the best he&rsquo;d ever seen.
+            Adam Leipzig is a Hollywood producer with the credentials of a generation: former SVP at Walt Disney Studios, National Geographic Films. He came in with the reputation but not the digital footprint to match. We engineered his content engine to make the online presence catch up with the real-life one. 227% audience growth, a 68% hook retention rate, and a system he called the best he&rsquo;d ever seen.
           </p>
           <a href="/client-success/adam-leipzig" className="case-body-link">
             Read the case study

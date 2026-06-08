@@ -4,10 +4,10 @@ const caseStudies = [
   {
     slug: 'adam-leipzig',
     engine: 'The Magnetic Content Engine',
-    headline: '327% audience growth. Hollywood producer.',
+    headline: '227% audience growth. Hollywood producer.',
     description: 'A world-class creator with stalled growth and no repeatable system. We rebuilt the strategy from audience intelligence up and tripled his hook retention rate in the process.',
     client: 'Adam Leipzig',
-    stat: '327%',
+    stat: '227%',
     statLabel: 'Audience Growth',
     live: true,
   },

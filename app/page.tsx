@@ -179,7 +179,7 @@ export default function Home() {
           <div className="work-grid">
             <a href="/client-success/adam-leipzig" className="work-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <p className="work-engine-label">The Magnetic Content Engine</p>
-              <h3 className="work-case-headline">327% audience growth. Hollywood producer.</h3>
+              <h3 className="work-case-headline">227% audience growth. Hollywood producer.</h3>
               <p className="work-desc">
                 A world-class creator with stalled growth and no repeatable system. We rebuilt the strategy from audience
                 intelligence up — and tripled his hook retention rate in the process.
