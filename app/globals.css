@@ -2638,23 +2638,6 @@ footer {
   border-radius: 12px;
   padding: 28px 28px 24px;
 }
-.audit-profile-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-.audit-profile-card-element {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text);
-}
-.audit-profile-card-obs {
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 1.65;
-}
 
 /* ─── Content Pillars Grid ─── */
 .audit-pillars-grid {
@@ -2674,25 +2657,11 @@ footer {
 .audit-section--alt .audit-pillar-card {
   background: var(--bg);
 }
-.audit-pillar-card-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-.audit-pillar-score-wrap .audit-score-ring-number {
-  font-size: 1.6rem;
-}
-.audit-pillar-score-wrap .audit-score-ring-out {
-  font-size: 0.65rem;
-}
 .audit-pillar-name {
   font-family: 'Outfit', sans-serif;
   font-size: 1.05rem;
   font-weight: 500;
   color: var(--text);
-  text-align: center;
 }
 .audit-pillar-detail {
   font-size: 0.88rem;
@@ -2727,12 +2696,6 @@ footer {
 }
 
 /* ─── Performance Analysis ─── */
-.audit-perf-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 48px;
-}
 .audit-perf-col {
   background: var(--bg-alt);
   border: 1px solid var(--border);
@@ -2932,4 +2895,233 @@ footer {
   .audit-opp-body { padding: 0 20px; }
   .audit-opp-body--open { padding: 0 20px 20px; }
   .audit-section-nav-inner { padding: 0 20px; }
+  .audit-metrics-grid { grid-template-columns: 1fr; }
+  .audit-mode-toggle { top: auto; bottom: 20px; right: 20px; left: 20px; justify-content: center; }
+}
+
+/* ─── Mode Toggle ─── */
+.audit-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.audit-mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: transparent;
+  color: var(--muted);
+}
+.audit-mode-btn--active {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* ─── Edit Controls ─── */
+.audit-edit-input,
+.audit-edit-textarea,
+.audit-edit-select {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  width: 100%;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.audit-edit-input:focus,
+.audit-edit-textarea:focus,
+.audit-edit-select:focus {
+  border-color: var(--gold);
+}
+.audit-edit-input--large {
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 10px 14px;
+}
+.audit-edit-textarea {
+  resize: vertical;
+  min-height: 60px;
+  line-height: 1.55;
+}
+.audit-edit-select {
+  width: auto;
+  min-width: 140px;
+  cursor: pointer;
+  appearance: auto;
+}
+.audit-hero-edit-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ─── Profile card number ─── */
+.audit-profile-card-num {
+  font-size: 0.72rem;
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.audit-profile-card-hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+.audit-profile-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.audit-profile-card-element {
+  flex: 1;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ─── Content Metrics Grid ─── */
+.audit-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.audit-metric-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 20px 20px;
+}
+.audit-metric-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.audit-metric-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.audit-metric-detail {
+  margin-top: 14px;
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ─── Sub-heading ─── */
+.audit-sub-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+/* ─── Summary card count ─── */
+.audit-summary-card-count {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ─── Add / Remove buttons ─── */
+.audit-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 10px 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.audit-add-btn:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.06);
+}
+.audit-remove-btn {
+  margin-top: 12px;
+  padding: 6px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: #D4513A;
+  background: transparent;
+  border: 1px solid rgba(212,81,58,0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.audit-remove-btn:hover {
+  background: rgba(212,81,58,0.08);
+}
+
+/* ─── Pillar card layout updates ─── */
+.audit-pillar-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* ─── Opp card header as button ─── */
+.audit-opp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text);
+}
+
+/* ─── Performance grid 2-col variant ─── */
+.audit-perf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+@media (min-width: 901px) {
+  .audit-perf-grid--three { grid-template-columns: repeat(3, 1fr); }
 }
