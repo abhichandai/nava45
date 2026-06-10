@@ -12,10 +12,9 @@ type Props = {
   offset?: number
 }
 
-const easeInOutCubic = (t: number) =>
-  t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+const easeInOutSine = (t: number) => -(Math.cos(Math.PI * t) - 1) / 2
 
-export default function HeroScrollCue({ target, label, duration = 1600, offset = 96 }: Props) {
+export default function HeroScrollCue({ target, label, duration = 1800, offset = 96 }: Props) {
   const isAnimating = useRef(false)
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -44,7 +43,7 @@ export default function HeroScrollCue({ target, label, duration = 1600, offset =
 
     const step = (now: number) => {
       const t = Math.min((now - startTime) / duration, 1)
-      const eased = easeInOutCubic(t)
+      const eased = easeInOutSine(t)
       window.scrollTo(0, startY + distance * eased)
       if (t < 1) {
         requestAnimationFrame(step)
