@@ -31,7 +31,7 @@ export default function HeroScrollCue({ target, label, duration = 1800, offset =
     const targetY = el.getBoundingClientRect().top + window.scrollY - offset
 
     if (reducedMotion) {
-      window.scrollTo(0, targetY)
+      window.scrollTo({ top: targetY, behavior: 'instant' as ScrollBehavior })
       history.pushState(null, '', target)
       return
     }
@@ -44,7 +44,7 @@ export default function HeroScrollCue({ target, label, duration = 1800, offset =
     const step = (now: number) => {
       const t = Math.min((now - startTime) / duration, 1)
       const eased = linear(t)
-      window.scrollTo(0, startY + distance * eased)
+      window.scrollTo({ top: startY + distance * eased, behavior: 'instant' as ScrollBehavior })
       if (t < 1) {
         requestAnimationFrame(step)
       } else {
