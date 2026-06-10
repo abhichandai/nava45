@@ -12,7 +12,7 @@ type Props = {
   offset?: number
 }
 
-const linear = (t: number) => t
+const easeOutSine = (t: number) => Math.sin((t * Math.PI) / 2)
 
 export default function HeroScrollCue({ target, label, duration = 1800, offset = 96 }: Props) {
   const isAnimating = useRef(false)
@@ -43,7 +43,7 @@ export default function HeroScrollCue({ target, label, duration = 1800, offset =
 
     const step = (now: number) => {
       const t = Math.min((now - startTime) / duration, 1)
-      const eased = linear(t)
+      const eased = easeOutSine(t)
       window.scrollTo({ top: startY + distance * eased, behavior: 'instant' as ScrollBehavior })
       if (t < 1) {
         requestAnimationFrame(step)
