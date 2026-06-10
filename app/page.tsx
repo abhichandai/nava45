@@ -1,3 +1,4 @@
+import HeroScrollCue from './components/HeroScrollCue'
 
 export default function Home() {
   return (
@@ -17,14 +18,7 @@ export default function Home() {
             <a href="/apply" className="btn-primary">Apply to Work Together</a>
           </div>
         </div>
-        <div className="hero-scroll-cue animate-fade-up delay-3">
-          <a href="#quote" className="hero-scroll-link" aria-label="Scroll to next section">
-            <svg className="hero-scroll-arrow" width="40" height="46" viewBox="0 0 24 28" fill="none" aria-hidden="true">
-              <path d="M5 8l7 7 7-7" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M5 16l7 7 7-7" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-        </div>
+        <HeroScrollCue target="#quote" />
       </section>
 
       {/* Hero Quote — Adam Leipzig */}
