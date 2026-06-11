@@ -2928,6 +2928,7 @@ footer {
   color: var(--muted);
   line-height: 1.6;
   padding: 12px 0;
+  white-space: pre-wrap;
   border-bottom: 1px solid var(--border);
 }
 .audit-perf-item:last-child {
@@ -3011,6 +3012,7 @@ footer {
   line-height: 1.7;
   border-top: 1px solid var(--border);
   padding-top: 20px;
+  white-space: pre-wrap;
 }
 
 /* ─── CTA ─── */
