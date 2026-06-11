@@ -33,7 +33,7 @@ export async function saveAudit(slug: string, data: any) {
 
 export async function listAudits() {
   const res = await fetch(
-    `${SUPABASE_URL}/rest/v1/audits?select=slug,data->client->name,created_at,updated_at&order=updated_at.desc`,
+    `${SUPABASE_URL}/rest/v1/audits?select=slug,data,updated_at&order=updated_at.desc`,
     { headers, cache: 'no-store' }
   )
   if (!res.ok) return []
