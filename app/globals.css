@@ -2944,6 +2944,8 @@ footer {
 /* ─── Profile Screenshot ─── */
 .audit-screenshot-upload {
   margin: 32px 0;
+  display: flex;
+  justify-content: center;
 }
 .audit-screenshot-dropzone {
   display: flex;
