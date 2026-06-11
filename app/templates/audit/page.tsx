@@ -667,7 +667,7 @@ export default function AuditTemplate() {
             <FadeSection className="audit-proof-case-card" delay={0}>
               <div className="audit-proof-case-stats">
                 <div className="audit-proof-case-stat">
-                  <span className="audit-proof-case-num">327%</span>
+                  <span className="audit-proof-case-num">227%</span>
                   <span className="audit-proof-case-label">Audience Growth</span>
                 </div>
                 <div className="audit-proof-case-stat">

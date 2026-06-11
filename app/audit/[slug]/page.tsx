@@ -357,7 +357,7 @@ export default function AuditView() {
           <div className="audit-proof-cases-grid">
             <FadeSection className="audit-proof-case-card" delay={0}>
               <div className="audit-proof-case-stats">
-                <div className="audit-proof-case-stat"><span className="audit-proof-case-num">327%</span><span className="audit-proof-case-label">Audience Growth</span></div>
+                <div className="audit-proof-case-stat"><span className="audit-proof-case-num">227%</span><span className="audit-proof-case-label">Audience Growth</span></div>
                 <div className="audit-proof-case-stat"><span className="audit-proof-case-num">68%</span><span className="audit-proof-case-label">Hook Retention</span></div>
               </div>
               <p className="audit-proof-case-desc">From 22K to 72K+ followers through strategic content and a proprietary hook format that tripled video retention.</p>
