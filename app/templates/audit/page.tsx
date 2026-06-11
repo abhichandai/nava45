@@ -6,25 +6,18 @@ import { loadAudit, saveAudit, slugify } from '../../lib/supabase-audits'
    ACCOUNT AUDIT — Internal Builder + Presentation Tool
    ═══════════════════════════════════════════════════════════════════════════ */
 
-type Rating = 'very-strong' | 'strong' | 'decent' | 'could-be-better' | 'weak' | 'missing' | ''
-type PillarStatus = 'present' | 'underused' | 'missing' | ''
+type Rating = 'excellent' | 'strong' | 'decent' | 'could-be-better' | 'weak' | 'missing' | 'n-a' | ''
 type Impact = 'high' | 'medium' | 'low'
 
 const RATINGS: { value: Rating; label: string }[] = [
   { value: '', label: 'Select…' },
-  { value: 'very-strong', label: 'Very Strong' },
+  { value: 'excellent', label: 'Excellent' },
   { value: 'strong', label: 'Strong' },
   { value: 'decent', label: 'Decent' },
   { value: 'could-be-better', label: 'Could Be Better' },
   { value: 'weak', label: 'Weak' },
   { value: 'missing', label: 'Missing' },
-]
-
-const PILLAR_STATUSES: { value: PillarStatus; label: string }[] = [
-  { value: '', label: 'Select…' },
-  { value: 'present', label: 'Present' },
-  { value: 'underused', label: 'Underused' },
-  { value: 'missing', label: 'Missing' },
+  { value: 'n-a', label: 'N/A' },
 ]
 
 const IMPACTS: { value: Impact; label: string }[] = [
@@ -62,9 +55,9 @@ function createDefaultState() {
     profile: Object.fromEntries(PROFILE_ITEMS.map(p => [p.key, { rating: '' as Rating, observation: '' }])),
     contentMetrics: Object.fromEntries(CONTENT_METRICS.map(m => [m.key, { rating: '' as Rating, detail: '' }])),
     contentPillars: {
-      value: { status: '' as PillarStatus, detail: '', recs: ['', ''] },
-      growth: { status: '' as PillarStatus, detail: '', recs: ['', ''] },
-      connection: { status: '' as PillarStatus, detail: '', recs: ['', ''] },
+      value: { status: '' as Rating, detail: '', recs: ['', ''] },
+      growth: { status: '' as Rating, detail: '', recs: ['', ''] },
+      connection: { status: '' as Rating, detail: '', recs: ['', ''] },
     },
     strengths: ['', '', ''],
     weaknesses: ['', '', ''],
@@ -78,10 +71,11 @@ function createDefaultState() {
 
 /* ─── Rating utilities ───────────────────────────────────────────────────── */
 
-function ratingColor(r: Rating | PillarStatus): string {
-  if (r === 'very-strong' || r === 'strong' || r === 'present') return '#3BB06C'
-  if (r === 'decent' || r === 'could-be-better' || r === 'underused') return '#C9A84C'
+function ratingColor(r: Rating): string {
+  if (r === 'excellent' || r === 'strong') return '#3BB06C'
+  if (r === 'decent' || r === 'could-be-better') return '#C9A84C'
   if (r === 'weak' || r === 'missing') return '#D4513A'
+  if (r === 'n-a') return 'var(--muted)'
   return 'var(--muted)'
 }
 
@@ -89,32 +83,15 @@ function ratingLabel(r: Rating): string {
   return RATINGS.find(x => x.value === r)?.label || '—'
 }
 
-function pillarLabel(s: PillarStatus): string {
-  return PILLAR_STATUSES.find(x => x.value === s)?.label || '—'
-}
-
 function overallScore(state: ReturnType<typeof createDefaultState>): number {
-  const ratingToNum = (r: Rating): number => {
-    if (r === 'very-strong') return 100
-    if (r === 'strong') return 80
-    if (r === 'decent') return 60
-    if (r === 'could-be-better') return 40
-    if (r === 'weak') return 20
-    if (r === 'missing') return 0
-    return -1
-  }
-  const pillarToNum = (s: PillarStatus): number => {
-    if (s === 'present') return 100
-    if (s === 'underused') return 50
-    if (s === 'missing') return 10
-    return -1
+  const ratingToNum = (r: string): number => {
+    const m: Record<string, number> = { 'excellent': 100, 'strong': 80, 'decent': 60, 'could-be-better': 40, 'weak': 20, 'missing': 0 }
+    return m[r] ?? -1
   }
   const scores: number[] = []
   Object.values(state.profile).forEach(p => { const n = ratingToNum(p.rating); if (n >= 0) scores.push(n) })
   Object.values(state.contentMetrics).forEach(m => { const n = ratingToNum(m.rating); if (n >= 0) scores.push(n) })
-  const pv = pillarToNum(state.contentPillars.value.status); if (pv >= 0) scores.push(pv)
-  const pg = pillarToNum(state.contentPillars.growth.status); if (pg >= 0) scores.push(pg)
-  const pc = pillarToNum(state.contentPillars.connection.status); if (pc >= 0) scores.push(pc)
+  Object.values(state.contentPillars).forEach(p => { const n = ratingToNum(p.status); if (n >= 0) scores.push(n) })
   if (scores.length === 0) return 0
   return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
 }
@@ -157,10 +134,10 @@ function ScoreBar({ value }: { value: number }) {
   )
 }
 
-function Badge({ rating }: { rating: Rating | PillarStatus }) {
+function Badge({ rating }: { rating: Rating }) {
   if (!rating) return <span className="audit-badge" style={{ opacity: 0.4 }}>Not Rated</span>
   const color = ratingColor(rating)
-  const label = RATINGS.find(r => r.value === rating)?.label || PILLAR_STATUSES.find(r => r.value === rating)?.label || rating
+  const label = RATINGS.find(r => r.value === rating)?.label || rating
   return <span className="audit-badge" style={{ background: `${color}18`, color }}>{label}</span>
 }
 
@@ -343,14 +320,14 @@ export default function AuditTemplate() {
   // Profile score (just the profile items)
   const profileRatings = Object.values(state.profile).filter(p => p.rating)
   const profileScore = profileRatings.length ? Math.round(profileRatings.reduce((sum, p) => {
-    const m: Record<string, number> = { 'very-strong': 100, 'strong': 80, 'decent': 60, 'could-be-better': 40, 'weak': 20, 'missing': 0 }
+    const m: Record<string, number> = { 'excellent': 100, 'strong': 80, 'decent': 60, 'could-be-better': 40, 'weak': 20, 'missing': 0 }
     return sum + (m[p.rating] ?? 0)
   }, 0) / profileRatings.length) : 0
 
   // Content score
   const contentRatings = Object.values(state.contentMetrics).filter(m => m.rating)
   const contentScore = contentRatings.length ? Math.round(contentRatings.reduce((sum, m) => {
-    const mp: Record<string, number> = { 'very-strong': 100, 'strong': 80, 'decent': 60, 'could-be-better': 40, 'weak': 20, 'missing': 0 }
+    const mp: Record<string, number> = { 'excellent': 100, 'strong': 80, 'decent': 60, 'could-be-better': 40, 'weak': 20, 'missing': 0 }
     return sum + (mp[m.rating] ?? 0)
   }, 0) / contentRatings.length) : 0
 
@@ -561,7 +538,7 @@ export default function AuditTemplate() {
           <div className="audit-metrics-grid">
             {CONTENT_METRICS.map((metric, i) => {
               const data = state.contentMetrics[metric.key]
-              const numVal = { 'very-strong': 100, 'strong': 80, 'decent': 60, 'could-be-better': 40, 'weak': 20, 'missing': 0 }[data.rating] ?? 0
+              const numVal = { 'excellent': 100, 'strong': 80, 'decent': 60, 'could-be-better': 40, 'weak': 20, 'missing': 0 }[data.rating] ?? 0
               return (
                 <FadeSection key={metric.key} delay={i * 80} className="audit-metric-card">
                   <div className="audit-metric-card-header">
@@ -599,7 +576,7 @@ export default function AuditTemplate() {
                   <div className="audit-pillar-card-top">
                     <h3 className="audit-pillar-name">{pillar.label}</h3>
                     {editMode ? (
-                      <EditSelect value={data.status} options={PILLAR_STATUSES}
+                      <EditSelect value={data.status} options={RATINGS}
                         onChange={v => updatePillar(pillar.key, 'status', v)} editMode={editMode} />
                     ) : (
                       <Badge rating={data.status} />

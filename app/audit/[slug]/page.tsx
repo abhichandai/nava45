@@ -3,21 +3,16 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import { loadAudit } from '../../lib/supabase-audits'
 
-type Rating = 'very-strong' | 'strong' | 'decent' | 'could-be-better' | 'weak' | 'missing' | ''
-type PillarStatus = 'present' | 'underused' | 'missing' | ''
+type Rating = 'excellent' | 'strong' | 'decent' | 'could-be-better' | 'weak' | 'missing' | 'n-a' | ''
 
 const RATINGS = [
-  { value: 'very-strong', label: 'Very Strong' },
+  { value: 'excellent', label: 'Excellent' },
   { value: 'strong', label: 'Strong' },
   { value: 'decent', label: 'Decent' },
   { value: 'could-be-better', label: 'Could Be Better' },
   { value: 'weak', label: 'Weak' },
   { value: 'missing', label: 'Missing' },
-]
-const PILLAR_STATUSES = [
-  { value: 'present', label: 'Present' },
-  { value: 'underused', label: 'Underused' },
-  { value: 'missing', label: 'Missing' },
+  { value: 'n-a', label: 'N/A' },
 ]
 
 const PROFILE_ITEMS = [
@@ -39,17 +34,18 @@ const CONTENT_METRICS = [
   { key: 'hashtagUse', label: 'Hashtag / Keyword Use' },
 ]
 
-function ratingColor(r: Rating | PillarStatus): string {
-  if (r === 'very-strong' || r === 'strong' || r === 'present') return '#3BB06C'
-  if (r === 'decent' || r === 'could-be-better' || r === 'underused') return '#C9A84C'
+function ratingColor(r: string): string {
+  if (r === 'excellent' || r === 'strong') return '#3BB06C'
+  if (r === 'decent' || r === 'could-be-better') return '#C9A84C'
   if (r === 'weak' || r === 'missing') return '#D4513A'
+  if (r === 'n-a') return 'var(--muted)'
   return 'var(--muted)'
 }
 
-function Badge({ rating }: { rating: Rating | PillarStatus }) {
+function Badge({ rating }: { rating: string }) {
   if (!rating) return null
   const color = ratingColor(rating)
-  const label = [...RATINGS, ...PILLAR_STATUSES].find(r => r.value === rating)?.label || rating
+  const label = RATINGS.find(r => r.value === rating)?.label || rating
   return <span className="audit-badge" style={{ background: `${color}18`, color }}>{label}</span>
 }
 
@@ -141,20 +137,15 @@ const PLATFORM_COLORS: Record<string, string> = {
 
 function overallScore(state: any): number {
   const ratingToNum = (r: string): number => {
-    const m: Record<string,number> = {'very-strong':100,'strong':80,'decent':60,'could-be-better':40,'weak':20,'missing':0}
+    const m: Record<string,number> = {'excellent':100,'strong':80,'decent':60,'could-be-better':40,'weak':20,'missing':0}
     return m[r] ?? -1
-  }
-  const pillarToNum = (s: string): number => {
-    const m: Record<string,number> = {'present':100,'underused':50,'missing':10}
-    return m[s] ?? -1
   }
   const scores: number[] = []
   if (state.profile) Object.values(state.profile).forEach((p: any) => { const n = ratingToNum(p.rating); if (n >= 0) scores.push(n) })
   if (state.contentMetrics) Object.values(state.contentMetrics).forEach((m: any) => { const n = ratingToNum(m.rating); if (n >= 0) scores.push(n) })
   if (state.contentPillars) {
-    ['value','growth','connection'].forEach(k => {
-      const s = state.contentPillars[k]?.status
-      const n = pillarToNum(s); if (n >= 0) scores.push(n)
+    Object.values(state.contentPillars).forEach((p: any) => {
+      const n = ratingToNum(p.status); if (n >= 0) scores.push(n)
     })
   }
   return scores.length ? Math.round(scores.reduce((a: number,b: number) => a+b, 0) / scores.length) : 0
@@ -210,7 +201,7 @@ export default function AuditView() {
   const initials = state.client?.name ? state.client.name.split(' ').map((n: string) => n[0]).join('') : '?'
 
   const profileRatings = state.profile ? Object.values(state.profile).filter((p: any) => p.rating) : []
-  const rMap: Record<string, number> = { 'very-strong': 100, 'strong': 80, 'decent': 60, 'could-be-better': 40, 'weak': 20, 'missing': 0 }
+  const rMap: Record<string, number> = { 'excellent': 100, 'strong': 80, 'decent': 60, 'could-be-better': 40, 'weak': 20, 'missing': 0 }
   const profileScore = profileRatings.length ? Math.round((profileRatings as any[]).reduce((s, p) => s + (rMap[p.rating] ?? 0), 0) / profileRatings.length) : 0
   const contentRatings = state.contentMetrics ? Object.values(state.contentMetrics).filter((m: any) => m.rating) : []
   const contentScore = contentRatings.length ? Math.round((contentRatings as any[]).reduce((s, m) => s + (rMap[m.rating] ?? 0), 0) / contentRatings.length) : 0
