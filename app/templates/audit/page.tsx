@@ -391,9 +391,6 @@ export default function AuditTemplate() {
             <div className="audit-screenshot-upload">
               {state.profileScreenshot ? (
                 <>
-                  <div className="audit-screenshot-preview" style={{ maxWidth: `${state.screenshotScale}%` }}>
-                    <img src={state.profileScreenshot} alt="Profile screenshot" />
-                  </div>
                   <div className="audit-screenshot-controls">
                     <label className="audit-screenshot-slider-label">
                       Size
@@ -404,6 +401,9 @@ export default function AuditTemplate() {
                     </label>
                     <button className="audit-remove-btn"
                       onClick={() => setState(s => ({ ...s, profileScreenshot: '' }))}>Remove</button>
+                  </div>
+                  <div className="audit-screenshot-preview" style={{ maxWidth: `${state.screenshotScale}%` }}>
+                    <img src={state.profileScreenshot} alt="Profile screenshot" />
                   </div>
                 </>
               ) : (
