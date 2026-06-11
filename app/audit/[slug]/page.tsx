@@ -329,7 +329,7 @@ export default function AuditView() {
           <p className="contact-sub">
             This audit is just the starting point. We build the systems that make your brand impossible to ignore.
           </p>
-          <a href="/apply" className="btn-primary">Apply to Work Together</a>
+          <a href="https://cal.com/achand/audit" target="_blank" rel="noopener noreferrer" className="btn-primary">Book a Call</a>
         </FadeSection>
       </section>
 
