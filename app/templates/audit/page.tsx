@@ -232,6 +232,14 @@ function PlatformIcon({ platform }: { platform: string }) {
   return <>{icons[platform] || <span className="audit-avatar-initials">?</span>}</>
 }
 
+const PLATFORM_COLORS: Record<string, string> = {
+  Instagram: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)',
+  LinkedIn: '#0A66C2',
+  TikTok: '#000000',
+  YouTube: '#FF0000',
+  'Twitter/X': '#000000',
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    MAIN PAGE
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -388,7 +396,7 @@ export default function AuditTemplate() {
           <div className="audit-hero-badge"><span className="audit-hero-badge-dot" />Account Audit</div>
           <div className="audit-hero-top">
             <div className="audit-hero-left">
-              <div className="audit-avatar"><PlatformIcon platform={state.client.platform} /></div>
+              <div className="audit-avatar" style={{ background: PLATFORM_COLORS[state.client.platform] || 'var(--gold)' }}><PlatformIcon platform={state.client.platform} /></div>
               <div style={{ flex: 1 }}>
                 {editMode ? (
                   <div className="audit-hero-edit-fields">

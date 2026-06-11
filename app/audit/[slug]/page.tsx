@@ -131,6 +131,14 @@ function PlatformIcon({ platform }: { platform: string }) {
   return <>{icons[platform] || <span className="audit-avatar-initials">?</span>}</>
 }
 
+const PLATFORM_COLORS: Record<string, string> = {
+  Instagram: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)',
+  LinkedIn: '#0A66C2',
+  TikTok: '#000000',
+  YouTube: '#FF0000',
+  'Twitter/X': '#000000',
+}
+
 function overallScore(state: any): number {
   const ratingToNum = (r: string): number => {
     const m: Record<string,number> = {'very-strong':100,'strong':80,'decent':60,'could-be-better':40,'weak':20,'missing':0}
@@ -226,7 +234,7 @@ export default function AuditView() {
           <div className="audit-hero-badge"><span className="audit-hero-badge-dot" />Account Audit</div>
           <div className="audit-hero-top">
             <div className="audit-hero-left">
-              <div className="audit-avatar"><PlatformIcon platform={state.client?.platform} /></div>
+              <div className="audit-avatar" style={{ background: PLATFORM_COLORS[state.client?.platform] || 'var(--gold)' }}><PlatformIcon platform={state.client?.platform} /></div>
               <div>
                 <h1 className="audit-hero-name">{state.client?.name || 'Client'}</h1>
                 <p className="audit-hero-handle">{state.client?.handle} · {state.client?.platform}</p>
