@@ -28,7 +28,7 @@ const IMPACTS: { value: Impact; label: string }[] = [
 
 const PROFILE_ITEMS = [
   { key: 'profilePhoto', label: 'Profile Photo', hint: 'A photo of them smiling that makes a strong first impression.' },
-  { key: 'nameField', label: 'Name Field', hint: 'Niche-related keywords — the platform acts as a search engine.' },
+  { key: 'nameField', label: 'Niche Keywords in Name Field', hint: 'Niche-related keywords — the platform acts as a search engine.' },
   { key: 'iHelpStatement', label: '"I Help" Statement', hint: '"I help [X] achieve [Y] without [Z]" — clear, specific, client-focused.' },
   { key: 'dmCta', label: 'DM CTA', hint: 'An easy way for people to message directly instead of filling out a form.' },
   { key: 'applicationLink', label: 'Application Link', hint: 'A single application form — no multi-link tools like Linktree.' },
@@ -61,6 +61,7 @@ function createDefaultState() {
     },
     strengths: ['', '', ''],
     weaknesses: ['', '', ''],
+    postsData: [] as { num: string; title: string; link: string; type: string; likes: string; shares: string; comments: string }[],
     opportunities: [
       { title: '', impact: 'high' as Impact, detail: '' },
       { title: '', impact: 'high' as Impact, detail: '' },
@@ -534,6 +535,73 @@ export default function AuditTemplate() {
             <p className="audit-subheading">We analyzed your recent content across six key dimensions to identify what&rsquo;s driving results and where the gaps are.</p>
           </FadeSection>
 
+          {/* Posts data - CSV upload / collapsible table */}
+          {editMode && state.postsData.length === 0 && (
+            <div className="audit-csv-upload">
+              <label className="audit-screenshot-dropzone" style={{ padding: '24px' }}>
+                <input type="file" accept=".csv" style={{ display: 'none' }}
+                  onChange={e => {
+                    const file = e.target.files?.[0]
+                    if (!file) return
+                    const reader = new FileReader()
+                    reader.onload = () => {
+                      const text = reader.result as string
+                      const lines = text.split('\n').map(l => l.replace(/\r$/, ''))
+                      const rows: any[] = []
+                      for (let i = 1; i <= 30 && i < lines.length; i++) {
+                        const cols = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g)
+                        if (!cols || cols.length < 4) continue
+                        const clean = (s: string) => s.replace(/^"|"$/g, '')
+                        rows.push({ num: clean(cols[0]), title: clean(cols[1]), link: clean(cols[2]), type: clean(cols[3]), likes: clean(cols[4] || ''), shares: clean(cols[5] || ''), comments: clean(cols[6] || '') })
+                      }
+                      setState(s => ({ ...s, postsData: rows }))
+                    }
+                    reader.readAsText(file)
+                  }} />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+                <span>Upload posts CSV</span>
+              </label>
+            </div>
+          )}
+          {state.postsData.length > 0 && (
+            <FadeSection>
+              <div className="audit-posts-section">
+                <button className="audit-posts-toggle" onClick={() => {
+                  const el = document.getElementById('posts-table')
+                  if (el) el.classList.toggle('audit-posts-table--open')
+                }}>
+                  <span>Analyzed Posts ({state.postsData.length})</span>
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </button>
+                <div id="posts-table" className="audit-posts-table">
+                  <table>
+                    <thead>
+                      <tr><th>#</th><th>Post</th><th>Type</th><th>Likes</th><th>Shares</th><th>Comments</th></tr>
+                    </thead>
+                    <tbody>
+                      {state.postsData.map((p, i) => (
+                        <tr key={i}>
+                          <td>{p.num}</td>
+                          <td>{p.link ? <a href={p.link} target="_blank" rel="noopener noreferrer" className="audit-posts-link">{p.title}</a> : p.title}</td>
+                          <td><span className="audit-posts-type">{p.type}</span></td>
+                          <td>{p.likes}</td>
+                          <td>{p.shares}</td>
+                          <td>{p.comments}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {editMode && (
+                  <button className="audit-remove-btn" style={{ marginTop: 8 }}
+                    onClick={() => setState(s => ({ ...s, postsData: [] }))}>Remove CSV</button>
+                )}
+              </div>
+            </FadeSection>
+          )}
+
           {/* Content metrics grid */}
           <div className="audit-metrics-grid">
             {CONTENT_METRICS.map((metric, i) => {
@@ -633,54 +701,6 @@ export default function AuditTemplate() {
         </div>
       </section>
 
-      {/* ═══ SOCIAL PROOF — Case Studies ═══ */}
-      <section className="audit-proof-cases">
-        <div className="audit-proof-cases-inner">
-          <FadeSection>
-            <p className="audit-label" style={{ textAlign: 'center' }}>Proven Results</p>
-            <h2 className="audit-heading" style={{ textAlign: 'center' }}>What happens when the strategy clicks.</h2>
-          </FadeSection>
-          <div className="audit-proof-cases-grid">
-            <FadeSection className="audit-proof-case-card" delay={0}>
-              <div className="audit-proof-case-stats">
-                <div className="audit-proof-case-stat">
-                  <span className="audit-proof-case-num">227%</span>
-                  <span className="audit-proof-case-label">Audience Growth</span>
-                </div>
-                <div className="audit-proof-case-stat">
-                  <span className="audit-proof-case-num">68%</span>
-                  <span className="audit-proof-case-label">Hook Retention</span>
-                </div>
-              </div>
-              <p className="audit-proof-case-desc">From 22K to 72K+ followers through strategic content and a proprietary hook format that tripled video retention.</p>
-              <div className="audit-proof-case-attr">
-                <span className="audit-proof-case-name">Adam Leipzig</span>
-                <span className="audit-proof-case-role">Hollywood Producer · CEO · Author</span>
-              </div>
-              <a href="/client-success/adam-leipzig" className="audit-proof-case-link" target="_blank" rel="noopener noreferrer">Read the full case study →</a>
-            </FadeSection>
-            <FadeSection className="audit-proof-case-card" delay={120}>
-              <div className="audit-proof-case-stats">
-                <div className="audit-proof-case-stat">
-                  <span className="audit-proof-case-num">185K</span>
-                  <span className="audit-proof-case-label">Followers from Zero</span>
-                </div>
-                <div className="audit-proof-case-stat">
-                  <span className="audit-proof-case-num">$26K</span>
-                  <span className="audit-proof-case-label">Passive Revenue</span>
-                </div>
-              </div>
-              <p className="audit-proof-case-desc">Built an entire brand from scratch — audience, product, and automated revenue — without a single paid ad.</p>
-              <div className="audit-proof-case-attr">
-                <span className="audit-proof-case-name">Quit By Healing</span>
-                <span className="audit-proof-case-role">Men&rsquo;s Digital Wellness &amp; Self-Development</span>
-              </div>
-              <a href="/client-success/quit-by-healing" className="audit-proof-case-link" target="_blank" rel="noopener noreferrer">Read the full case study →</a>
-            </FadeSection>
-          </div>
-        </div>
-      </section>
-
       {/* ═══ GROWTH OPPORTUNITIES ═══ */}
       <section id="opportunities" className="audit-section">
         <div className="audit-section-inner">
@@ -738,6 +758,54 @@ export default function AuditTemplate() {
           {editMode && (
             <button className="audit-add-btn" onClick={addOpp}>+ Add Opportunity</button>
           )}
+        </div>
+      </section>
+
+      {/* ═══ SOCIAL PROOF — Case Studies ═══ */}
+      <section className="audit-proof-cases">
+        <div className="audit-proof-cases-inner">
+          <FadeSection>
+            <p className="audit-label" style={{ textAlign: 'center' }}>Proven Results</p>
+            <h2 className="audit-heading" style={{ textAlign: 'center' }}>What happens when the strategy clicks.</h2>
+          </FadeSection>
+          <div className="audit-proof-cases-grid">
+            <FadeSection className="audit-proof-case-card" delay={0}>
+              <div className="audit-proof-case-stats">
+                <div className="audit-proof-case-stat">
+                  <span className="audit-proof-case-num">227%</span>
+                  <span className="audit-proof-case-label">Audience Growth</span>
+                </div>
+                <div className="audit-proof-case-stat">
+                  <span className="audit-proof-case-num">68%</span>
+                  <span className="audit-proof-case-label">Hook Retention</span>
+                </div>
+              </div>
+              <p className="audit-proof-case-desc">From 22K to 72K+ followers through strategic content and a proprietary hook format that tripled video retention.</p>
+              <div className="audit-proof-case-attr">
+                <span className="audit-proof-case-name">Adam Leipzig</span>
+                <span className="audit-proof-case-role">Hollywood Producer · CEO · Author</span>
+              </div>
+              <a href="/client-success/adam-leipzig" className="audit-proof-case-link" target="_blank" rel="noopener noreferrer">Read the full case study →</a>
+            </FadeSection>
+            <FadeSection className="audit-proof-case-card" delay={120}>
+              <div className="audit-proof-case-stats">
+                <div className="audit-proof-case-stat">
+                  <span className="audit-proof-case-num">185K</span>
+                  <span className="audit-proof-case-label">Followers from Zero</span>
+                </div>
+                <div className="audit-proof-case-stat">
+                  <span className="audit-proof-case-num">$26K</span>
+                  <span className="audit-proof-case-label">Passive Revenue</span>
+                </div>
+              </div>
+              <p className="audit-proof-case-desc">Built an entire brand from scratch — audience, product, and automated revenue — without a single paid ad.</p>
+              <div className="audit-proof-case-attr">
+                <span className="audit-proof-case-name">Quit By Healing</span>
+                <span className="audit-proof-case-role">Men&rsquo;s Digital Wellness &amp; Self-Development</span>
+              </div>
+              <a href="/client-success/quit-by-healing" className="audit-proof-case-link" target="_blank" rel="noopener noreferrer">Read the full case study →</a>
+            </FadeSection>
+          </div>
         </div>
       </section>
 

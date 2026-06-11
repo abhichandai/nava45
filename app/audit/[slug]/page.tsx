@@ -17,7 +17,7 @@ const RATINGS = [
 
 const PROFILE_ITEMS = [
   { key: 'profilePhoto', label: 'Profile Photo' },
-  { key: 'nameField', label: 'Name Field' },
+  { key: 'nameField', label: 'Niche Keywords in Name Field' },
   { key: 'iHelpStatement', label: '"I Help" Statement' },
   { key: 'dmCta', label: 'DM CTA' },
   { key: 'applicationLink', label: 'Application Link' },
@@ -287,6 +287,34 @@ export default function AuditView() {
       <section id="content" className="audit-section audit-section--alt">
         <div className="audit-section-inner">
           <FadeSection><p className="audit-label">Content Strategy Analysis</p><h2 className="audit-heading">Based on your last 30 posts.</h2></FadeSection>
+          {state.postsData?.length > 0 && (
+            <FadeSection>
+              <div className="audit-posts-section">
+                <button className="audit-posts-toggle" onClick={() => {
+                  const el = document.getElementById('posts-table')
+                  if (el) el.classList.toggle('audit-posts-table--open')
+                }}>
+                  <span>Analyzed Posts ({state.postsData.length})</span>
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </button>
+                <div id="posts-table" className="audit-posts-table">
+                  <table>
+                    <thead><tr><th>#</th><th>Post</th><th>Type</th><th>Likes</th><th>Shares</th><th>Comments</th></tr></thead>
+                    <tbody>
+                      {state.postsData.map((p: any, i: number) => (
+                        <tr key={i}>
+                          <td>{p.num}</td>
+                          <td>{p.link ? <a href={p.link} target="_blank" rel="noopener noreferrer" className="audit-posts-link">{p.title}</a> : p.title}</td>
+                          <td><span className="audit-posts-type">{p.type}</span></td>
+                          <td>{p.likes}</td><td>{p.shares}</td><td>{p.comments}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </FadeSection>
+          )}
           <div className="audit-metrics-grid">
             {CONTENT_METRICS.map((metric, i) => {
               const data = state.contentMetrics?.[metric.key]
@@ -339,6 +367,32 @@ export default function AuditView() {
         </div>
       </section>
 
+      {/* Opportunities */}
+      <section id="opportunities" className="audit-section">
+        <div className="audit-section-inner">
+          <FadeSection><p className="audit-label">Growth Opportunities</p><h2 className="audit-heading">Untapped levers for your next stage of growth.</h2></FadeSection>
+          <div className="audit-opp-list">
+            {(state.opportunities || []).filter((o: any) => o.title).map((opp: any, i: number) => {
+              const isOpen = expandedOpp === i
+              return (
+                <FadeSection key={i} delay={i * 80}>
+                  <button className={`audit-opp-card ${isOpen ? 'audit-opp-card--open' : ''}`} onClick={() => setExpandedOpp(isOpen ? null : i)}>
+                    <div className="audit-opp-card-header">
+                      <div className="audit-opp-card-left"><span className="audit-opp-number">{String(i+1).padStart(2,'0')}</span><span className="audit-opp-title">{opp.title}</span></div>
+                      <div className="audit-opp-card-right">
+                        <span className={`audit-impact audit-impact--${opp.impact}`}>{opp.impact} impact</span>
+                        <svg className={`audit-opp-chevron ${isOpen ? 'audit-opp-chevron--open' : ''}`} width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                      </div>
+                    </div>
+                    {opp.detail && <div className={`audit-opp-body ${isOpen ? 'audit-opp-body--open' : ''}`}><p style={{ whiteSpace: 'pre-wrap' }}>{opp.detail}</p></div>}
+                  </button>
+                </FadeSection>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="audit-proof-cases">
         <div className="audit-proof-cases-inner">
           <FadeSection>
@@ -364,32 +418,6 @@ export default function AuditView() {
               <div className="audit-proof-case-attr"><span className="audit-proof-case-name">Quit By Healing</span><span className="audit-proof-case-role">Men&rsquo;s Digital Wellness &amp; Self-Development</span></div>
               <a href="/client-success/quit-by-healing" className="audit-proof-case-link" target="_blank" rel="noopener noreferrer">Read the full case study →</a>
             </FadeSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Opportunities */}
-      <section id="opportunities" className="audit-section">
-        <div className="audit-section-inner">
-          <FadeSection><p className="audit-label">Growth Opportunities</p><h2 className="audit-heading">Untapped levers for your next stage of growth.</h2></FadeSection>
-          <div className="audit-opp-list">
-            {(state.opportunities || []).filter((o: any) => o.title).map((opp: any, i: number) => {
-              const isOpen = expandedOpp === i
-              return (
-                <FadeSection key={i} delay={i * 80}>
-                  <button className={`audit-opp-card ${isOpen ? 'audit-opp-card--open' : ''}`} onClick={() => setExpandedOpp(isOpen ? null : i)}>
-                    <div className="audit-opp-card-header">
-                      <div className="audit-opp-card-left"><span className="audit-opp-number">{String(i+1).padStart(2,'0')}</span><span className="audit-opp-title">{opp.title}</span></div>
-                      <div className="audit-opp-card-right">
-                        <span className={`audit-impact audit-impact--${opp.impact}`}>{opp.impact} impact</span>
-                        <svg className={`audit-opp-chevron ${isOpen ? 'audit-opp-chevron--open' : ''}`} width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                      </div>
-                    </div>
-                    {opp.detail && <div className={`audit-opp-body ${isOpen ? 'audit-opp-body--open' : ''}`}><p>{opp.detail}</p></div>}
-                  </button>
-                </FadeSection>
-              )
-            })}
           </div>
         </div>
       </section>
