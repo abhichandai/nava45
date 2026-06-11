@@ -57,6 +57,7 @@ const CONTENT_METRICS = [
 function createDefaultState() {
   return {
     client: { name: '', handle: '', platform: 'Instagram', title: '' },
+    profileScreenshot: '',
     profile: Object.fromEntries(PROFILE_ITEMS.map(p => [p.key, { rating: '' as Rating, observation: '' }])),
     contentMetrics: Object.fromEntries(CONTENT_METRICS.map(m => [m.key, { rating: '' as Rating, detail: '' }])),
     contentPillars: {
@@ -383,6 +384,38 @@ export default function AuditTemplate() {
               <ScoreRing score={score} label="Overall Score" />
             </div>
           </div>
+
+          {/* Profile screenshot */}
+          {editMode ? (
+            <div className="audit-screenshot-upload">
+              {state.profileScreenshot ? (
+                <div className="audit-screenshot-preview">
+                  <img src={state.profileScreenshot} alt="Profile screenshot" />
+                  <button className="audit-remove-btn" style={{ marginTop: 8 }}
+                    onClick={() => setState(s => ({ ...s, profileScreenshot: '' }))}>Remove</button>
+                </div>
+              ) : (
+                <label className="audit-screenshot-dropzone">
+                  <input type="file" accept="image/*" style={{ display: 'none' }}
+                    onChange={e => {
+                      const file = e.target.files?.[0]
+                      if (!file) return
+                      const reader = new FileReader()
+                      reader.onload = () => setState(s => ({ ...s, profileScreenshot: reader.result as string }))
+                      reader.readAsDataURL(file)
+                    }} />
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" />
+                  </svg>
+                  <span>Upload profile screenshot</span>
+                </label>
+              )}
+            </div>
+          ) : state.profileScreenshot ? (
+            <div className="audit-screenshot-preview">
+              <img src={state.profileScreenshot} alt="Profile screenshot" />
+            </div>
+          ) : null}
 
           {/* Summary cards */}
           <div className="audit-summary-row">

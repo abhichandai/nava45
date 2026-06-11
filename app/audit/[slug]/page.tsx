@@ -204,6 +204,11 @@ export default function AuditView() {
             </div>
             <div className="audit-hero-right"><ScoreRing score={score} label="Overall Score" /></div>
           </div>
+          {state.profileScreenshot && (
+            <div className="audit-screenshot-preview">
+              <img src={state.profileScreenshot} alt="Profile screenshot" />
+            </div>
+          )}
           <div className="audit-summary-row">
             <FadeSection className="audit-summary-card"><div className="audit-summary-card-top"><span className="audit-summary-card-label">Profile</span></div><div className="audit-summary-card-score">{profileScore}<span className="audit-summary-card-unit">/100</span></div><ScoreBar value={profileScore} /></FadeSection>
             <FadeSection className="audit-summary-card" delay={120}><div className="audit-summary-card-top"><span className="audit-summary-card-label">Content Strategy</span></div><div className="audit-summary-card-score">{contentScore}<span className="audit-summary-card-unit">/100</span></div><ScoreBar value={contentScore} /></FadeSection>
