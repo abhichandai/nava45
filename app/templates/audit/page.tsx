@@ -199,6 +199,39 @@ function EditSelect<T extends string>({ value, options, onChange, editMode }: {
   )
 }
 
+/* ─── Platform Icons ─────────────────────────────────────────────────────── */
+
+function PlatformIcon({ platform }: { platform: string }) {
+  const icons: Record<string, React.ReactNode> = {
+    Instagram: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none" />
+      </svg>
+    ),
+    LinkedIn: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff">
+        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.982 0H8.014v16h4.969v-8.4c0-4.67 6.03-5.05 6.03 0V24H24V13.87c0-7.88-8.922-7.59-11.018-3.71V8z" transform="scale(0.85) translate(2,2)" />
+      </svg>
+    ),
+    TikTok: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff">
+        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.87a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.3z" transform="scale(0.9) translate(1.5,1)" />
+      </svg>
+    ),
+    YouTube: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff">
+        <path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 00.5 6.19 31.6 31.6 0 000 12a31.6 31.6 0 00.5 5.81 3.02 3.02 0 002.12 2.14c1.84.55 9.38.55 9.38.55s7.54 0 9.38-.55a3.02 3.02 0 002.12-2.14A31.6 31.6 0 0024 12a31.6 31.6 0 00-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" transform="scale(0.85) translate(2,2)" />
+      </svg>
+    ),
+    'Twitter/X': (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" transform="scale(0.8) translate(2.5,2.5)" />
+      </svg>
+    ),
+  }
+  return <>{icons[platform] || <span className="audit-avatar-initials">?</span>}</>
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    MAIN PAGE
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -355,7 +388,7 @@ export default function AuditTemplate() {
           <div className="audit-hero-badge"><span className="audit-hero-badge-dot" />Account Audit</div>
           <div className="audit-hero-top">
             <div className="audit-hero-left">
-              <div className="audit-avatar"><span className="audit-avatar-initials">{initials}</span></div>
+              <div className="audit-avatar"><PlatformIcon platform={state.client.platform} /></div>
               <div style={{ flex: 1 }}>
                 {editMode ? (
                   <div className="audit-hero-edit-fields">
