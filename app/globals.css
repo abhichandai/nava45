@@ -2973,6 +2973,27 @@ footer {
   border: 1px solid var(--border);
   display: block;
 }
+.audit-screenshot-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 16px;
+}
+.audit-screenshot-slider-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.audit-screenshot-slider {
+  width: 140px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
 
 /* ─── Edit Controls ─── */
 .audit-edit-input,

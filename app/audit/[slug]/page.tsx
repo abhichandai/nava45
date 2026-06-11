@@ -205,7 +205,7 @@ export default function AuditView() {
             <div className="audit-hero-right"><ScoreRing score={score} label="Overall Score" /></div>
           </div>
           {state.profileScreenshot && (
-            <div className="audit-screenshot-preview">
+            <div className="audit-screenshot-preview" style={{ maxWidth: `${state.screenshotScale || 60}%` }}>
               <img src={state.profileScreenshot} alt="Profile screenshot" />
             </div>
           )}

@@ -58,6 +58,7 @@ function createDefaultState() {
   return {
     client: { name: '', handle: '', platform: 'Instagram', title: '' },
     profileScreenshot: '',
+    screenshotScale: 60,
     profile: Object.fromEntries(PROFILE_ITEMS.map(p => [p.key, { rating: '' as Rating, observation: '' }])),
     contentMetrics: Object.fromEntries(CONTENT_METRICS.map(m => [m.key, { rating: '' as Rating, detail: '' }])),
     contentPillars: {
@@ -389,10 +390,19 @@ export default function AuditTemplate() {
           {editMode ? (
             <div className="audit-screenshot-upload">
               {state.profileScreenshot ? (
-                <div className="audit-screenshot-preview">
+                <div className="audit-screenshot-preview" style={{ maxWidth: `${state.screenshotScale}%` }}>
                   <img src={state.profileScreenshot} alt="Profile screenshot" />
-                  <button className="audit-remove-btn" style={{ marginTop: 8 }}
-                    onClick={() => setState(s => ({ ...s, profileScreenshot: '' }))}>Remove</button>
+                  <div className="audit-screenshot-controls">
+                    <label className="audit-screenshot-slider-label">
+                      Size
+                      <input type="range" min="30" max="100" value={state.screenshotScale}
+                        onChange={e => setState(s => ({ ...s, screenshotScale: Number(e.target.value) }))}
+                        className="audit-screenshot-slider" />
+                      <span>{state.screenshotScale}%</span>
+                    </label>
+                    <button className="audit-remove-btn"
+                      onClick={() => setState(s => ({ ...s, profileScreenshot: '' }))}>Remove</button>
+                  </div>
                 </div>
               ) : (
                 <label className="audit-screenshot-dropzone">
@@ -412,7 +422,7 @@ export default function AuditTemplate() {
               )}
             </div>
           ) : state.profileScreenshot ? (
-            <div className="audit-screenshot-preview">
+            <div className="audit-screenshot-preview" style={{ maxWidth: `${state.screenshotScale || 60}%` }}>
               <img src={state.profileScreenshot} alt="Profile screenshot" />
             </div>
           ) : null}
