@@ -318,13 +318,18 @@ export default function AuditView() {
       </section>
 
       {/* CTA */}
-      <section className="audit-cta-section">
+      <section className="contact-section">
         <FadeSection>
-          <div className="audit-cta-inner">
-            <h2 className="audit-cta-title">Ready to<br /><em>Elevate</em> Your Brand?</h2>
-            <p className="audit-cta-sub">This audit is just the starting point. We build the systems that make your brand impossible to ignore.</p>
-            <a href="https://cal.com/achand/audit" target="_blank" rel="noopener noreferrer" className="btn-primary">Book a Call</a>
-          </div>
+          <h2 className="contact-title">
+            Ready to<br />
+            <em style={{ fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic', color: 'var(--gold)' }}>
+              Elevate
+            </em> Your Brand?
+          </h2>
+          <p className="contact-sub">
+            This audit is just the starting point. We build the systems that make your brand impossible to ignore.
+          </p>
+          <a href="https://cal.com/achand/audit" target="_blank" rel="noopener noreferrer" className="btn-primary">Book a Call</a>
         </FadeSection>
       </section>
 
