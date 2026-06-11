@@ -2330,7 +2330,7 @@ footer {
 
 .audit-page {
   min-height: 100vh;
-  padding-top: 80px;
+  padding-top: 0;
 }
 
 /* ─── Fade-in animation ─── */
@@ -2348,8 +2348,8 @@ footer {
 /* ─── Section Nav (sticky) ─── */
 .audit-section-nav {
   position: sticky;
-  top: 0;
-  z-index: 90;
+  top: 80px;
+  z-index: 50;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(12px);
@@ -2387,7 +2387,7 @@ footer {
 
 /* ─── Hero ─── */
 .audit-hero {
-  padding: 80px 40px 60px;
+  padding: 60px 40px 60px;
   border-bottom: 1px solid var(--border);
 }
 .audit-hero-inner {
@@ -2896,21 +2896,20 @@ footer {
   .audit-opp-body--open { padding: 0 20px 20px; }
   .audit-section-nav-inner { padding: 0 20px; }
   .audit-metrics-grid { grid-template-columns: 1fr; }
-  .audit-mode-toggle { top: auto; bottom: 20px; right: 20px; left: 20px; justify-content: center; }
 }
 
 /* ─── Mode Toggle ─── */
 .audit-mode-toggle {
   position: fixed;
-  top: 20px;
+  bottom: 24px;
   right: 24px;
-  z-index: 100;
+  z-index: 95;
   display: flex;
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
 }
 .audit-mode-btn {
   display: flex;
@@ -2931,6 +2930,16 @@ footer {
   background: var(--gold);
   color: #fff;
 }
+.audit-save-status {
+  padding: 8px 12px;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.audit-save-status--ok { color: #3BB06C; }
+.audit-save-status--err { color: #D4513A; }
 
 /* ─── Edit Controls ─── */
 .audit-edit-input,
