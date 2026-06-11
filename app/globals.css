@@ -2965,7 +2965,7 @@ footer {
   background: rgba(201,168,76,0.04);
 }
 .audit-screenshot-preview {
-  margin: 32px 0;
+  margin: 32px auto;
 }
 .audit-screenshot-preview img {
   width: 100%;
