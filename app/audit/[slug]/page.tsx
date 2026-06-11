@@ -408,7 +408,7 @@ export default function AuditView() {
             <p className="audit-proof-quote-text">I&rsquo;ve worked with 10 companies like yours and nobody does it better. You are <span style={{ color: 'var(--gold)' }}>the best I have ever seen.</span></p>
             <div className="audit-proof-quote-attr">
               <span className="audit-proof-quote-name">Adam Leipzig</span>
-              <span className="audit-proof-quote-role">Hollywood Producer · Former President, National Geographic Films</span>
+              <span className="audit-proof-quote-role">Hollywood Producer · Former SVP, Walt Disney Studios · Former President, National Geographic Films</span>
             </div>
           </div>
         </FadeSection>

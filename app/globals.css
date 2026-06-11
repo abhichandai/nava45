@@ -3122,9 +3122,10 @@ footer {
 
 /* ─── Social Proof — Quotes ─── */
 .audit-proof-quote {
-  padding: 60px 40px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  padding: 72px 40px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 100%);
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
 }
 .audit-proof-quote-inner {
   max-width: 720px;
@@ -3169,7 +3170,9 @@ footer {
 /* ─── Social Proof — Case Studies ─── */
 .audit-proof-cases {
   padding: 80px 40px;
-  border-top: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 100%);
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
 }
 .audit-proof-cases-inner {
   max-width: 1200px;
@@ -3186,9 +3189,11 @@ footer {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 32px 28px 28px;
+  text-align: center;
 }
 .audit-proof-case-stats {
   display: flex;
+  justify-content: center;
   gap: 32px;
   margin-bottom: 20px;
   padding-bottom: 20px;
