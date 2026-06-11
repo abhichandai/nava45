@@ -158,7 +158,7 @@ function FadeSection({ children, className = '', delay = 0 }: { children: React.
 function EditText({ value, onChange, placeholder, multiline, editMode }: {
   value: string; onChange: (v: string) => void; placeholder: string; multiline?: boolean; editMode: boolean
 }) {
-  if (!editMode) return <>{value || <span style={{ opacity: 0.35, fontStyle: 'italic' }}>{placeholder}</span>}</>
+  if (!editMode) return <span style={{ whiteSpace: 'pre-wrap' }}>{value || <span style={{ opacity: 0.35, fontStyle: 'italic' }}>{placeholder}</span>}</span>
   if (multiline) return (
     <textarea className="audit-edit-textarea" value={value} onChange={e => onChange(e.target.value)}
       placeholder={placeholder} rows={3} />
