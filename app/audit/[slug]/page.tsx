@@ -362,6 +362,7 @@ export default function AuditView() {
               </div>
               <p className="audit-proof-case-desc">From 22K to 72K+ followers through strategic content and a proprietary hook format that tripled video retention.</p>
               <div className="audit-proof-case-attr"><span className="audit-proof-case-name">Adam Leipzig</span><span className="audit-proof-case-role">Hollywood Producer · CEO · Author</span></div>
+              <a href="/client-success/adam-leipzig" className="audit-proof-case-link" target="_blank" rel="noopener noreferrer">Read the full case study →</a>
             </FadeSection>
             <FadeSection className="audit-proof-case-card" delay={120}>
               <div className="audit-proof-case-stats">
@@ -370,6 +371,7 @@ export default function AuditView() {
               </div>
               <p className="audit-proof-case-desc">Built an entire brand from scratch — audience, product, and automated revenue — without a single paid ad.</p>
               <div className="audit-proof-case-attr"><span className="audit-proof-case-name">Quit By Healing</span><span className="audit-proof-case-role">Men&rsquo;s Digital Wellness &amp; Self-Development</span></div>
+              <a href="/client-success/quit-by-healing" className="audit-proof-case-link" target="_blank" rel="noopener noreferrer">Read the full case study →</a>
             </FadeSection>
           </div>
         </div>

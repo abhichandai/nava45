@@ -680,6 +680,7 @@ export default function AuditTemplate() {
                 <span className="audit-proof-case-name">Adam Leipzig</span>
                 <span className="audit-proof-case-role">Hollywood Producer · CEO · Author</span>
               </div>
+              <a href="/client-success/adam-leipzig" className="audit-proof-case-link" target="_blank" rel="noopener noreferrer">Read the full case study →</a>
             </FadeSection>
             <FadeSection className="audit-proof-case-card" delay={120}>
               <div className="audit-proof-case-stats">
@@ -697,6 +698,7 @@ export default function AuditTemplate() {
                 <span className="audit-proof-case-name">Quit By Healing</span>
                 <span className="audit-proof-case-role">Men&rsquo;s Digital Wellness &amp; Self-Development</span>
               </div>
+              <a href="/client-success/quit-by-healing" className="audit-proof-case-link" target="_blank" rel="noopener noreferrer">Read the full case study →</a>
             </FadeSection>
           </div>
         </div>
