@@ -534,6 +534,20 @@ export default function AuditTemplate() {
         </div>
       </section>
 
+      {/* ═══ SOCIAL PROOF — Sam Quote ═══ */}
+      <section className="audit-proof-quote">
+        <FadeSection>
+          <div className="audit-proof-quote-inner">
+            <span className="audit-proof-quote-mark">&ldquo;</span>
+            <p className="audit-proof-quote-text">My business income two and three X&rsquo;d within just three or four weeks.</p>
+            <div className="audit-proof-quote-attr">
+              <span className="audit-proof-quote-name">Sam Overton</span>
+              <span className="audit-proof-quote-role">Fluid Social</span>
+            </div>
+          </div>
+        </FadeSection>
+      </section>
+
       {/* ═══ CONTENT STRATEGY ═══ */}
       <section id="content" className="audit-section audit-section--alt">
         <div className="audit-section-inner">
@@ -642,6 +656,52 @@ export default function AuditTemplate() {
         </div>
       </section>
 
+      {/* ═══ SOCIAL PROOF — Case Studies ═══ */}
+      <section className="audit-proof-cases">
+        <div className="audit-proof-cases-inner">
+          <FadeSection>
+            <p className="audit-label" style={{ textAlign: 'center' }}>Proven Results</p>
+            <h2 className="audit-heading" style={{ textAlign: 'center' }}>What happens when the strategy clicks.</h2>
+          </FadeSection>
+          <div className="audit-proof-cases-grid">
+            <FadeSection className="audit-proof-case-card" delay={0}>
+              <div className="audit-proof-case-stats">
+                <div className="audit-proof-case-stat">
+                  <span className="audit-proof-case-num">327%</span>
+                  <span className="audit-proof-case-label">Audience Growth</span>
+                </div>
+                <div className="audit-proof-case-stat">
+                  <span className="audit-proof-case-num">68%</span>
+                  <span className="audit-proof-case-label">Hook Retention</span>
+                </div>
+              </div>
+              <p className="audit-proof-case-desc">From 22K to 72K+ followers through strategic content and a proprietary hook format that tripled video retention.</p>
+              <div className="audit-proof-case-attr">
+                <span className="audit-proof-case-name">Adam Leipzig</span>
+                <span className="audit-proof-case-role">Hollywood Producer · CEO · Author</span>
+              </div>
+            </FadeSection>
+            <FadeSection className="audit-proof-case-card" delay={120}>
+              <div className="audit-proof-case-stats">
+                <div className="audit-proof-case-stat">
+                  <span className="audit-proof-case-num">185K</span>
+                  <span className="audit-proof-case-label">Followers from Zero</span>
+                </div>
+                <div className="audit-proof-case-stat">
+                  <span className="audit-proof-case-num">$26K</span>
+                  <span className="audit-proof-case-label">Passive Revenue</span>
+                </div>
+              </div>
+              <p className="audit-proof-case-desc">Built an entire brand from scratch — audience, product, and automated revenue — without a single paid ad.</p>
+              <div className="audit-proof-case-attr">
+                <span className="audit-proof-case-name">Quit By Healing</span>
+                <span className="audit-proof-case-role">Men&rsquo;s Digital Wellness &amp; Self-Development</span>
+              </div>
+            </FadeSection>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ GROWTH OPPORTUNITIES ═══ */}
       <section id="opportunities" className="audit-section">
         <div className="audit-section-inner">
@@ -700,6 +760,20 @@ export default function AuditTemplate() {
             <button className="audit-add-btn" onClick={addOpp}>+ Add Opportunity</button>
           )}
         </div>
+      </section>
+
+      {/* ═══ SOCIAL PROOF — Adam Quote ═══ */}
+      <section className="audit-proof-quote">
+        <FadeSection>
+          <div className="audit-proof-quote-inner">
+            <span className="audit-proof-quote-mark">&ldquo;</span>
+            <p className="audit-proof-quote-text">I&rsquo;ve worked with 10 companies like yours and nobody does it better. You are <span style={{ color: 'var(--gold)' }}>the best I have ever seen.</span></p>
+            <div className="audit-proof-quote-attr">
+              <span className="audit-proof-quote-name">Adam Leipzig</span>
+              <span className="audit-proof-quote-role">Hollywood Producer · Former President, National Geographic Films</span>
+            </div>
+          </div>
+        </FadeSection>
       </section>
 
       {/* ═══ CTA ═══ */}
