@@ -536,7 +536,7 @@ export default function AuditTemplate() {
           </FadeSection>
 
           {/* Posts data - CSV upload / collapsible table */}
-          {editMode && state.postsData.length === 0 && (
+          {editMode && ((state.postsData || []).length) === 0 && (
             <div className="audit-csv-upload">
               <label className="audit-screenshot-dropzone" style={{ padding: '24px' }}>
                 <input type="file" accept=".csv" style={{ display: 'none' }}
@@ -565,14 +565,14 @@ export default function AuditTemplate() {
               </label>
             </div>
           )}
-          {state.postsData.length > 0 && (
+          {((state.postsData || []).length) > 0 && (
             <FadeSection>
               <div className="audit-posts-section">
                 <button className="audit-posts-toggle" onClick={() => {
                   const el = document.getElementById('posts-table')
                   if (el) el.classList.toggle('audit-posts-table--open')
                 }}>
-                  <span>Analyzed Posts ({state.postsData.length})</span>
+                  <span>Analyzed Posts ({((state.postsData || []).length)})</span>
                   <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </button>
                 <div id="posts-table" className="audit-posts-table">
@@ -581,7 +581,7 @@ export default function AuditTemplate() {
                       <tr><th>#</th><th>Post</th><th>Type</th><th>Likes</th><th>Shares</th><th>Comments</th></tr>
                     </thead>
                     <tbody>
-                      {state.postsData.map((p, i) => (
+                      {(state.postsData || []).map((p, i) => (
                         <tr key={i}>
                           <td>{p.num}</td>
                           <td>{p.link ? <a href={p.link} target="_blank" rel="noopener noreferrer" className="audit-posts-link">{p.title}</a> : p.title}</td>
