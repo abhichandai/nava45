@@ -814,8 +814,8 @@ section { padding: 112px 60px; }
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
-/* Pause entire ticker on hover */
-.ticker-track-wrap:hover .ticker-track {
+/* Pause entire ticker on hover (only relevant once it's running) */
+.ticker-track-wrap.is-visible:hover .ticker-track {
   animation-play-state: paused;
 }
 
@@ -829,6 +829,14 @@ section { padding: 112px 60px; }
   align-items: center;
   width: max-content;
   animation: ticker-scroll 80s linear infinite;
+  /* Hold at the start (strongest logos first) until the section scrolls into view */
+  animation-play-state: paused;
+}
+
+/* Start the loop only once the section is in view, so every visitor sees
+   the strongest logos lead regardless of time spent on the hero + quote above */
+.ticker-track-wrap.is-visible .ticker-track {
+  animation-play-state: running;
 }
 
 /* Each set is its own flex row — -50% lands exactly at the set boundary */

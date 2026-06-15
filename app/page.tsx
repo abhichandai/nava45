@@ -1,4 +1,5 @@
 import HeroScrollCue from './components/HeroScrollCue'
+import TickerSection from './components/TickerSection'
 
 export default function Home() {
   return (
@@ -10,9 +11,8 @@ export default function Home() {
         <div className="hero-line" />
         <div className="hero-content">
           <h1 className="hero-title animate-fade-up">
-            Growth for<br />
-            <em>discerning</em><br />
-            brands & leaders.
+            <em>Exceptional</em> growth for<br />
+            <em>exceptional</em> brands &amp; leaders.
           </h1>
           <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <a href="/apply" className="btn-primary">Apply to Work Together</a>
@@ -45,41 +45,7 @@ export default function Home() {
       </section>
 
       {/* Logo Ticker — Trusted By */}
-      <section className="ticker-section">
-        <p className="section-label ticker-label">Trusted By</p>
-        <div className="ticker-track-wrap">
-          <div className="ticker-track">
-            {[0, 1, 2, 3].map((i) => (
-              <div className="ticker-set" key={i} aria-hidden={i > 0 ? 'true' : 'false'}>
-                <div className="ticker-item">
-                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/olympus.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Olympus" : undefined} />
-                </div>
-                <div className="ticker-item">
-                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/welch-allyn.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Welch Allyn" : undefined} />
-                </div>
-                <div className="ticker-item">
-                  <div className="ticker-logo ticker-logo--wide" style={{backgroundImage:"url('/logos/university-of-toronto.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "University of Toronto" : undefined} />
-                </div>
-                <div className="ticker-item">
-                  <div className="ticker-logo ticker-logo--wide" style={{backgroundImage:"url('/logos/balance-catamarans.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Balance Catamarans" : undefined} />
-                </div>
-                <div className="ticker-item">
-                  <div className="ticker-logo ticker-logo--wide" style={{backgroundImage:"url('/logos/adam-leipzig.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Adam Leipzig" : undefined} />
-                </div>
-                <div className="ticker-item">
-                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/dh-smile-center.svg')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "DH Smile Center" : undefined} />
-                </div>
-                <div className="ticker-item">
-                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/focus-and-action.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Focus & Action" : undefined} />
-                </div>
-                <div className="ticker-item">
-                  <div className="ticker-logo" style={{backgroundImage:"url('/logos/quit-by-healing.png')"}} role={i === 0 ? "img" : undefined} aria-label={i === 0 ? "Quit by Healing" : undefined} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TickerSection />
 
       {/* Who We Work With */}
       <section className="who-section" style={{ padding: '160px 60px' }}>
