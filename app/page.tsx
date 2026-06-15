@@ -11,8 +11,9 @@ export default function Home() {
         <div className="hero-line" />
         <div className="hero-content">
           <h1 className="hero-title animate-fade-up">
-            <em>Exceptional</em> growth for<br />
-            <em>exceptional</em> brands &amp; leaders.
+            Exceptional <em>growth</em><br />
+            for exceptional<br />
+            brands &amp; leaders.
           </h1>
           <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <a href="/apply" className="btn-primary">Apply to Work Together</a>
