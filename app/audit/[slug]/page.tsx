@@ -243,7 +243,7 @@ export default function AuditView() {
           <div className="audit-summary-row">
             <FadeSection className="audit-summary-card"><div className="audit-summary-card-top"><span className="audit-summary-card-label">Profile</span></div><div className="audit-summary-card-score">{profileScore}<span className="audit-summary-card-unit">/100</span></div><ScoreBar value={profileScore} /></FadeSection>
             <FadeSection className="audit-summary-card" delay={120}><div className="audit-summary-card-top"><span className="audit-summary-card-label">Content Strategy</span></div><div className="audit-summary-card-score">{contentScore}<span className="audit-summary-card-unit">/100</span></div><ScoreBar value={contentScore} /></FadeSection>
-            <FadeSection className="audit-summary-card" delay={240}><div className="audit-summary-card-top"><span className="audit-summary-card-label">Opportunities</span></div><div className="audit-summary-card-score">{(state.opportunities || []).filter((o: any) => o.impact === 'high').length}<span className="audit-summary-card-unit"> high impact</span></div></FadeSection>
+            <FadeSection className="audit-summary-card" delay={240}><div className="audit-summary-card-top"><span className="audit-summary-card-label">Opportunities</span></div><div className="audit-summary-card-score">{(state.opportunities || []).filter((o: any) => o.impact === 'high').length}<span className="audit-summary-card-unit"> high impact</span></div><ScoreBar value={(state.opportunities || []).length ? ((state.opportunities || []).filter((o: any) => o.title).length / (state.opportunities || []).length) * 100 : 0} /></FadeSection>
           </div>
         </div>
       </section>
