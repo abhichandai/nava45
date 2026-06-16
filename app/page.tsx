@@ -14,7 +14,7 @@ export default function Home() {
             Scale your <em>influence</em>.
           </h1>
           <p className="hero-subhead animate-fade-up delay-1">
-            We build the audience, the authority, and the pipeline{' '}
+            We build the audience, authority, and pipeline{' '}
             <span className="hero-subhead-nobreak">your <span className="hero-subhead-gold">reputation deserves.</span></span>
           </p>
           <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '44px' }}>
