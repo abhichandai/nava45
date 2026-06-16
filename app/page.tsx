@@ -11,10 +11,12 @@ export default function Home() {
         <div className="hero-line" />
         <div className="hero-content">
           <h1 className="hero-title animate-fade-up">
-            Scale your<br />
-            <em>influence</em>.
+            Scale your <em>influence</em>.
           </h1>
-          <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '72px' }}>
+          <p className="hero-subhead animate-fade-up delay-1">
+            The audience, the authority, and the pipeline your reputation deserves.
+          </p>
+          <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '44px' }}>
             <a href="/apply" className="btn-primary">Apply to Work Together</a>
           </div>
         </div>

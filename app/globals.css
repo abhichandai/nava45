@@ -3672,3 +3672,21 @@ footer {
     max-width: none;
   }
 }
+
+/* ─── Hero sub-headline (homepage) — bridges headline to CTA ────────────── */
+.hero-subhead {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 30px auto 0;
+  text-align: center;
+  font-weight: 300;
+}
+@media (max-width: 600px) {
+  .hero-subhead {
+    font-size: 1.02rem;
+    max-width: 400px;
+    margin-top: 24px;
+  }
+}
