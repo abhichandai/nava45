@@ -11,7 +11,8 @@ export default function Home() {
         <div className="hero-line" />
         <div className="hero-content">
           <h1 className="hero-title animate-fade-up">
-            Your <em>influence</em>, at scale.
+            Scale your<br />
+            <em>influence</em>.
           </h1>
           <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '72px' }}>
             <a href="/apply" className="btn-primary">Apply to Work Together</a>
