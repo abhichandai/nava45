@@ -229,6 +229,7 @@ export default function AuditView() {
               <div>
                 <h1 className="audit-hero-name">{state.client?.name || 'Client'}</h1>
                 <p className="audit-hero-handle">{state.client?.handle} · {state.client?.platform}</p>
+                {state.client?.followers && <p className="audit-hero-handle" style={{ marginTop: 4, opacity: 0.85 }}>{state.client.followers} followers</p>}
                 <p className="audit-hero-title">{state.client?.title}</p>
               </div>
             </div>

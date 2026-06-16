@@ -49,7 +49,7 @@ const CONTENT_METRICS = [
 
 function createDefaultState() {
   return {
-    client: { name: '', handle: '', platform: 'Instagram', title: '' },
+    client: { name: '', handle: '', platform: 'Instagram', title: '', followers: '' },
     profileScreenshot: '',
     screenshotScale: 60,
     profile: Object.fromEntries(PROFILE_ITEMS.map(p => [p.key, { rating: '' as Rating, observation: '' }])),
@@ -388,6 +388,8 @@ export default function AuditTemplate() {
                         <option>Instagram</option><option>LinkedIn</option><option>TikTok</option><option>YouTube</option><option>Twitter/X</option>
                       </select>
                     </div>
+                    <input className="audit-edit-input" value={state.client.followers || ''}
+                      onChange={e => updateClient('followers', e.target.value)} placeholder="Follower count — e.g. 8,904" />
                     <input className="audit-edit-input" value={state.client.title}
                       onChange={e => updateClient('title', e.target.value)} placeholder="Their title — e.g. CEO, Producer, Founder" />
                   </div>
@@ -395,6 +397,7 @@ export default function AuditTemplate() {
                   <>
                     <h1 className="audit-hero-name">{state.client.name || 'Client Name'}</h1>
                     <p className="audit-hero-handle">{state.client.handle || '@handle'} · {state.client.platform}</p>
+                    {state.client.followers && <p className="audit-hero-handle" style={{ marginTop: 4, opacity: 0.85 }}>{state.client.followers} followers</p>}
                     <p className="audit-hero-title">{state.client.title || 'Title'}</p>
                   </>
                 )}
