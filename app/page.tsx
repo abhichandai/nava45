@@ -14,7 +14,7 @@ export default function Home() {
             Scale your <em>influence</em>.
           </h1>
           <p className="hero-subhead animate-fade-up delay-1">
-            The audience, the authority, and the pipeline your reputation deserves.
+            Build the audience, the authority, and the pipeline your reputation deserves.
           </p>
           <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '44px' }}>
             <a href="/apply" className="btn-primary">Apply to Work Together</a>
