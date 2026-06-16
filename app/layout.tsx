@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Nav from './components/Nav'
+import CookieNotice from './components/CookieNotice'
 
 export const metadata: Metadata = {
   title: 'Nava45 — Marketing & Growth',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Nav />
         {children}
+        <CookieNotice />
       </body>
     </html>
   )
