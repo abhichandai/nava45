@@ -11,9 +11,8 @@ export default function Home() {
         <div className="hero-line" />
         <div className="hero-content">
           <h1 className="hero-title animate-fade-up">
-            We make<br />
-            <em>exceptional brands</em><br />
-            impossible to overlook.
+            Make your presence<br />
+            match your <em>reputation</em>.
           </h1>
           <div className="animate-fade-up delay-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <a href="/apply" className="btn-primary">Apply to Work Together</a>
@@ -119,7 +118,7 @@ export default function Home() {
               <span className="results-label">Qualified pipeline. Luxury yachts.</span>
             </div>
             <div className="results-stat">
-              <span className="results-number">226K</span>
+              <span className="results-number">185K</span>
               <span className="results-label">Audience built from scratch.</span>
             </div>
             <div className="results-stat">
