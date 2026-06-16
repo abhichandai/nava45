@@ -11,7 +11,7 @@ export default function Home() {
         <div className="hero-line" />
         <div className="hero-content">
           <h1 className="hero-title animate-fade-up">
-            Scale your <em>influence</em>.
+            Scale Your <em>Influence</em>.
           </h1>
           <p className="hero-subhead animate-fade-up delay-1">
             We build the audience, authority, and pipeline{' '}
