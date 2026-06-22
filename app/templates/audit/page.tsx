@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { loadAudit, saveAudit, slugify } from '../../lib/supabase-audits'
+import { parseAuditCsv, isUsableAudit } from '../../lib/parse-audit-csv'
 
 /* ═══════════════════════════════════════════════════════════════════════════
    ACCOUNT AUDIT — Internal Builder + Presentation Tool
@@ -297,6 +298,31 @@ export default function AuditTemplate() {
   const addOpp = () => setState(s => ({ ...s, opportunities: [...s.opportunities, { title: '', impact: 'medium' as Impact, detail: '' }] }))
   const removeOpp = (idx: number) => setState(s => ({ ...s, opportunities: s.opportunities.filter((_, i) => i !== idx) }))
 
+  // Import a full audit from a v2 audit CSV. Replaces audit content; keeps any uploaded screenshot.
+  const importAuditCsv = (file: File) => {
+    const reader = new FileReader()
+    reader.onload = () => {
+      const parsed = parseAuditCsv(reader.result as string)
+      if (!isUsableAudit(parsed)) {
+        alert("Couldn't read that file as an audit CSV. Make sure it's the audit export in the expected format.")
+        return
+      }
+      if (!confirm('Import this CSV? It will replace the current audit content (your uploaded screenshot is kept).')) return
+      setState(s => ({
+        ...s,
+        client: { ...s.client, ...parsed.client },
+        profile: { ...s.profile, ...parsed.profile },
+        contentMetrics: { ...s.contentMetrics, ...parsed.contentMetrics },
+        contentPillars: { ...s.contentPillars, ...parsed.contentPillars },
+        strengths: parsed.strengths.length ? parsed.strengths : s.strengths,
+        weaknesses: parsed.weaknesses.length ? parsed.weaknesses : s.weaknesses,
+        postsData: parsed.postsData.length ? parsed.postsData : s.postsData,
+        opportunities: parsed.opportunities.length ? parsed.opportunities : s.opportunities,
+      }))
+    }
+    reader.readAsText(file)
+  }
+
   const score = overallScore(state)
   const initials = state.client.name ? state.client.name.split(' ').map(n => n[0]).join('') : '?'
 
@@ -339,6 +365,14 @@ export default function AuditTemplate() {
         {saveStatus === 'saving' && <span className="audit-save-status">Saving…</span>}
         {saveStatus === 'saved' && <span className="audit-save-status audit-save-status--ok">Saved</span>}
         {saveStatus === 'error' && <span className="audit-save-status audit-save-status--err">Error</span>}
+        {editMode && (
+          <label className="audit-mode-btn" style={{ cursor: 'pointer' }} title="Populate the entire audit from an audit CSV">
+            <input type="file" accept=".csv" style={{ display: 'none' }}
+              onChange={e => { const f = e.target.files?.[0]; if (f) importAuditCsv(f); e.target.value = '' }} />
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Import CSV
+          </label>
+        )}
         {editMode && clientUrl && (
           <button className="audit-mode-btn" onClick={() => { navigator.clipboard.writeText(clientUrl); alert('Client link copied!') }}
             title={clientUrl}>
@@ -548,16 +582,8 @@ export default function AuditTemplate() {
                     if (!file) return
                     const reader = new FileReader()
                     reader.onload = () => {
-                      const text = reader.result as string
-                      const lines = text.split('\n').map(l => l.replace(/\r$/, ''))
-                      const rows: any[] = []
-                      for (let i = 1; i <= 30 && i < lines.length; i++) {
-                        const cols = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g)
-                        if (!cols || cols.length < 4) continue
-                        const clean = (s: string) => s.replace(/^"|"$/g, '')
-                        rows.push({ num: clean(cols[0]), title: clean(cols[1]), link: clean(cols[2]), type: clean(cols[3]), likes: clean(cols[4] || ''), shares: clean(cols[5] || ''), comments: clean(cols[6] || '') })
-                      }
-                      setState(s => ({ ...s, postsData: rows }))
+                      const parsed = parseAuditCsv(reader.result as string)
+                      if (parsed.postsData.length) setState(s => ({ ...s, postsData: parsed.postsData }))
                     }
                     reader.readAsText(file)
                   }} />
