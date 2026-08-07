@@ -43,6 +43,22 @@ export default function TemplatesPage() {
           <span className="templates-card-arrow">→</span>
         </a>
 
+        {/* Audit Template V2 */}
+        <a href="/templates/audit-v2" className="templates-card">
+          <div className="templates-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+              <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+              <rect x="9" y="3" width="6" height="4" rx="1" />
+              <path d="M9 12h6" /><path d="M9 16h6" />
+            </svg>
+          </div>
+          <div>
+            <h2 className="templates-card-title">Account Audit V2</h2>
+            <p className="templates-card-desc">Redesigned audit template. Create a new audit for a prospect, fill in ratings, upload a profile screenshot, and share the link.</p>
+          </div>
+          <span className="templates-card-arrow">→</span>
+        </a>
+
         {/* Prospect Audits */}
         <div className="templates-section">
           <button className="templates-section-header" onClick={() => setOpen(!open)}>
