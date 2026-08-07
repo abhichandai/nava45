@@ -531,23 +531,27 @@ export default function AuditTemplateV2() {
 
       <style jsx>{`
         .av2-page {
-          --av2-ink: #0d0f13;
-          --av2-ink-2: #15181f;
-          --av2-ink-3: #1b1f27;
-          --av2-hairline: rgba(255,255,255,0.08);
-          --av2-hairline-strong: rgba(255,255,255,0.14);
-          --av2-text: #f3f2ee;
-          --av2-muted: #98979e;
-          --av2-muted-soft: #7c7b82;
-          --av2-gold: #f2b705;
+          --av2-ink: #0E0D0C;
+          --av2-ink-2: #161412;
+          --av2-ink-3: #1A1714;
+          --av2-hairline: rgba(240,237,230,0.08);
+          --av2-hairline-strong: rgba(240,237,230,0.14);
+          --av2-text: #F0EDE6;
+          --av2-muted: #7A7670;
+          --av2-muted-soft: rgba(240,237,230,0.45);
+          --av2-gold: #C9A84C;
           --av2-green: #4ade80;
-          --av2-amber: #f2b705;
+          --av2-amber: #C9A84C;
           --av2-red: #ef4a45;
           background: var(--av2-ink);
           color: var(--av2-text);
-          font-family: 'Inter', sans-serif;
+          font-family: 'Outfit', sans-serif;
           min-height: 100vh;
           -webkit-font-smoothing: antialiased;
+        }
+
+        .av2-mark, .av2-subject-name, .av2-section-title, .av2-closing-title, .av2-proof-stat-num {
+          font-family: 'Cormorant Garamond', serif;
         }
 
         .av2-toolbar {
@@ -644,7 +648,8 @@ export default function AuditTemplateV2() {
         .av2-closing-title { font-size: clamp(26px, 3.4vw, 34px); font-weight: 700; letter-spacing: -0.01em; color: var(--av2-text); line-height: 1.3; margin: 0 0 16px; }
         .av2-accent { color: var(--av2-gold); }
         .av2-closing p { font-size: 15px; font-weight: 400; color: var(--av2-muted); max-width: 52ch; margin: 0 auto 32px; line-height: 1.6; }
-        .av2-cta { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1a1305; background: var(--av2-gold); padding: 15px 34px; border-radius: 4px; text-decoration: none; }
+        .av2-cta { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--av2-gold); padding: 15px 34px; border-radius: 4px; text-decoration: none; transition: background 0.25s ease; }
+        .av2-cta:hover { background: #7A6018; }
 
         /* ─── Edit-mode form controls ─── */
         .av2-input { font-family: inherit; background: var(--av2-ink); color: var(--av2-text); border: 1px solid var(--av2-hairline-strong); border-radius: 4px; padding: 8px 10px; font-size: 13.5px; width: 100%; }
